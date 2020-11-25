@@ -33,8 +33,8 @@ namespace BusProject
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtLoginId = new System.Windows.Forms.TextBox();
+            this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -81,19 +81,19 @@ namespace BusProject
             this.label4.TabIndex = 1;
             this.label4.Text = "Phone";
             // 
-            // txtUsername
+            // txtLoginId
             // 
-            this.txtUsername.Location = new System.Drawing.Point(217, 33);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(258, 25);
-            this.txtUsername.TabIndex = 1;
+            this.txtLoginId.Location = new System.Drawing.Point(217, 33);
+            this.txtLoginId.Name = "txtLoginId";
+            this.txtLoginId.Size = new System.Drawing.Size(258, 25);
+            this.txtLoginId.TabIndex = 1;
             // 
-            // txtPassword
+            // txtLoginPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(217, 83);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(258, 25);
-            this.txtPassword.TabIndex = 2;
+            this.txtLoginPassword.Location = new System.Drawing.Point(217, 83);
+            this.txtLoginPassword.Name = "txtLoginPassword";
+            this.txtLoginPassword.Size = new System.Drawing.Size(258, 25);
+            this.txtLoginPassword.TabIndex = 2;
             // 
             // txtName
             // 
@@ -118,10 +118,10 @@ namespace BusProject
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.txtLoginPassword);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtUsername);
+            this.groupBox1.Controls.Add(this.txtLoginId);
             this.groupBox1.Location = new System.Drawing.Point(94, 81);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(606, 281);
@@ -174,7 +174,7 @@ namespace BusProject
             this.BttBack.UseVisualStyleBackColor = true;
             this.BttBack.Click += new System.EventHandler(this.BttBack_Click);
             // 
-            // Register
+            // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -197,8 +197,8 @@ namespace BusProject
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtLoginId;
+        private System.Windows.Forms.TextBox txtLoginPassword;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.GroupBox groupBox1;

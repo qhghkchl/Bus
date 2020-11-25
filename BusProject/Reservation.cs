@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using BusProject.Data;
 
 namespace BusProject
 {
@@ -19,7 +20,7 @@ namespace BusProject
         }
         private void cbStartLocation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-        }
+/*            Operation user = Dao.Operation.GetArrival(txt);
+*/        }
     }
 }

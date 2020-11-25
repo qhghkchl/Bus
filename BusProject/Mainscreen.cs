@@ -22,8 +22,7 @@ namespace BusProject
         {
             if (txtLoginId.Text != string .Empty && txtLoginPassword.Text != string .Empty)
             {         
-                Customer user = Dao.Customer.GetByName(txtLoginId.Text);
-                
+                Customer user = Dao.Customer.GetByName(txtLoginId.Text);               
 
                 if (user != null)
                 {

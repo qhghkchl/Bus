@@ -22,21 +22,21 @@ namespace BusProject
         
         private void bttConfirm_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "" || txtPhone.Text == "" || txtBirthday.Text == "" || txtPassword.Text == "" || txtUsername.Text == "")
+            if (txtName.Text == "" || txtPhone.Text == "" || txtBirthday.Text == "" || txtLoginPassword.Text == "" || txtLoginId.Text == "")
             {
                 MessageBox.Show("정보를 입력해주세요.");
             }
             else
             {
-                Customer customer = new Customer();
-                customer.Name = txtName.Text.Trim();
-                //TODO : 수정
-                // customer.PhoneNumber = txtPhone.Text.Trim();
-                customer.Birth = int.Parse(txtBirthday.Text);
-                customer.LoginId = txtUsername.Text.Trim();
-                customer.LoginPassword = txtPassword.Text.Trim();
+                Customer user = Dao.Customer.GetByName(txtLoginId.Text);
 
-                Dao.Customer.Insert(customer);
+                user.Name = txtName.Text.Trim();             
+                user.PhoneNumber = txtPhone.Text.Trim();
+                user.Birth = txtBirthday.Text.Trim();
+                user.LoginId = txtLoginId.Text.Trim();
+                user.LoginPassword = txtLoginPassword.Text.Trim();
+
+                Dao.Customer.Insert(user);
 
                 Clear();
                 MessageBox.Show("회원정보 입력완료.");
@@ -53,7 +53,7 @@ namespace BusProject
         }
         void Clear()
         {
-            txtName.Text = txtPhone.Text = txtBirthday.Text = txtPassword.Text = txtUsername.Text = "";
+            txtName.Text = txtPhone.Text = txtBirthday.Text = txtLoginPassword.Text = txtLoginId.Text = "";
         }
     }
 }

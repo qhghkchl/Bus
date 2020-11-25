@@ -22,10 +22,10 @@ namespace BusProject.Data
     
         public int CustomerId { get; set; }
         public string Name { get; set; }
-        public Nullable<int> PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string LoginId { get; set; }
         public string LoginPassword { get; set; }
-        public int Birth { get; set; }
+        public string Birth { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Seat> Seats { get; set; }

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Linq.Expressions;
 using EFLibrary;
+
 
 namespace BusProject.Data
 {
@@ -16,6 +18,14 @@ namespace BusProject.Data
             get
             {
                 return x => x.OperationId;
+            }
+        }
+
+        public Operation GetArrival(int operationId)
+        {
+            using (var context = new BusProjectEntities())
+            {
+                return context.Operations.FirstOrDefault(x => x.OperationId == operationId);
             }
         }
     }

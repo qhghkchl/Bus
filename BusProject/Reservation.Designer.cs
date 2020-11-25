@@ -34,12 +34,13 @@ namespace BusProject
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BttSearch = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.DepartureDate = new System.Windows.Forms.DateTimePicker();
             this.checkEconomy = new System.Windows.Forms.CheckBox();
             this.checkPremium = new System.Windows.Forms.CheckBox();
             this.checkHighClass = new System.Windows.Forms.CheckBox();
             this.checkAll = new System.Windows.Forms.CheckBox();
-            this.cbArrivalTime = new System.Windows.Forms.ComboBox();
             this.cbStartTime = new System.Windows.Forms.ComboBox();
             this.cbArrivalLocation = new System.Windows.Forms.ComboBox();
             this.cbStartLocation = new System.Windows.Forms.ComboBox();
@@ -62,7 +63,7 @@ namespace BusProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 137);
+            this.label2.Location = new System.Drawing.Point(36, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 1;
@@ -71,7 +72,7 @@ namespace BusProject
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 218);
+            this.label3.Location = new System.Drawing.Point(36, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 2;
@@ -88,12 +89,13 @@ namespace BusProject
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BttSearch);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.DepartureDate);
             this.groupBox1.Controls.Add(this.checkEconomy);
             this.groupBox1.Controls.Add(this.checkPremium);
             this.groupBox1.Controls.Add(this.checkHighClass);
             this.groupBox1.Controls.Add(this.checkAll);
-            this.groupBox1.Controls.Add(this.cbArrivalTime);
             this.groupBox1.Controls.Add(this.cbStartTime);
             this.groupBox1.Controls.Add(this.cbArrivalLocation);
             this.groupBox1.Controls.Add(this.cbStartLocation);
@@ -108,12 +110,30 @@ namespace BusProject
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "예매하기";
             // 
+            // BttSearch
+            // 
+            this.BttSearch.Location = new System.Drawing.Point(173, 397);
+            this.BttSearch.Name = "BttSearch";
+            this.BttSearch.Size = new System.Drawing.Size(75, 23);
+            this.BttSearch.TabIndex = 9;
+            this.BttSearch.Text = "조회";
+            this.BttSearch.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(36, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "시간";
+            // 
             // DepartureDate
             // 
-            this.DepartureDate.Location = new System.Drawing.Point(132, 211);
+            this.DepartureDate.Location = new System.Drawing.Point(132, 161);
             this.DepartureDate.Name = "DepartureDate";
             this.DepartureDate.Size = new System.Drawing.Size(272, 25);
-            this.DepartureDate.TabIndex = 5;
+            this.DepartureDate.TabIndex = 3;
             // 
             // checkEconomy
             // 
@@ -121,7 +141,7 @@ namespace BusProject
             this.checkEconomy.Location = new System.Drawing.Point(257, 353);
             this.checkEconomy.Name = "checkEconomy";
             this.checkEconomy.Size = new System.Drawing.Size(59, 19);
-            this.checkEconomy.TabIndex = 9;
+            this.checkEconomy.TabIndex = 8;
             this.checkEconomy.Text = "일반";
             this.checkEconomy.UseVisualStyleBackColor = true;
             // 
@@ -131,7 +151,7 @@ namespace BusProject
             this.checkPremium.Location = new System.Drawing.Point(257, 292);
             this.checkPremium.Name = "checkPremium";
             this.checkPremium.Size = new System.Drawing.Size(89, 19);
-            this.checkPremium.TabIndex = 7;
+            this.checkPremium.TabIndex = 6;
             this.checkPremium.Text = "프리미엄";
             this.checkPremium.UseVisualStyleBackColor = true;
             // 
@@ -141,7 +161,7 @@ namespace BusProject
             this.checkHighClass.Location = new System.Drawing.Point(132, 353);
             this.checkHighClass.Name = "checkHighClass";
             this.checkHighClass.Size = new System.Drawing.Size(59, 19);
-            this.checkHighClass.TabIndex = 8;
+            this.checkHighClass.TabIndex = 7;
             this.checkHighClass.Text = "우등";
             this.checkHighClass.UseVisualStyleBackColor = true;
             // 
@@ -151,33 +171,25 @@ namespace BusProject
             this.checkAll.Location = new System.Drawing.Point(132, 292);
             this.checkAll.Name = "checkAll";
             this.checkAll.Size = new System.Drawing.Size(59, 19);
-            this.checkAll.TabIndex = 6;
+            this.checkAll.TabIndex = 5;
             this.checkAll.Text = "전체";
             this.checkAll.UseVisualStyleBackColor = true;
-            // 
-            // cbArrivalTime
-            // 
-            this.cbArrivalTime.FormattingEnabled = true;
-            this.cbArrivalTime.Location = new System.Drawing.Point(288, 129);
-            this.cbArrivalTime.Name = "cbArrivalTime";
-            this.cbArrivalTime.Size = new System.Drawing.Size(116, 23);
-            this.cbArrivalTime.TabIndex = 4;
             // 
             // cbStartTime
             // 
             this.cbStartTime.FormattingEnabled = true;
-            this.cbStartTime.Location = new System.Drawing.Point(288, 51);
+            this.cbStartTime.Location = new System.Drawing.Point(132, 214);
             this.cbStartTime.Name = "cbStartTime";
             this.cbStartTime.Size = new System.Drawing.Size(116, 23);
-            this.cbStartTime.TabIndex = 2;
+            this.cbStartTime.TabIndex = 4;
             // 
             // cbArrivalLocation
             // 
             this.cbArrivalLocation.FormattingEnabled = true;
-            this.cbArrivalLocation.Location = new System.Drawing.Point(132, 129);
+            this.cbArrivalLocation.Location = new System.Drawing.Point(132, 103);
             this.cbArrivalLocation.Name = "cbArrivalLocation";
             this.cbArrivalLocation.Size = new System.Drawing.Size(116, 23);
-            this.cbArrivalLocation.TabIndex = 3;
+            this.cbArrivalLocation.TabIndex = 2;
             // 
             // cbStartLocation
             // 
@@ -203,7 +215,7 @@ namespace BusProject
             this.BttBack.Location = new System.Drawing.Point(144, 462);
             this.BttBack.Name = "BttBack";
             this.BttBack.Size = new System.Drawing.Size(75, 23);
-            this.BttBack.TabIndex = 6;
+            this.BttBack.TabIndex = 10;
             this.BttBack.Text = "뒤로가기";
             this.BttBack.UseVisualStyleBackColor = true;
             // 
@@ -212,7 +224,7 @@ namespace BusProject
             this.BttNext.Location = new System.Drawing.Point(777, 462);
             this.BttNext.Name = "BttNext";
             this.BttNext.Size = new System.Drawing.Size(75, 23);
-            this.BttNext.TabIndex = 7;
+            this.BttNext.TabIndex = 11;
             this.BttNext.Text = "다음";
             this.BttNext.UseVisualStyleBackColor = true;
             // 
@@ -241,7 +253,6 @@ namespace BusProject
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbArrivalTime;
         private System.Windows.Forms.ComboBox cbStartTime;
         private System.Windows.Forms.ComboBox cbArrivalLocation;
         private System.Windows.Forms.ComboBox cbStartLocation;
@@ -253,5 +264,7 @@ namespace BusProject
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BttBack;
         private System.Windows.Forms.Button BttNext;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button BttSearch;
     }
 }

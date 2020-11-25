@@ -29,5 +29,6 @@ namespace BusProject.Data
         public virtual Route Route { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Seat> Seats { get; set; }
+        public virtual BusType BusType1 { get; set; }
     }
 }

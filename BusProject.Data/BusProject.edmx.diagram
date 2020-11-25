@@ -14,6 +14,7 @@
         <AssociationConnector Association="BusSystemModel.FK_Seat_Customer" ManuallyRouted="false" />
         <AssociationConnector Association="BusSystemModel.FK_Operation_Route" ManuallyRouted="false" />
         <AssociationConnector Association="BusSystemModel.FK_Seat_Operation" ManuallyRouted="false" />
+        <AssociationConnector Association="BusSystemModel.FK_Operation_BusType1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
