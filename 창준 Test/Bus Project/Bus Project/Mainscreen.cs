@@ -11,9 +11,9 @@ using BusProject.Data;
 
 namespace Bus_Project
 {
-    public partial class Main : Form
+    public partial class Mainscreen : Form
     {
-        public Main()
+        public Mainscreen()
         {
             InitializeComponent();
         }

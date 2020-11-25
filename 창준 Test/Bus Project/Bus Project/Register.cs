@@ -47,7 +47,7 @@ namespace Bus_Project
         private void BttBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Main mainscreen = new Main();
+            Mainscreen mainscreen = new Mainscreen();
             mainscreen.Show();
             
         }

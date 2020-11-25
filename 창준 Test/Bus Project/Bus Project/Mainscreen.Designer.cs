@@ -1,7 +1,7 @@
 ﻿
 namespace Bus_Project
 {
-    partial class Main
+    partial class Mainscreen
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,10 @@ namespace Bus_Project
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.bttLogin = new System.Windows.Forms.Button();
             this.bttRegister = new System.Windows.Forms.Button();
+            this.bttLogin = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,20 +72,15 @@ namespace Bus_Project
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "예매 로그인";
             // 
-            // txtUsername
+            // bttRegister
             // 
-            this.txtUsername.Location = new System.Drawing.Point(151, 52);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(194, 25);
-            this.txtUsername.TabIndex = 2;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(151, 119);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(194, 25);
-            this.txtPassword.TabIndex = 2;
+            this.bttRegister.Location = new System.Drawing.Point(270, 177);
+            this.bttRegister.Name = "bttRegister";
+            this.bttRegister.Size = new System.Drawing.Size(75, 23);
+            this.bttRegister.TabIndex = 3;
+            this.bttRegister.Text = "회원가입";
+            this.bttRegister.UseVisualStyleBackColor = true;
+            this.bttRegister.Click += new System.EventHandler(this.bttRegister_Click);
             // 
             // bttLogin
             // 
@@ -97,23 +92,28 @@ namespace Bus_Project
             this.bttLogin.UseVisualStyleBackColor = true;
             this.bttLogin.Click += new System.EventHandler(this.bttLogin_Click);
             // 
-            // bttRegister
+            // txtPassword
             // 
-            this.bttRegister.Location = new System.Drawing.Point(270, 177);
-            this.bttRegister.Name = "bttRegister";
-            this.bttRegister.Size = new System.Drawing.Size(75, 23);
-            this.bttRegister.TabIndex = 3;
-            this.bttRegister.Text = "회원가입";
-            this.bttRegister.UseVisualStyleBackColor = true;
-            this.bttRegister.Click += new System.EventHandler(this.bttRegister_Click);
+            this.txtPassword.Location = new System.Drawing.Point(151, 119);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(194, 25);
+            this.txtPassword.TabIndex = 2;
             // 
-            // Main
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(151, 52);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(194, 25);
+            this.txtUsername.TabIndex = 2;
+            // 
+            // Mainscreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Main";
+            this.Name = "Mainscreen";
             this.Text = "Bus";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
