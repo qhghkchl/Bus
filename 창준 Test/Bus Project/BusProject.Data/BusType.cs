@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bus_Project
+namespace BusProject.Data
 {
     using System;
     using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace Bus_Project
     
         public int BusType1 { get; set; }
         public int Capacity { get; set; }
-        public int AddPrice { get; set; }
+        public Nullable<int> AddPrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bus> Buses { get; set; }

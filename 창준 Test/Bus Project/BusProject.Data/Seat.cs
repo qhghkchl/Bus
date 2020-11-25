@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bus_Project
+namespace BusProject.Data
 {
     using System;
     using System.Collections.Generic;

@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BusEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BusSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bus">
           <Key>
             <PropertyRef Name="OperationId" />
           </Key>
           <Property Name="OperationId" Type="int" Nullable="false" />
-          <Property Name="OperationDate" Type="datetime" Nullable="false" />
+          <Property Name="OpeartionDate" Type="datetime" Nullable="false" />
           <Property Name="RouteId" Type="int" Nullable="false" />
           <Property Name="BusType" Type="int" Nullable="false" />
           <Property Name="Price" Type="int" Nullable="false" />
@@ -21,18 +21,18 @@
           </Key>
           <Property Name="BusType" Type="int" Nullable="false" />
           <Property Name="Capacity" Type="int" Nullable="false" />
-          <Property Name="AddPrice" Type="int" Nullable="false" />
+          <Property Name="AddPrice" Type="int" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerId" />
           </Key>
-          <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CellphoneNumber" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Birth" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Birth" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Route">
           <Key>
@@ -79,30 +79,30 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Seat_Bus">
-          <End Role="Bus" Type="Self.Bus" Multiplicity="1" />
+          <End Role="Bus" Type="Self.Bus" Multiplicity="0..1" />
           <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Bus">
               <PropertyRef Name="OperationId" />
             </Principal>
             <Dependent Role="Seat">
-              <PropertyRef Name="OperationId" />
+              <PropertyRef Name="CustomerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Seat_Customer">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="CustomerId" />
             </Principal>
             <Dependent Role="Seat">
-              <PropertyRef Name="CustomerId" />
+              <PropertyRef Name="OperationId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BusEntitiesStoreContainer">
+        <EntityContainer Name="BusSystemModelStoreContainer">
           <EntitySet Name="Bus" EntityType="Self.Bus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BusType" EntityType="Self.BusType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -129,13 +129,13 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BusEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BusSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Bus">
           <Key>
             <PropertyRef Name="OperationId" />
           </Key>
           <Property Name="OperationId" Type="Int32" Nullable="false" />
-          <Property Name="OperationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OpeartionDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="RouteId" Type="Int32" Nullable="false" />
           <Property Name="BusType" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Int32" Nullable="false" />
@@ -149,19 +149,19 @@
           </Key>
           <Property Name="BusType1" Type="Int32" Nullable="false" />
           <Property Name="Capacity" Type="Int32" Nullable="false" />
-          <Property Name="AddPrice" Type="Int32" Nullable="false" />
+          <Property Name="AddPrice" Type="Int32" />
           <NavigationProperty Name="Buses" Relationship="Self.FK_Bus_BusType" FromRole="BusType" ToRole="Bus" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerId" />
           </Key>
-          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CellphoneNumber" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Birth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birth" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Seats" Relationship="Self.FK_Seat_Customer" FromRole="Customer" ToRole="Seat" />
         </EntityType>
         <EntityType Name="Route">
@@ -212,30 +212,30 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Seat_Bus">
-          <End Role="Bus" Type="Self.Bus" Multiplicity="1" />
+          <End Role="Bus" Type="Self.Bus" Multiplicity="0..1" />
           <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Bus">
               <PropertyRef Name="OperationId" />
             </Principal>
             <Dependent Role="Seat">
-              <PropertyRef Name="OperationId" />
+              <PropertyRef Name="CustomerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Seat_Customer">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="CustomerId" />
             </Principal>
             <Dependent Role="Seat">
-              <PropertyRef Name="CustomerId" />
+              <PropertyRef Name="OperationId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Bus_ProjectEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BusSystemEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Buses" EntityType="Self.Bus" />
           <EntitySet Name="BusTypes" EntityType="Self.BusType" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
@@ -263,12 +263,12 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BusEntitiesStoreContainer" CdmEntityContainer="Bus_ProjectEntities">
+        <EntityContainerMapping StorageEntityContainer="BusSystemModelStoreContainer" CdmEntityContainer="BusSystemEntities">
           <EntitySetMapping Name="Buses">
-            <EntityTypeMapping TypeName="BusEntities.Bus">
+            <EntityTypeMapping TypeName="BusSystemModel.Bus">
               <MappingFragment StoreEntitySet="Bus">
                 <ScalarProperty Name="OperationId" ColumnName="OperationId" />
-                <ScalarProperty Name="OperationDate" ColumnName="OperationDate" />
+                <ScalarProperty Name="OpeartionDate" ColumnName="OpeartionDate" />
                 <ScalarProperty Name="RouteId" ColumnName="RouteId" />
                 <ScalarProperty Name="BusType" ColumnName="BusType" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
@@ -276,7 +276,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BusTypes">
-            <EntityTypeMapping TypeName="BusEntities.BusType">
+            <EntityTypeMapping TypeName="BusSystemModel.BusType">
               <MappingFragment StoreEntitySet="BusType">
                 <ScalarProperty Name="BusType1" ColumnName="BusType" />
                 <ScalarProperty Name="Capacity" ColumnName="Capacity" />
@@ -285,19 +285,19 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="BusEntities.Customer">
+            <EntityTypeMapping TypeName="BusSystemModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="CellphoneNumber" ColumnName="CellphoneNumber" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Birth" ColumnName="Birth" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Routes">
-            <EntityTypeMapping TypeName="BusEntities.Route">
+            <EntityTypeMapping TypeName="BusSystemModel.Route">
               <MappingFragment StoreEntitySet="Route">
                 <ScalarProperty Name="RouteId" ColumnName="RouteId" />
                 <ScalarProperty Name="Arrival" ColumnName="Arrival" />
@@ -307,7 +307,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Seats">
-            <EntityTypeMapping TypeName="BusEntities.Seat">
+            <EntityTypeMapping TypeName="BusSystemModel.Seat">
               <MappingFragment StoreEntitySet="Seat">
                 <ScalarProperty Name="SeatId" ColumnName="SeatId" />
                 <ScalarProperty Name="OperationId" ColumnName="OperationId" />

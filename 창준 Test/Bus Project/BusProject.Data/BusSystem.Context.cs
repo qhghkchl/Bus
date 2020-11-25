@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bus_Project
+namespace BusProject.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Bus_ProjectEntities : DbContext
+    public partial class BusSystemEntities : DbContext
     {
-        public Bus_ProjectEntities()
-            : base("name=Bus_ProjectEntities")
+        public BusSystemEntities()
+            : base("name=BusSystemEntities")
         {
         }
     
@@ -30,7 +30,5 @@ namespace Bus_Project
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Route> Routes { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
-
-        
     }
 }

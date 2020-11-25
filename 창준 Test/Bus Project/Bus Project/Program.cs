@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusProject.Data;
+using EFLibrary;
 
 namespace Bus_Project
 {
@@ -16,6 +19,9 @@ namespace Bus_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DbContextCreator.Context = () => new BusSystemEntities();
+
             Application.Run(new Main());
 
         }

@@ -7,26 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bus_Project
+namespace BusProject.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Bus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Bus()
         {
             this.Seats = new HashSet<Seat>();
         }
     
-        public int CustomerId { get; set; }
-        public string Name { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Birth { get; set; }
+        public int OperationId { get; set; }
+        public System.DateTime OpeartionDate { get; set; }
+        public int RouteId { get; set; }
+        public int BusType { get; set; }
+        public int Price { get; set; }
     
+        public virtual BusType BusType1 { get; set; }
+        public virtual Route Route { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Seat> Seats { get; set; }
     }
