@@ -22,9 +22,9 @@ namespace BusProject.Data
     
         public int CustomerId { get; set; }
         public string Name { get; set; }
-        public Nullable<int> CellphoneNumber { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        public Nullable<int> PhoneNumber { get; set; }
+        public string LoginId { get; set; }
+        public string LoginPassword { get; set; }
         public int Birth { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

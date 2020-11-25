@@ -77,6 +77,7 @@
     <Compile Include="Dao\BusDao.cs" />
     <Compile Include="Dao\CustomerDao.cs" />
     <Compile Include="Dao\Dao.cs" />
+    <Compile Include="Dao\RegisterDao.cs" />
     <Compile Include="EFLibrary\BaseDao.cs" />
     <Compile Include="EFLibrary\DbContextCreator.cs" />
     <Compile Include="EFLibrary\DualKeyDao.cs" />

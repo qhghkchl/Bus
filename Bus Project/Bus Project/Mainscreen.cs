@@ -20,13 +20,14 @@ namespace Bus_Project
         
         private void bttLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text != string .Empty && txtPassword.Text != string .Empty)
-            {
-                Customer user = Dao.Customer.GetByName(txtUsername.Text);
+            if (txtLoginId.Text != string .Empty && txtLoginPassword.Text != string .Empty)
+            {         
+                Customer user = Dao.Customer.GetByName(txtLoginId.Text);
+                Customer password = Dao.Customer.GetByPassword(txtLoginPassword.Text);
 
                 if (user != null)
                 {
-                    if (user.Password == txtPassword.Text)
+                    if (user.LoginPassword == txtLoginPassword.Text)
                         MessageBox.Show("로그인 하세요.");
                     else
                         MessageBox.Show("잘못된 비밀번호입니다.");

@@ -20,12 +20,15 @@ namespace BusProject.Data
             }
         }
 
-        public Customer GetByName(string userName)
+        public Customer GetByName(string loginId)
         {
             using (var context = new BusSystemEntities())
             {
-                return context.Customers.FirstOrDefault(x => x.UserName == userName);
+                return context.Customers.FirstOrDefault(x => x.LoginId == loginId);               
             }
         }
+
+        
     }
+
 }

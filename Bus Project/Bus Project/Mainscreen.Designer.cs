@@ -34,8 +34,8 @@ namespace Bus_Project
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bttRegister = new System.Windows.Forms.Button();
             this.bttLogin = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtLoginPassword = new System.Windows.Forms.TextBox();
+            this.txtLoginId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +61,8 @@ namespace Bus_Project
             // 
             this.groupBox1.Controls.Add(this.bttRegister);
             this.groupBox1.Controls.Add(this.bttLogin);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Controls.Add(this.txtUsername);
+            this.groupBox1.Controls.Add(this.txtLoginPassword);
+            this.groupBox1.Controls.Add(this.txtLoginId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(182, 154);
@@ -92,20 +92,20 @@ namespace Bus_Project
             this.bttLogin.UseVisualStyleBackColor = true;
             this.bttLogin.Click += new System.EventHandler(this.bttLogin_Click);
             // 
-            // txtPassword
+            // txtLoginPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(151, 119);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(194, 25);
-            this.txtPassword.TabIndex = 2;
+            this.txtLoginPassword.Location = new System.Drawing.Point(151, 119);
+            this.txtLoginPassword.Name = "txtLoginPassword";
+            this.txtLoginPassword.PasswordChar = '*';
+            this.txtLoginPassword.Size = new System.Drawing.Size(194, 25);
+            this.txtLoginPassword.TabIndex = 2;
             // 
-            // txtUsername
+            // txtLoginId
             // 
-            this.txtUsername.Location = new System.Drawing.Point(151, 52);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(194, 25);
-            this.txtUsername.TabIndex = 2;
+            this.txtLoginId.Location = new System.Drawing.Point(151, 52);
+            this.txtLoginId.Name = "txtLoginId";
+            this.txtLoginId.Size = new System.Drawing.Size(194, 25);
+            this.txtLoginId.TabIndex = 2;
             // 
             // Mainscreen
             // 
@@ -128,8 +128,8 @@ namespace Bus_Project
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bttRegister;
         private System.Windows.Forms.Button bttLogin;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtLoginPassword;
+        private System.Windows.Forms.TextBox txtLoginId;
     }
 }
 
