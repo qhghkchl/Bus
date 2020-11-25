@@ -30,5 +30,7 @@ namespace Bus_Project
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Route> Routes { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
+
+        
     }
 }

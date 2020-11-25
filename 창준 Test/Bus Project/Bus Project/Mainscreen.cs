@@ -41,12 +41,15 @@ namespace Bus_Project
             else
             {
                 MessageBox.Show("아이디와 비밀번호 입력하세요.");
-            }
+            }      
         }
 
         private void bttRegister_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Register register = new Register();
+            register.Show();         
+      
         }
     }
 }

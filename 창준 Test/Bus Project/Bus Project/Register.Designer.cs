@@ -38,10 +38,11 @@ namespace Bus_Project
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bttConfirm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtBirthday = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.bttConfirm = new System.Windows.Forms.Button();
+            this.BttBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +86,7 @@ namespace Bus_Project
             this.txtUsername.Location = new System.Drawing.Point(217, 33);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(258, 25);
-            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -99,14 +100,14 @@ namespace Bus_Project
             this.txtName.Location = new System.Drawing.Point(217, 133);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(258, 25);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 3;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(217, 183);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(258, 25);
-            this.txtPhone.TabIndex = 2;
+            this.txtPhone.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -128,15 +129,6 @@ namespace Bus_Project
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // bttConfirm
-            // 
-            this.bttConfirm.Location = new System.Drawing.Point(625, 391);
-            this.bttConfirm.Name = "bttConfirm";
-            this.bttConfirm.Size = new System.Drawing.Size(75, 23);
-            this.bttConfirm.TabIndex = 4;
-            this.bttConfirm.Text = "가입완료";
-            this.bttConfirm.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -145,6 +137,13 @@ namespace Bus_Project
             this.label5.Size = new System.Drawing.Size(72, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "Password";
+            // 
+            // txtBirthday
+            // 
+            this.txtBirthday.Location = new System.Drawing.Point(217, 233);
+            this.txtBirthday.Name = "txtBirthday";
+            this.txtBirthday.Size = new System.Drawing.Size(258, 25);
+            this.txtBirthday.TabIndex = 5;
             // 
             // label6
             // 
@@ -155,22 +154,37 @@ namespace Bus_Project
             this.label6.TabIndex = 1;
             this.label6.Text = "Birthday";
             // 
-            // txtBirthday
+            // bttConfirm
             // 
-            this.txtBirthday.Location = new System.Drawing.Point(217, 233);
-            this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.Size = new System.Drawing.Size(258, 25);
-            this.txtBirthday.TabIndex = 2;
+            this.bttConfirm.Location = new System.Drawing.Point(625, 391);
+            this.bttConfirm.Name = "bttConfirm";
+            this.bttConfirm.Size = new System.Drawing.Size(75, 23);
+            this.bttConfirm.TabIndex = 6;
+            this.bttConfirm.Text = "가입완료";
+            this.bttConfirm.UseVisualStyleBackColor = true;
+            this.bttConfirm.Click += new System.EventHandler(this.bttConfirm_Click);
+            // 
+            // BttBack
+            // 
+            this.BttBack.Location = new System.Drawing.Point(625, 41);
+            this.BttBack.Name = "BttBack";
+            this.BttBack.Size = new System.Drawing.Size(75, 23);
+            this.BttBack.TabIndex = 7;
+            this.BttBack.Text = "뒤로가기";
+            this.BttBack.UseVisualStyleBackColor = true;
+            this.BttBack.Click += new System.EventHandler(this.BttBack_Click);
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BttBack);
             this.Controls.Add(this.bttConfirm);
             this.Controls.Add(this.groupBox1);
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.BttBack_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -192,5 +206,6 @@ namespace Bus_Project
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBirthday;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button BttBack;
     }
 }
