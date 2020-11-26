@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusProject.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,30 @@ namespace BusProject.EmployeeUC
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void cbAddBusGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void cbAddBusGrade_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtStartLocationE_TextChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void bttAddBus_Click(object sender, EventArgs e)
+        {
+            routeBindingSource.AddNew();
+        }
+
+        private void bttEditBus_Click(object sender, EventArgs e)
+        {
+            routeBindingSource.EndEdit();
+            routeBindingSource.ResetBindings(false);
+        }
+
+        private void bttDeleteBus_Click(object sender, EventArgs e)
+        {
+            routeBindingSource.RemoveCurrent();
         }
     }
 }
