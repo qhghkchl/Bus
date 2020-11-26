@@ -36,7 +36,6 @@ namespace BusProject
             this.bttTop3 = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
             // 
             // bttAddBus
@@ -98,20 +97,11 @@ namespace BusProject
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker1.TabIndex = 7;
             // 
-            // domainUpDown1
-            // 
-            this.domainUpDown1.Location = new System.Drawing.Point(272, 105);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(175, 25);
-            this.domainUpDown1.TabIndex = 8;
-            this.domainUpDown1.Text = "domainUpDown1";
-            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 653);
-            this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.bttTop3);
@@ -135,6 +125,5 @@ namespace BusProject
         private System.Windows.Forms.Button bttTop3;
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
     }
 }
