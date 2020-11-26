@@ -21,11 +21,11 @@ namespace BusProject.Data
             }
         }
 
-        public Route GetArrival(int routeId)
+        public Operation GetArrival(int operationId)
         {
             using (var context = new BusProjectEntities())
             {
-                return context.Routes.FirstOrDefault(x => x.RouteId == routeId);
+                return context.Operations.FirstOrDefault(x => x.OperationId == operationId);
             }
         }
     }

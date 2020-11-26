@@ -24,8 +24,6 @@ namespace BusProject.Data
         public System.DateTime OpeartionDate { get; set; }
         public int RouteId { get; set; }
         public int BusTypeId { get; set; }
-        public int ArrivalTime { get; set; }
-        public int DepartureTime { get; set; }
     
         public virtual BusType BusType { get; set; }
         public virtual Route Route { get; set; }

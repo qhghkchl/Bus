@@ -7,20 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using BusProject.Data;
 
 namespace BusProject
 {
-    public partial class Reservation : Form
+    public partial class EmployeeForm : Form
     {
-        public Reservation()
+        public EmployeeForm()
         {
             InitializeComponent();
         }
-        private void cbStartLocation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-/*            Operation user = Dao.Operation.GetArrival(txt);
-*/        }
     }
 }
