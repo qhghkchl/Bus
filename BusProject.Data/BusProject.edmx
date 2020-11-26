@@ -29,9 +29,11 @@
             <PropertyRef Name="OperationId" />
           </Key>
           <Property Name="OperationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OpeartionDate" Type="datetime" Nullable="false" />
+          <Property Name="OpeartionDate" Type="date" Nullable="false" />
           <Property Name="RouteId" Type="int" Nullable="false" />
           <Property Name="BusTypeId" Type="int" Nullable="false" />
+          <Property Name="ArrivalTime" Type="int" Nullable="false" />
+          <Property Name="DepartureTime" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Route">
           <Key>
@@ -41,6 +43,7 @@
           <Property Name="Arrival" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Departure" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RoutePrice" Type="int" Nullable="false" />
+          <Property Name="TravelTime" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Seat">
           <Key>
@@ -155,13 +158,15 @@
             <PropertyRef Name="OperationId" />
           </Key>
           <Property Name="OperationId" Type="Int32" Nullable="false" />
-          <Property Name="OpeartionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OpeartionDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="RouteId" Type="Int32" Nullable="false" />
           <Property Name="BusTypeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="BusType" Relationship="Self.FK_Operation_BusType" FromRole="Operation" ToRole="BusType" />
           <NavigationProperty Name="Route" Relationship="Self.FK_Operation_Route" FromRole="Operation" ToRole="Route" />
           <NavigationProperty Name="Seats" Relationship="Self.FK_Seat_Operation" FromRole="Operation" ToRole="Seat" />
           <NavigationProperty Name="BusType1" Relationship="BusSystemModel.FK_Operation_BusType1" FromRole="Operation" ToRole="BusType" />
+          <Property Name="ArrivalTime" Type="Int32" Nullable="false" />
+          <Property Name="DepartureTime" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Route">
           <Key>
@@ -172,6 +177,7 @@
           <Property Name="Departure" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RoutePrice" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Operations" Relationship="Self.FK_Operation_Route" FromRole="Route" ToRole="Operation" />
+          <Property Name="TravelTime" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Seat">
           <Key>
@@ -303,6 +309,8 @@
           <EntitySetMapping Name="Operations">
             <EntityTypeMapping TypeName="BusSystemModel.Operation">
               <MappingFragment StoreEntitySet="Operation">
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
                 <ScalarProperty Name="OperationId" ColumnName="OperationId" />
                 <ScalarProperty Name="OpeartionDate" ColumnName="OpeartionDate" />
                 <ScalarProperty Name="RouteId" ColumnName="RouteId" />
@@ -313,6 +321,7 @@
           <EntitySetMapping Name="Routes">
             <EntityTypeMapping TypeName="BusSystemModel.Route">
               <MappingFragment StoreEntitySet="Route">
+                <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
                 <ScalarProperty Name="RouteId" ColumnName="RouteId" />
                 <ScalarProperty Name="Arrival" ColumnName="Arrival" />
                 <ScalarProperty Name="Departure" ColumnName="Departure" />

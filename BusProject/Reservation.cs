@@ -17,10 +17,30 @@ namespace BusProject
         public Reservation()
         {
             InitializeComponent();
+            
+        }
+        private void Reservation_Load(object sender, EventArgs e)
+        {
+ 
+            using (BusProjectEntities con = new BusProjectEntities())
+            {
+                routeBindingSource2.DataSource = con.Routes.ToList();
+                Route obj = cbStartLocation.SelectedItem as Route;
+                if (obj != null)
+                    routeBindingSource2.DataSource = con.Routes.Where(p => p.RouteId == obj.RouteId).ToList();
+            }
+
         }
         private void cbStartLocation_SelectedIndexChanged(object sender, EventArgs e)
         {
-/*            Operation user = Dao.Operation.GetArrival(txt);
-*/        }
+            Route obj = cbStartLocation.SelectedItem as Route;
+            if (obj != null)
+            {
+                using (BusProjectEntities con = new BusProjectEntities())
+                {
+                    routeBindingSource2.DataSource = con.Routes.Where(p => p.RouteId == obj.RouteId).ToList();
+                }
+            }
+        }
     }
 }

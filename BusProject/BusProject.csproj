@@ -53,6 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bus_ProjectDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bus_ProjectDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Mainscreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +69,11 @@
     </Compile>
     <Compile Include="MenuScreen.Designer.cs">
       <DependentUpon>MenuScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperationDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,7 +110,32 @@
     <EmbeddedResource Include="Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Bus_ProjectDataSet.xsc">
+      <DependentUpon>Bus_ProjectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Bus_ProjectDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Bus_ProjectDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Bus_ProjectDataSet.xss">
+      <DependentUpon>Bus_ProjectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OperationDataSet.xsc">
+      <DependentUpon>OperationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OperationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OperationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OperationDataSet.xss">
+      <DependentUpon>OperationDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BusProject.Bus_ProjectDataSetTableAdapters.RouteTableAdapter.datasource" />
+    <None Include="Properties\DataSources\BusProject.Data.Route.datasource" />
+    <None Include="Properties\DataSources\Bus_ProjectDataSet.RouteRow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

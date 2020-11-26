@@ -29,6 +29,7 @@ namespace BusProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,13 +43,29 @@ namespace BusProject
             this.checkHighClass = new System.Windows.Forms.CheckBox();
             this.checkAll = new System.Windows.Forms.CheckBox();
             this.cbStartTime = new System.Windows.Forms.ComboBox();
-            this.cbArrivalLocation = new System.Windows.Forms.ComboBox();
             this.cbStartLocation = new System.Windows.Forms.ComboBox();
+            this.cbArrivalLocation = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BttBack = new System.Windows.Forms.Button();
             this.BttNext = new System.Windows.Forms.Button();
+            this.bus_ProjectDataSet = new BusProject.Bus_ProjectDataSet();
+            this.routeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.routeTableAdapterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.routeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.routeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.travelTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operationsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bus_ProjectDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeTableAdapterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,8 +114,8 @@ namespace BusProject
             this.groupBox1.Controls.Add(this.checkHighClass);
             this.groupBox1.Controls.Add(this.checkAll);
             this.groupBox1.Controls.Add(this.cbStartTime);
-            this.groupBox1.Controls.Add(this.cbArrivalLocation);
             this.groupBox1.Controls.Add(this.cbStartLocation);
+            this.groupBox1.Controls.Add(this.cbArrivalLocation);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
@@ -183,6 +200,19 @@ namespace BusProject
             this.cbStartTime.Size = new System.Drawing.Size(116, 23);
             this.cbStartTime.TabIndex = 4;
             // 
+            // cbStartLocation
+            // 
+            this.cbStartLocation.DataSource = this.routeBindingSource2;
+            this.cbStartLocation.DisplayMember = "Arrival";
+            this.cbStartLocation.FormattingEnabled = true;
+            this.cbStartLocation.Location = new System.Drawing.Point(132, 51);
+            this.cbStartLocation.Name = "cbStartLocation";
+            this.cbStartLocation.Size = new System.Drawing.Size(116, 23);
+            this.cbStartLocation.TabIndex = 1;
+            this.cbStartLocation.ValueMember = "Arrival";
+            this.cbStartLocation.SelectedIndexChanged += new System.EventHandler(this.cbStartLocation_SelectedIndexChanged);
+            this.cbStartLocation.SelectionChangeCommitted += new System.EventHandler(this.cbStartLocation_SelectedIndexChanged);
+            // 
             // cbArrivalLocation
             // 
             this.cbArrivalLocation.FormattingEnabled = true;
@@ -191,23 +221,23 @@ namespace BusProject
             this.cbArrivalLocation.Size = new System.Drawing.Size(116, 23);
             this.cbArrivalLocation.TabIndex = 2;
             // 
-            // cbStartLocation
-            // 
-            this.cbStartLocation.FormattingEnabled = true;
-            this.cbStartLocation.Location = new System.Drawing.Point(132, 51);
-            this.cbStartLocation.Name = "cbStartLocation";
-            this.cbStartLocation.Size = new System.Drawing.Size(116, 23);
-            this.cbStartLocation.TabIndex = 1;
-            this.cbStartLocation.SelectedIndexChanged += new System.EventHandler(this.cbStartLocation_SelectedIndexChanged);
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(485, 12);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.routeIdDataGridViewTextBoxColumn,
+            this.arrivalDataGridViewTextBoxColumn,
+            this.departureDataGridViewTextBoxColumn,
+            this.routePriceDataGridViewTextBoxColumn,
+            this.travelTimeDataGridViewTextBoxColumn,
+            this.operationsDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.routeBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(506, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(472, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(681, 426);
             this.dataGridView1.TabIndex = 5;
             // 
             // BttBack
@@ -228,20 +258,96 @@ namespace BusProject
             this.BttNext.Text = "다음";
             this.BttNext.UseVisualStyleBackColor = true;
             // 
+            // bus_ProjectDataSet
+            // 
+            this.bus_ProjectDataSet.DataSetName = "Bus_ProjectDataSet";
+            this.bus_ProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // routeBindingSource
+            // 
+            this.routeBindingSource.DataMember = "Route";
+            this.routeBindingSource.DataSource = this.bus_ProjectDataSet;
+            // 
+            // routeTableAdapterBindingSource
+            // 
+            this.routeTableAdapterBindingSource.DataSource = typeof(BusProject.Bus_ProjectDataSetTableAdapters.RouteTableAdapter);
+            // 
+            // routeBindingSource1
+            // 
+            this.routeBindingSource1.DataSource = typeof(BusProject.Data.Route);
+            // 
+            // routeIdDataGridViewTextBoxColumn
+            // 
+            this.routeIdDataGridViewTextBoxColumn.DataPropertyName = "RouteId";
+            this.routeIdDataGridViewTextBoxColumn.HeaderText = "RouteId";
+            this.routeIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.routeIdDataGridViewTextBoxColumn.Name = "routeIdDataGridViewTextBoxColumn";
+            this.routeIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // arrivalDataGridViewTextBoxColumn
+            // 
+            this.arrivalDataGridViewTextBoxColumn.DataPropertyName = "Arrival";
+            this.arrivalDataGridViewTextBoxColumn.HeaderText = "Arrival";
+            this.arrivalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.arrivalDataGridViewTextBoxColumn.Name = "arrivalDataGridViewTextBoxColumn";
+            this.arrivalDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // departureDataGridViewTextBoxColumn
+            // 
+            this.departureDataGridViewTextBoxColumn.DataPropertyName = "Departure";
+            this.departureDataGridViewTextBoxColumn.HeaderText = "Departure";
+            this.departureDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.departureDataGridViewTextBoxColumn.Name = "departureDataGridViewTextBoxColumn";
+            this.departureDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // routePriceDataGridViewTextBoxColumn
+            // 
+            this.routePriceDataGridViewTextBoxColumn.DataPropertyName = "RoutePrice";
+            this.routePriceDataGridViewTextBoxColumn.HeaderText = "RoutePrice";
+            this.routePriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.routePriceDataGridViewTextBoxColumn.Name = "routePriceDataGridViewTextBoxColumn";
+            this.routePriceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // travelTimeDataGridViewTextBoxColumn
+            // 
+            this.travelTimeDataGridViewTextBoxColumn.DataPropertyName = "TravelTime";
+            this.travelTimeDataGridViewTextBoxColumn.HeaderText = "TravelTime";
+            this.travelTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.travelTimeDataGridViewTextBoxColumn.Name = "travelTimeDataGridViewTextBoxColumn";
+            this.travelTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // operationsDataGridViewTextBoxColumn
+            // 
+            this.operationsDataGridViewTextBoxColumn.DataPropertyName = "Operations";
+            this.operationsDataGridViewTextBoxColumn.HeaderText = "Operations";
+            this.operationsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.operationsDataGridViewTextBoxColumn.Name = "operationsDataGridViewTextBoxColumn";
+            this.operationsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // routeBindingSource2
+            // 
+            this.routeBindingSource2.DataSource = typeof(BusProject.Data.Route);
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 497);
+            this.ClientSize = new System.Drawing.Size(1214, 497);
             this.Controls.Add(this.BttNext);
             this.Controls.Add(this.BttBack);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Reservation";
             this.Text = "Reservation";
+            this.Load += new System.EventHandler(this.Reservation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bus_ProjectDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeTableAdapterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,7 +361,6 @@ namespace BusProject
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbStartTime;
         private System.Windows.Forms.ComboBox cbArrivalLocation;
-        private System.Windows.Forms.ComboBox cbStartLocation;
         private System.Windows.Forms.CheckBox checkEconomy;
         private System.Windows.Forms.CheckBox checkPremium;
         private System.Windows.Forms.CheckBox checkHighClass;
@@ -266,5 +371,17 @@ namespace BusProject
         private System.Windows.Forms.Button BttNext;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BttSearch;
+        private System.Windows.Forms.ComboBox cbStartLocation;
+        private Bus_ProjectDataSet bus_ProjectDataSet;
+        private System.Windows.Forms.BindingSource routeBindingSource;
+        private System.Windows.Forms.BindingSource routeTableAdapterBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn routeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn routePriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn travelTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operationsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource routeBindingSource1;
+        private System.Windows.Forms.BindingSource routeBindingSource2;
     }
 }

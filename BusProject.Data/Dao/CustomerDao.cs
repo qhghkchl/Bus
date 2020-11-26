@@ -26,9 +26,6 @@ namespace BusProject.Data
             {
                 return context.Customers.FirstOrDefault(x => x.LoginId == loginId);               
             }
-        }
-
-        
+        }       
     }
-
 }

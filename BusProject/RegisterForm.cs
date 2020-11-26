@@ -19,17 +19,16 @@ namespace BusProject
         }
         
         MenuScreen mainmenu = new MenuScreen();
-        
         private void bttConfirm_Click(object sender, EventArgs e)
         {
+            Customer user = Dao.Customer.GetByName(txtLoginId.Text);
+
             if (txtName.Text == "" || txtPhone.Text == "" || txtBirthday.Text == "" || txtLoginPassword.Text == "" || txtLoginId.Text == "")
             {
                 MessageBox.Show("정보를 입력해주세요.");
             }
             else
             {
-                Customer user = Dao.Customer.GetByName(txtLoginId.Text);
-
                 user.Name = txtName.Text.Trim();             
                 user.PhoneNumber = txtPhone.Text.Trim();
                 user.Birth = txtBirthday.Text.Trim();
@@ -42,8 +41,8 @@ namespace BusProject
                 MessageBox.Show("회원정보 입력완료.");
                 this.Close();
                 mainmenu.Show();
-            }           
         }
+    }
         private void BttBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -54,6 +53,18 @@ namespace BusProject
         void Clear()
         {
             txtName.Text = txtPhone.Text = txtBirthday.Text = txtLoginPassword.Text = txtLoginId.Text = "";
+        }
+
+        private void txtLoginId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Reservation reservation = new Reservation();
+            reservation.Show();
         }
     }
 }
