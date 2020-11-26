@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Bus_ProjectDataSet" targetNamespace="http://tempuri.org/Bus_ProjectDataSet.xsd" xmlns:mstns="http://tempuri.org/Bus_ProjectDataSet.xsd" xmlns="http://tempuri.org/Bus_ProjectDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=LAPTOP-RA9POO6C;Initial Catalog=&quot;Bus Project&quot;;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="laptop-ra9poo6c.Bus Project.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RouteTableAdapter" GeneratorDataComponentClassName="RouteTableAdapter" Name="Route" UserDataComponentName="RouteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laptop-ra9poo6c.Bus Project.dbo" DbObjectName="[Bus Project].dbo.Route" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Arrival FROM dbo.Route</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Arrival" DataSetColumn="Arrival" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Bus_ProjectDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Bus_ProjectDataSet" msprop:Generator_UserDSName="Bus_ProjectDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Route" msprop:Generator_TableClassName="RouteDataTable" msprop:Generator_TableVarName="tableRoute" msprop:Generator_TablePropName="Route" msprop:Generator_RowDeletingName="RouteRowDeleting" msprop:Generator_RowChangingName="RouteRowChanging" msprop:Generator_RowEvHandlerName="RouteRowChangeEventHandler" msprop:Generator_RowDeletedName="RouteRowDeleted" msprop:Generator_UserTableName="Route" msprop:Generator_RowChangedName="RouteRowChanged" msprop:Generator_RowEvArgName="RouteRowChangeEvent" msprop:Generator_RowClassName="RouteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Arrival" msprop:Generator_ColumnVarNameInTable="columnArrival" msprop:Generator_ColumnPropNameInRow="Arrival" msprop:Generator_ColumnPropNameInTable="ArrivalColumn" msprop:Generator_UserColumnName="Arrival">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
