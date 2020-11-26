@@ -35,7 +35,6 @@ namespace BusProject
             this.bttSalesCondition = new System.Windows.Forms.Button();
             this.bttTop3 = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // bttAddBus
@@ -90,19 +89,11 @@ namespace BusProject
             this.pnlContainer.Size = new System.Drawing.Size(1120, 480);
             this.pnlContainer.TabIndex = 6;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(35, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker1.TabIndex = 7;
-            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 653);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.bttTop3);
             this.Controls.Add(this.bttSalesCondition);
@@ -124,6 +115,5 @@ namespace BusProject
         private System.Windows.Forms.Button bttSalesCondition;
         private System.Windows.Forms.Button bttTop3;
         private System.Windows.Forms.Panel pnlContainer;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
