@@ -27,6 +27,7 @@ namespace BusProject
             }
 
         }
+
         private void cbDeparture_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool newVal = (checkAll.Checked == true);
