@@ -17,11 +17,21 @@ namespace BusProject
             InitializeComponent();
         }
 
-        private void txtReservation_Click(object sender, EventArgs e)
+        private void bttReservation_Click(object sender, EventArgs e)
         {
-            this.Close();
             Reservation reservation = new Reservation();
             reservation.Show();
+            this.Close();
+        }
+
+        private void bttCustomerInfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttReservationInfo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

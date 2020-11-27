@@ -21,8 +21,8 @@ namespace BusProject
             Application.SetCompatibleTextRenderingDefault(false);
 
             DbContextCreator.Context = () => new BusProjectEntities();
-
-            Application.Run(new Mainscreen());
+            
+            Application.Run(new Reservation());
 
         }
     }

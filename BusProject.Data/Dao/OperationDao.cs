@@ -21,7 +21,7 @@ namespace BusProject.Data
             }
         }
 
-        public Operation GetArrival(int operationId)
+        public Operation GetByOperationId(int operationId)
         {
             using (var context = new BusProjectEntities())
             {

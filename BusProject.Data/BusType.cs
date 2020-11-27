@@ -18,16 +18,14 @@ namespace BusProject.Data
         public BusType()
         {
             this.Operations = new HashSet<Operation>();
-            this.Operations1 = new HashSet<Operation>();
         }
     
         public int BusTypeId { get; set; }
+        public string BusClass { get; set; }
         public int Capacity { get; set; }
         public Nullable<int> AddPrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Operation> Operations { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Operation> Operations1 { get; set; }
     }
 }

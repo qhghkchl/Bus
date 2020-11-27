@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BusProject.EmployeeUC
+namespace BusProject
 {
-    public partial class ucSalesCondition : UserControl
+    public partial class CustomerInfo : Form
     {
-        public ucSalesCondition()
+        public CustomerInfo()
         {
             InitializeComponent();
         }

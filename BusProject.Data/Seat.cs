@@ -15,6 +15,8 @@ namespace BusProject.Data
     public partial class Seat
     {
         public int SeatId { get; set; }
+        public string Column { get; set; }
+        public Nullable<int> ColumnNumber { get; set; }
         public int OperationId { get; set; }
         public Nullable<int> CustomerId { get; set; }
         public Nullable<System.DateTime> ReservationDate { get; set; }

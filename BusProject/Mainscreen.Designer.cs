@@ -36,15 +36,13 @@ namespace BusProject
             this.bttLogin = new System.Windows.Forms.Button();
             this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.txtLoginId = new System.Windows.Forms.TextBox();
-            this.RbtCustomer = new System.Windows.Forms.RadioButton();
-            this.RbtAdmin = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 62);
+            this.label1.Location = new System.Drawing.Point(117, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 15);
             this.label1.TabIndex = 0;
@@ -86,7 +84,7 @@ namespace BusProject
             // 
             // bttLogin
             // 
-            this.bttLogin.Location = new System.Drawing.Point(88, 177);
+            this.bttLogin.Location = new System.Drawing.Point(151, 177);
             this.bttLogin.Name = "bttLogin";
             this.bttLogin.Size = new System.Drawing.Size(75, 23);
             this.bttLogin.TabIndex = 3;
@@ -109,42 +107,18 @@ namespace BusProject
             this.txtLoginId.Size = new System.Drawing.Size(194, 25);
             this.txtLoginId.TabIndex = 2;
             // 
-            // RbtCustomer
-            // 
-            this.RbtCustomer.AutoSize = true;
-            this.RbtCustomer.Location = new System.Drawing.Point(261, 391);
-            this.RbtCustomer.Name = "RbtCustomer";
-            this.RbtCustomer.Size = new System.Drawing.Size(58, 19);
-            this.RbtCustomer.TabIndex = 3;
-            this.RbtCustomer.TabStop = true;
-            this.RbtCustomer.Text = "회원";
-            this.RbtCustomer.UseVisualStyleBackColor = true;
-            // 
-            // RbtAdmin
-            // 
-            this.RbtAdmin.AutoSize = true;
-            this.RbtAdmin.Location = new System.Drawing.Point(463, 391);
-            this.RbtAdmin.Name = "RbtAdmin";
-            this.RbtAdmin.Size = new System.Drawing.Size(73, 19);
-            this.RbtAdmin.TabIndex = 3;
-            this.RbtAdmin.TabStop = true;
-            this.RbtAdmin.Text = "관리자";
-            this.RbtAdmin.UseVisualStyleBackColor = true;
-            // 
             // Mainscreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.RbtAdmin);
-            this.Controls.Add(this.RbtCustomer);
             this.Controls.Add(this.groupBox1);
             this.Name = "Mainscreen";
-            this.Text = "Bus";
+            this.Text = "버스예매 시스템";
+            this.Load += new System.EventHandler(this.Mainscreen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -157,8 +131,6 @@ namespace BusProject
         private System.Windows.Forms.Button bttLogin;
         private System.Windows.Forms.TextBox txtLoginPassword;
         private System.Windows.Forms.TextBox txtLoginId;
-        private System.Windows.Forms.RadioButton RbtCustomer;
-        private System.Windows.Forms.RadioButton RbtAdmin;
     }
 }
 

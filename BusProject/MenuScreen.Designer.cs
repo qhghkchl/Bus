@@ -30,52 +30,54 @@ namespace BusProject
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtReservationInfo = new System.Windows.Forms.Button();
-            this.txtReservation = new System.Windows.Forms.Button();
-            this.BttMyinfo = new System.Windows.Forms.Button();
+            this.bttReservationInfo = new System.Windows.Forms.Button();
+            this.bttCustomerInfo = new System.Windows.Forms.Button();
+            this.bttReservation = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtReservationInfo);
-            this.groupBox1.Controls.Add(this.txtReservation);
-            this.groupBox1.Controls.Add(this.BttMyinfo);
+            this.groupBox1.Controls.Add(this.bttReservationInfo);
+            this.groupBox1.Controls.Add(this.bttReservation);
+            this.groupBox1.Controls.Add(this.bttCustomerInfo);
             this.groupBox1.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(248, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(322, 344);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Menu";
+            this.groupBox1.Text = "매뉴";
             // 
-            // txtReservationInfo
+            // bttReservationInfo
             // 
-            this.txtReservationInfo.Location = new System.Drawing.Point(104, 258);
-            this.txtReservationInfo.Name = "txtReservationInfo";
-            this.txtReservationInfo.Size = new System.Drawing.Size(121, 43);
-            this.txtReservationInfo.TabIndex = 3;
-            this.txtReservationInfo.Text = "예매정보";
-            this.txtReservationInfo.UseVisualStyleBackColor = true;
+            this.bttReservationInfo.Location = new System.Drawing.Point(104, 258);
+            this.bttReservationInfo.Name = "bttReservationInfo";
+            this.bttReservationInfo.Size = new System.Drawing.Size(121, 43);
+            this.bttReservationInfo.TabIndex = 3;
+            this.bttReservationInfo.Text = "예매정보";
+            this.bttReservationInfo.UseVisualStyleBackColor = true;
+            this.bttReservationInfo.Click += new System.EventHandler(this.bttReservationInfo_Click);
             // 
-            // txtReservation
+            // bttCustomerInfo
             // 
-            this.txtReservation.Location = new System.Drawing.Point(104, 158);
-            this.txtReservation.Name = "txtReservation";
-            this.txtReservation.Size = new System.Drawing.Size(121, 43);
-            this.txtReservation.TabIndex = 2;
-            this.txtReservation.Text = "예매하기";
-            this.txtReservation.UseVisualStyleBackColor = true;
-            this.txtReservation.Click += new System.EventHandler(this.txtReservation_Click);
+            this.bttCustomerInfo.Location = new System.Drawing.Point(104, 57);
+            this.bttCustomerInfo.Name = "bttCustomerInfo";
+            this.bttCustomerInfo.Size = new System.Drawing.Size(121, 43);
+            this.bttCustomerInfo.TabIndex = 1;
+            this.bttCustomerInfo.Text = "내 정보";
+            this.bttCustomerInfo.UseVisualStyleBackColor = true;
+            this.bttCustomerInfo.Click += new System.EventHandler(this.bttCustomerInfo_Click);
             // 
-            // BttMyinfo
+            // bttReservation
             // 
-            this.BttMyinfo.Location = new System.Drawing.Point(104, 57);
-            this.BttMyinfo.Name = "BttMyinfo";
-            this.BttMyinfo.Size = new System.Drawing.Size(121, 43);
-            this.BttMyinfo.TabIndex = 1;
-            this.BttMyinfo.Text = "내 정보";
-            this.BttMyinfo.UseVisualStyleBackColor = true;
+            this.bttReservation.Location = new System.Drawing.Point(104, 157);
+            this.bttReservation.Name = "bttReservation";
+            this.bttReservation.Size = new System.Drawing.Size(121, 43);
+            this.bttReservation.TabIndex = 2;
+            this.bttReservation.Text = "예매하기";
+            this.bttReservation.UseVisualStyleBackColor = true;
+            this.bttReservation.Click += new System.EventHandler(this.bttReservation_Click);
             // 
             // MenuScreen
             // 
@@ -84,7 +86,7 @@ namespace BusProject
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Name = "MenuScreen";
-            this.Text = "MenuScreen";
+            this.Text = "매뉴화면";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -92,8 +94,8 @@ namespace BusProject
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button txtReservationInfo;
-        private System.Windows.Forms.Button txtReservation;
-        private System.Windows.Forms.Button BttMyinfo;
+        private System.Windows.Forms.Button bttReservationInfo;
+        private System.Windows.Forms.Button bttCustomerInfo;
+        private System.Windows.Forms.Button bttReservation;
     }
 }

@@ -16,14 +16,12 @@ namespace BusProject
         public Mainscreen()
         {
             InitializeComponent();
-        }
-        
+        }  
         private void bttLogin_Click(object sender, EventArgs e)
         {
+            Customer user = Dao.Customer.GetByName(txtLoginId.Text);
             if (txtLoginId.Text != string .Empty && txtLoginPassword.Text != string .Empty)
             {         
-                Customer user = Dao.Customer.GetByName(txtLoginId.Text);               
-
                 if (user != null)
                 {
                     if (user.LoginPassword == txtLoginPassword.Text)
@@ -36,14 +34,21 @@ namespace BusProject
             }
             else
                 MessageBox.Show("아이디와 비밀번호 입력하세요.");
-        }
 
+            
+            MenuScreen menuscreen = new MenuScreen();
+            menuscreen.Show();
+            this.Close();
+        }
         private void bttRegister_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RegisterForm register = new RegisterForm();
+            RegisterScreen register = new RegisterScreen();
             register.Show();         
       
+        }
+        private void Mainscreen_Load(object sender, EventArgs e)
+        {
         }
     }
 }

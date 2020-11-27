@@ -21,14 +21,15 @@ namespace BusProject.Data
         }
     
         public int OperationId { get; set; }
-        public System.DateTime OpeartionDate { get; set; }
+        public System.DateTime OperationDate { get; set; }
         public int RouteId { get; set; }
         public int BusTypeId { get; set; }
+        public string ArrivalTime { get; set; }
+        public string DepartureTime { get; set; }
     
         public virtual BusType BusType { get; set; }
         public virtual Route Route { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Seat> Seats { get; set; }
-        public virtual BusType BusType1 { get; set; }
     }
 }
