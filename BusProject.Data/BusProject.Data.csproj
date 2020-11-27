@@ -81,6 +81,7 @@
     <Compile Include="EFLibrary\QuadKeyDao.cs" />
     <Compile Include="EFLibrary\SingleKeyDao.cs" />
     <Compile Include="EFLibrary\TripleKeyDao.cs" />
+    <Compile Include="Entities\Operation.cs" />
     <Compile Include="Operation.cs">
       <DependentUpon>BusProject.tt</DependentUpon>
     </Compile>
@@ -106,9 +107,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="BusProject.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
