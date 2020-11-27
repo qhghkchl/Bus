@@ -71,6 +71,12 @@
     <Compile Include="Mainscreen.Designer.cs">
       <DependentUpon>Mainscreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\ManageReservationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ManageReservationControl.Designer.cs">
+      <DependentUpon>ManageReservationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,11 +97,11 @@
     <Compile Include="Reservation.Designer.cs">
       <DependentUpon>Reservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\AddBusControl.cs">
+    <Compile Include="UserControl\ManageOperation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\AddBusControl.Designer.cs">
-      <DependentUpon>AddBusControl.cs</DependentUpon>
+    <Compile Include="UserControl\ManageOperation.Designer.cs">
+      <DependentUpon>ManageOperation.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
@@ -124,11 +130,15 @@
     <EmbeddedResource Include="Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\AddBusControl.resx">
-      <DependentUpon>AddBusControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\ManageOperation.resx">
+      <DependentUpon>ManageOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ManageReservationControl.resx">
+      <DependentUpon>ManageReservationControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BusProject.Data.BusType.datasource" />
+    <None Include="Properties\DataSources\BusProject.Data.Customer.datasource" />
     <None Include="Properties\DataSources\BusProject.Data.Operation.datasource" />
     <None Include="Properties\DataSources\BusProject.Data.Route.datasource" />
     <None Include="Properties\DataSources\BusProject.Data.Seat.datasource" />

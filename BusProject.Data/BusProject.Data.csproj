@@ -81,6 +81,7 @@
     <Compile Include="EFLibrary\QuadKeyDao.cs" />
     <Compile Include="EFLibrary\SingleKeyDao.cs" />
     <Compile Include="EFLibrary\TripleKeyDao.cs" />
+    <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Operation.cs" />
     <Compile Include="Operation.cs">
       <DependentUpon>BusProject.tt</DependentUpon>
