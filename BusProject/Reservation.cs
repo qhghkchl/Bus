@@ -26,9 +26,13 @@ namespace BusProject
                 routeBindingSource.DataSource = con.Routes.ToList();
             }
 
-        }   
+        }
         private void cbDeparture_SelectedIndexChanged(object sender, EventArgs e)
-        {           
+        {
+            bool newVal = (checkAll.Checked == true);
+            checkPremium.Checked = newVal;
+            checkHighClass.Checked = newVal;
+            checkEconomy.Checked = newVal;
         }
         private void cbArrival_SelectedIndexChanged(object sender, EventArgs e)
         {           

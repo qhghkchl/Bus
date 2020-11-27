@@ -5,14 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="eec4ffda46b44e51a1a28fd17cb586db" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="BusSystemModel.BusType" Width="1.5" PointX="0.75" PointY="5.5" />
-        <EntityTypeShape EntityType="BusSystemModel.Customer" Width="1.5" PointX="3" PointY="5.25" />
-        <EntityTypeShape EntityType="BusSystemModel.Operation" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="BusSystemModel.Route" Width="1.5" PointX="0.75" PointY="1.375" />
-        <EntityTypeShape EntityType="BusSystemModel.Seat" Width="1.5" PointX="5.25" PointY="1.125" />
-        <AssociationConnector Association="BusSystemModel.FK_Operation_BusType" />
+        <EntityTypeShape EntityType="BusSystemModel.BusType" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="BusSystemModel.Customer" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="BusSystemModel.Operation" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="BusSystemModel.Route" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="BusSystemModel.Seat" Width="1.5" PointX="7.5" PointY="1" />
+        <AssociationConnector Association="BusSystemModel.FK_Route_BusType2" />
         <AssociationConnector Association="BusSystemModel.FK_Seat_Customer" />
-        <AssociationConnector Association="BusSystemModel.FK_Operation_Route" />
+        <AssociationConnector Association="BusSystemModel.FK_Operation_Route1" />
         <AssociationConnector Association="BusSystemModel.FK_Seat_Operation" />
       </Diagram>
     </edmx:Diagrams>
