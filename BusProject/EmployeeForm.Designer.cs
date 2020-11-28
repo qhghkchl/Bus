@@ -1,4 +1,4 @@
-﻿namespace EmployeeForm
+﻿namespace BusProject
 {
     partial class EmployeeForm
     {
@@ -35,9 +35,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.uscAddBus = new BusProject.User_Control.AddBusControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.uscAddBus = new BusProject.User_Control.AddBusControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -128,14 +128,6 @@
             this.tabPage1.Text = "운행 관리";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // uscAddBus
-            // 
-            this.uscAddBus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscAddBus.Location = new System.Drawing.Point(3, 3);
-            this.uscAddBus.Name = "uscAddBus";
-            this.uscAddBus.Size = new System.Drawing.Size(1223, 453);
-            this.uscAddBus.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -156,6 +148,14 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // uscAddBus
+            // 
+            this.uscAddBus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscAddBus.Location = new System.Drawing.Point(3, 3);
+            this.uscAddBus.Name = "uscAddBus";
+            this.uscAddBus.Size = new System.Drawing.Size(1223, 453);
+            this.uscAddBus.TabIndex = 0;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -163,7 +163,7 @@
             this.ClientSize = new System.Drawing.Size(1237, 562);
             this.Controls.Add(this.splitContainer1);
             this.Name = "EmployeeForm";
-            this.Text = "Form1";
+            this.Text = "직원용";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
