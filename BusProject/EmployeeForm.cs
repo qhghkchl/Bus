@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusProject.Data;
 
-namespace EmployeeForm
+namespace BusProject
 {
     public partial class EmployeeForm: Form
     {
@@ -17,9 +18,18 @@ namespace EmployeeForm
             InitializeComponent();
         }
 
+        string loginId;
+        public EmployeeForm(string s)
+        {
+            InitializeComponent();
+            loginId = s;
+        }
+
         private void btnFormAddBus_Click(object sender, EventArgs e)
         {
             
         }
+
+        
     }
 }

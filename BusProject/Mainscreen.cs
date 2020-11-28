@@ -16,30 +16,45 @@ namespace BusProject
         public Mainscreen()
         {
             InitializeComponent();
-        }  
+        }
+
+
         private void bttLogin_Click(object sender, EventArgs e)
         {
-            Customer user = Dao.Customer.GetByName(txtLoginId.Text);
-            if (txtLoginId.Text != string .Empty && txtLoginPassword.Text != string .Empty)
-            {         
-                if (user != null)
+            if (txtLoginId.Text == "admin" && txtLoginPassword.Text == "3512")
+            {
+                EmployeeForm employeeForm = new EmployeeForm(txtLoginId.Text);
+                employeeForm.Show();
+                //this.Close();
+            }
+
+            else
+            {
+                Customer user = Dao.Customer.GetByName(txtLoginId.Text);
+
+                if (txtLoginId.Text != string.Empty && txtLoginPassword.Text != string.Empty)
                 {
-                    if (user.LoginPassword == txtLoginPassword.Text)
-                        MessageBox.Show("로그인 하세요.");
+                    if (user != null)
+                    {
+                        if (user.LoginPassword == txtLoginPassword.Text)
+                            MessageBox.Show("로그인 하세요.");
+                        else
+                            MessageBox.Show("잘못된 비밀번호입니다.");
+                    }
                     else
-                        MessageBox.Show("잘못된 비밀번호입니다.");
+                        MessageBox.Show("잘못된 아이디입니다");
                 }
                 else
-                    MessageBox.Show("잘못된 아이디입니다");
-            }
-            else
-                MessageBox.Show("아이디와 비밀번호 입력하세요.");
+                    MessageBox.Show("아이디와 비밀번호 입력하세요.");
 
-            
-            MenuScreen menuscreen = new MenuScreen();
-            menuscreen.Show();
-            this.Close();
+
+
+                MenuScreen menuscreen = new MenuScreen();
+                menuscreen.Show();
+                this.Close();
+            }
         }
+
         private void bttRegister_Click(object sender, EventArgs e)
         {
             this.Hide();
