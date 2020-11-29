@@ -62,8 +62,20 @@ namespace BusProject
             register.Show();         
       
         }
+
+        
         private void Mainscreen_Load(object sender, EventArgs e)
         {
         }
+
+        private void txtLoginPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    bttLogin_Click(sender, e);
+                    bttLogin.Select();
+                }
+            }
+        }
     }
-}
+
