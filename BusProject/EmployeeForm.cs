@@ -25,11 +25,6 @@ namespace BusProject
             loginId = s;
         }
 
-        private void btnFormAddBus_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        
+       
     }
 }

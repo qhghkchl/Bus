@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BusProject.User_Control
 {
-    public partial class AddBusControl : UserControl
+    public partial class ManageOperationControl : UserControl
     {
-        public AddBusControl()
+        public ManageOperationControl()
         {
             InitializeComponent();
         }
