@@ -2,7 +2,7 @@
 {
     public class Dao
     {
-        public static OperationDao Operation = new OperationDao();
+        public static ReservationDao Reservation = new ReservationDao();
         
         public static CustomerDao Customer = new CustomerDao();
 

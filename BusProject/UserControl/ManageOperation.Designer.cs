@@ -132,7 +132,7 @@ namespace BusProject.User_Control
             // 
             // operationBindingSource
             // 
-            this.operationBindingSource.DataSource = typeof(BusProject.Data.Operation);
+
             // 
             // AddBusControl
             // 

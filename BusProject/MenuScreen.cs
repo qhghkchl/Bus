@@ -19,9 +19,9 @@ namespace BusProject
 
         private void bttReservation_Click(object sender, EventArgs e)
         {
-            Reservation reservation = new Reservation();
+            /*Reservation reservation = new Reservation();
             reservation.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void bttCustomerInfo_Click(object sender, EventArgs e)

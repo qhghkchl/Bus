@@ -30,7 +30,7 @@ namespace BusProject
                 user.LoginPassword = txtPassword.Text.Trim();
                 user.Name = txtName.Text.Trim();
                 user.PhoneNumber = txtContact.Text.Trim();
-                user.Birth = txtDateOfBirth.Text.Trim();
+                user.DateOfBirth = txtDateOfBirth.Text.Trim();
 
                 Dao.Customer.Insert(user);
             }

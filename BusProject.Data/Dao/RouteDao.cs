@@ -29,19 +29,19 @@ namespace BusProject.Data
             }
         }     
 
-        public List<string> GetDepartureCities(object dataSource)
+        public List<string> GetDepartureCities()
         {
             using (var context = new BusProjectEntities())
             {
-                return context.Routes.Select(x => x.Departure).ToList();
+                return context.Routes.Select(x => x.DepartureLocation).ToList();
             }
         }
 
-        public List<string> GetArrivalCities(object dataSource)
+        public List<string> GetArrivalCities(string arrival)
         {
             using (var context = new BusProjectEntities())
             {
-                return context.Routes.Select(x => x.Arrival).ToList();
+                return context.Routes.Select(x => x.ArrivalLocation).ToList();
             }
         }
     }
