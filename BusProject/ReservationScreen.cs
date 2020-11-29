@@ -23,6 +23,11 @@ namespace BusProject
             List<string> cities = Dao.Route.GetDepartureCities();
             foreach (var city in cities)
             comboDeparture.Items.Add(city);
+
+            bool newVal = (checkAll.Checked == true);
+            checkPremium.Checked = newVal;
+            checkHigh.Checked = newVal;
+            checkEconomy.Checked = newVal;
         }
 
         private void comboDeparture_SelectedIndexChanged(object sender, EventArgs e)
