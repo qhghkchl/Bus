@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusProject.Data
 {
-    public partial class Reservation
+    public partial class Operation
     {
         public string Departure { get; set; }
         public string Arrival { get; set; }

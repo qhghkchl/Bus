@@ -62,7 +62,7 @@
             this.btnFormManageReservation.Name = "btnFormManageReservation";
             this.btnFormManageReservation.Size = new System.Drawing.Size(64, 64);
             this.btnFormManageReservation.TabIndex = 1;
-            this.btnFormManageReservation.Text = "Manage Reservation";
+            this.btnFormManageReservation.Text = "Manage Operation";
             this.btnFormManageReservation.UseVisualStyleBackColor = true;
             // 
             // button3

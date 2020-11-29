@@ -12,22 +12,22 @@ namespace BusProject.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Reservation
+    public partial class Operation
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Reservation()
+        public Operation()
         {
             this.Seats = new HashSet<Seat>();
         }
     
-        public int ReservationId { get; set; }
-        public System.DateTime ReservationDate { get; set; }
+        public int OperationId { get; set; }
+        public Nullable<int> RouteId { get; set; }
+        public System.DateTime OperationDate { get; set; }
         public System.TimeSpan DepartureTime { get; set; }
         public System.TimeSpan ArrivalTime { get; set; }
-        public Nullable<int> RouteId { get; set; }
     
+        public virtual Route Route { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Seat> Seats { get; set; }
-        public virtual Route Route { get; set; }
     }
 }

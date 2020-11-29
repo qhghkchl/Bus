@@ -19,7 +19,7 @@ namespace BusProject
 
         private void bttReservation_Click(object sender, EventArgs e)
         {
-            /*Reservation reservation = new Reservation();
+            /*Operation reservation = new Operation();
             reservation.Show();
             this.Close();*/
         }

@@ -12,16 +12,11 @@ namespace BusProject.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Seat
+    public partial class ReservationTime
     {
-        public int SeatId { get; set; }
-        public int OperationId { get; set; }
-        public int CustomerId { get; set; }
-        public string SeatColumn { get; set; }
-        public int SeatColumnNumber { get; set; }
-        public int PaymentMethod { get; set; }
-    
-        public virtual Customer Customer { get; set; }
-        public virtual Operation Operation { get; set; }
+        public int ReservationTimeId { get; set; }
+        public System.DateTime ReservationDate { get; set; }
+        public System.TimeSpan DepartureTime { get; set; }
+        public System.TimeSpan ArrivalTime { get; set; }
     }
 }

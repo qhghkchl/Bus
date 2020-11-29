@@ -17,11 +17,10 @@ namespace BusProject.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Route()
         {
-            this.Reservations = new HashSet<Reservation>();
+            this.Operations = new HashSet<Operation>();
         }
     
         public int RouteId { get; set; }
-        public Nullable<int> ReservationId { get; set; }
         public Nullable<int> BusTypeId { get; set; }
         public string ArrivalLocation { get; set; }
         public string DepartureLocation { get; set; }
@@ -30,6 +29,6 @@ namespace BusProject.Data
     
         public virtual BusType BusType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservation> Reservations { get; set; }
+        public virtual ICollection<Operation> Operations { get; set; }
     }
 }

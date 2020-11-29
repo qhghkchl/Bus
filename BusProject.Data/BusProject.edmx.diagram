@@ -5,23 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="eec4ffda46b44e51a1a28fd17cb586db" Name="BusSystem" ZoomLevel="74">
-        <EntityTypeShape EntityType="BusSystemModel.BusType" Width="1.5" PointX="0.75" PointY="2" />
-        <EntityTypeShape EntityType="BusSystemModel.Customer" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="BusSystemModel.Reservation" Width="1.5" PointX="0.75" PointY="4.875" />
-        <EntityTypeShape EntityType="BusSystemModel.Route" Width="1.5" PointX="3" PointY="4.5" />
-        <EntityTypeShape EntityType="BusSystemModel.Seat" Width="1.5" PointX="6" PointY="4.625" />
+        <EntityTypeShape EntityType="BusSystemModel.BusType" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="BusSystemModel.Customer" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="BusSystemModel.Operation" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="BusSystemModel.Route" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="BusSystemModel.Seat" Width="1.5" PointX="7.5" PointY="1" />
+        <EntityTypeShape EntityType="BusSystemModel.ReservationTime" Width="1.5" PointX="0.75" PointY="4.75" />
         <AssociationConnector Association="BusSystemModel.FK_Route_BusType" />
         <AssociationConnector Association="BusSystemModel.FK_Seat_Customer" />
-        <AssociationConnector Association="BusSystemModel.FK_Seat_Reservation" ManuallyRouted="true" >
-          <ConnectorPoint PointX="1.5" PointY="7.2398893229166656" />
-          <ConnectorPoint PointX="1.5" PointY="7.8637786853484677" />
-          <ConnectorPoint PointX="4.515" PointY="7.8637786853484677" />
-          <ConnectorPoint PointX="4.515" PointY="7.9887786853484677" />
-          <ConnectorPoint PointX="5.50995" PointY="7.9887786853484677" />
-          <ConnectorPoint PointX="5.50995" PointY="7.1509407552083317" />
-          <ConnectorPoint PointX="6" PointY="7.1509407552083317" />
-        </AssociationConnector>
-        <AssociationConnector Association="BusSystemModel.FK_Reservation_Route" />
+        <AssociationConnector Association="BusSystemModel.FK_Operation_Route" />
+        <AssociationConnector Association="BusSystemModel.FK_Seat_Operation" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
