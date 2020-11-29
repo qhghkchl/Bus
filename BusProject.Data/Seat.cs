@@ -18,7 +18,7 @@ namespace BusProject.Data
         public string Column { get; set; }
         public int ColumnNumber { get; set; }
         public int OperationId { get; set; }
-        public Nullable<int> CustomerId { get; set; }
+        public int CustomerId { get; set; }
         public System.DateTime ReservationDate { get; set; }
         public int PaymentMethod { get; set; }
     

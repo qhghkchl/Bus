@@ -14,21 +14,11 @@ namespace BusProject.Data
     
     public partial class Route
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Route()
-        {
-            this.Operations = new HashSet<Operation>();
-        }
-    
         public int RouteId { get; set; }
         public string Arrival { get; set; }
         public string Departure { get; set; }
         public int RoutePrice { get; set; }
-        public string TravelTime { get; set; }
+        public int TravelTime { get; set; }
         public int BusTypeId { get; set; }
-    
-        public virtual BusType BusType { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Operation> Operations { get; set; }
     }
 }

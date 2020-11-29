@@ -32,8 +32,7 @@
           <Property Name="OperationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OperationDate" Type="date" Nullable="false" />
           <Property Name="RouteId" Type="int" Nullable="false" />
-          <Property Name="ArrivalTime" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DepartureTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartureTime" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Route">
           <Key>
@@ -43,7 +42,7 @@
           <Property Name="Arrival" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Departure" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RoutePrice" Type="int" Nullable="false" />
-          <Property Name="TravelTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TravelTime" Type="int" Nullable="false" />
           <Property Name="BusTypeId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Seat">
@@ -55,34 +54,10 @@
           <Property Name="Column" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ColumnNumber" Type="int" Nullable="false" />
           <Property Name="OperationId" Type="int" Nullable="false" />
-          <Property Name="CustomerId" Type="int" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
           <Property Name="ReservationDate" Type="datetime" Nullable="false" />
           <Property Name="PaymentMethod" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Operation_Route1">
-          <End Role="Route" Type="Self.Route" Multiplicity="1" />
-          <End Role="Operation" Type="Self.Operation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Route">
-              <PropertyRef Name="RouteId" />
-            </Principal>
-            <Dependent Role="Operation">
-              <PropertyRef Name="RouteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Route_BusType2">
-          <End Role="BusType" Type="Self.BusType" Multiplicity="1" />
-          <End Role="Route" Type="Self.Route" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BusType">
-              <PropertyRef Name="BusTypeId" />
-            </Principal>
-            <Dependent Role="Route">
-              <PropertyRef Name="BusTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Seat_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
@@ -96,7 +71,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Seat_Operation">
-          <End Role="Operation" Type="Self.Operation" Multiplicity="0..1" />
+          <End Role="Operation" Type="Self.Operation" Multiplicity="1" />
           <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operation">
@@ -113,14 +88,6 @@
           <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seat" EntityType="Self.Seat" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Operation_Route1" Association="Self.FK_Operation_Route1">
-            <End Role="Route" EntitySet="Route" />
-            <End Role="Operation" EntitySet="Operation" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Route_BusType2" Association="Self.FK_Route_BusType2">
-            <End Role="BusType" EntitySet="BusType" />
-            <End Role="Route" EntitySet="Route" />
-          </AssociationSet>
           <AssociationSet Name="FK_Seat_Customer" Association="Self.FK_Seat_Customer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Seat" EntitySet="Seat" />
@@ -140,17 +107,9 @@
           <EntitySet Name="Operations" EntityType="BusSystemModel.Operation" />
           <EntitySet Name="Routes" EntityType="BusSystemModel.Route" />
           <EntitySet Name="Seats" EntityType="BusSystemModel.Seat" />
-          <AssociationSet Name="FK_Route_BusType2" Association="BusSystemModel.FK_Route_BusType2">
-            <End Role="BusType" EntitySet="BusTypes" />
-            <End Role="Route" EntitySet="Routes" />
-          </AssociationSet>
           <AssociationSet Name="FK_Seat_Customer" Association="BusSystemModel.FK_Seat_Customer">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Seat" EntitySet="Seats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Operation_Route1" Association="BusSystemModel.FK_Operation_Route1">
-            <End Role="Route" EntitySet="Routes" />
-            <End Role="Operation" EntitySet="Operations" />
           </AssociationSet>
           <AssociationSet Name="FK_Seat_Operation" Association="BusSystemModel.FK_Seat_Operation">
             <End Role="Operation" EntitySet="Operations" />
@@ -165,7 +124,6 @@
           <Property Name="BusClass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Capacity" Type="Int32" Nullable="false" />
           <Property Name="AddPrice" Type="Int32" />
-          <NavigationProperty Name="Routes" Relationship="BusSystemModel.FK_Route_BusType2" FromRole="BusType" ToRole="Route" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -186,9 +144,7 @@
           <Property Name="OperationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OperationDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="RouteId" Type="Int32" Nullable="false" />
-          <Property Name="ArrivalTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DepartureTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Route" Relationship="BusSystemModel.FK_Operation_Route1" FromRole="Operation" ToRole="Route" />
+          <Property Name="DepartureTime" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Seats" Relationship="BusSystemModel.FK_Seat_Operation" FromRole="Operation" ToRole="Seat" />
         </EntityType>
         <EntityType Name="Route">
@@ -199,10 +155,8 @@
           <Property Name="Arrival" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Departure" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RoutePrice" Type="Int32" Nullable="false" />
-          <Property Name="TravelTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TravelTime" Type="Int32" Nullable="false" />
           <Property Name="BusTypeId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="BusType" Relationship="BusSystemModel.FK_Route_BusType2" FromRole="Route" ToRole="BusType" />
-          <NavigationProperty Name="Operations" Relationship="BusSystemModel.FK_Operation_Route1" FromRole="Route" ToRole="Operation" />
         </EntityType>
         <EntityType Name="Seat">
           <Key>
@@ -213,24 +167,12 @@
           <Property Name="Column" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ColumnNumber" Type="Int32" Nullable="false" />
           <Property Name="OperationId" Type="Int32" Nullable="false" />
-          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
           <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="PaymentMethod" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="BusSystemModel.FK_Seat_Customer" FromRole="Seat" ToRole="Customer" />
           <NavigationProperty Name="Operation" Relationship="BusSystemModel.FK_Seat_Operation" FromRole="Seat" ToRole="Operation" />
         </EntityType>
-        <Association Name="FK_Route_BusType2">
-          <End Type="BusSystemModel.BusType" Role="BusType" Multiplicity="1" />
-          <End Type="BusSystemModel.Route" Role="Route" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BusType">
-              <PropertyRef Name="BusTypeId" />
-            </Principal>
-            <Dependent Role="Route">
-              <PropertyRef Name="BusTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Seat_Customer">
           <End Type="BusSystemModel.Customer" Role="Customer" Multiplicity="1" />
           <End Type="BusSystemModel.Seat" Role="Seat" Multiplicity="*" />
@@ -243,20 +185,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Operation_Route1">
-          <End Type="BusSystemModel.Route" Role="Route" Multiplicity="1" />
-          <End Type="BusSystemModel.Operation" Role="Operation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Route">
-              <PropertyRef Name="RouteId" />
-            </Principal>
-            <Dependent Role="Operation">
-              <PropertyRef Name="RouteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Seat_Operation">
-          <End Type="BusSystemModel.Operation" Role="Operation" Multiplicity="0..1" />
+          <End Type="BusSystemModel.Operation" Role="Operation" Multiplicity="1" />
           <End Type="BusSystemModel.Seat" Role="Seat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operation">
@@ -299,7 +229,6 @@
             <EntityTypeMapping TypeName="BusSystemModel.Operation">
               <MappingFragment StoreEntitySet="Operation">
                 <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
-                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
                 <ScalarProperty Name="RouteId" ColumnName="RouteId" />
                 <ScalarProperty Name="OperationDate" ColumnName="OperationDate" />
                 <ScalarProperty Name="OperationId" ColumnName="OperationId" />

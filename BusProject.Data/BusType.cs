@@ -14,18 +14,9 @@ namespace BusProject.Data
     
     public partial class BusType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BusType()
-        {
-            this.Routes = new HashSet<Route>();
-        }
-    
         public int BusTypeId { get; set; }
         public string BusClass { get; set; }
         public int Capacity { get; set; }
         public Nullable<int> AddPrice { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Route> Routes { get; set; }
     }
 }
