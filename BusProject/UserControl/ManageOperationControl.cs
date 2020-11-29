@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusProject.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,15 +11,22 @@ using System.Windows.Forms;
 
 namespace BusProject.User_Control
 {
-    public partial class AddBusControl : UserControl
+    public partial class ManageOperationControl : UserControl
     {
-        public AddBusControl()
+        public ManageOperationControl()
         {
             InitializeComponent();
         }
 
-        private void UserControl1_Load(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

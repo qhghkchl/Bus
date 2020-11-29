@@ -103,11 +103,11 @@
     <Compile Include="RegisterScreen.Designer.cs">
       <DependentUpon>RegisterScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\ManageOperation.cs">
+    <Compile Include="UserControl\ManageOperationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\ManageOperation.Designer.cs">
-      <DependentUpon>ManageOperation.cs</DependentUpon>
+    <Compile Include="UserControl\ManageOperationControl.Designer.cs">
+      <DependentUpon>ManageOperationControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
@@ -139,13 +139,14 @@
     <EmbeddedResource Include="RegisterScreen.resx">
       <DependentUpon>RegisterScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\ManageOperation.resx">
-      <DependentUpon>ManageOperation.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\ManageOperationControl.resx">
+      <DependentUpon>ManageOperationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\ManageReservationControl.resx">
       <DependentUpon>ManageReservationControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BusProject.Data.Customer.datasource" />
     <None Include="Properties\DataSources\EFLibrary.DbContextCreator.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

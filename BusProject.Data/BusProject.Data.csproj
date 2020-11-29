@@ -71,6 +71,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>BusProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dao\OperationDao.cs" />
     <Compile Include="Dao\ReservationDao.cs" />
     <Compile Include="Dao\CustomerDao.cs" />
     <Compile Include="Dao\Dao.cs" />
