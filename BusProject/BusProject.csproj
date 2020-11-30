@@ -59,12 +59,6 @@
     <Compile Include="CustomerInfo.Designer.cs">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmployeeForm.Designer.cs">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReservationScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,9 +110,6 @@
     </Compile>
     <EmbeddedResource Include="CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeForm.resx">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationScreen.resx">
       <DependentUpon>ReservationScreen.cs</DependentUpon>
