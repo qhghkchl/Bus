@@ -24,7 +24,7 @@ namespace BusProject
             {
                 MessageBox.Show("정보를 입력해주세요.");
             }
-            else
+            else if(user != null)
             {              
                 user.LoginId = txtLoginId.Text.Trim();
                 user.LoginPassword = txtPassword.Text.Trim();

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 using EFLibrary;
+using System.Collections.Generic;
 
 namespace BusProject.Data
 {
@@ -21,11 +22,11 @@ namespace BusProject.Data
         }
 
         public Customer GetByName(string loginId)
-        {
+        { 
             using (var context = new BusProjectEntities())
             {
                 return context.Customers.FirstOrDefault(x => x.LoginId == loginId);               
             }
-        }       
+        }      
     }
 }
