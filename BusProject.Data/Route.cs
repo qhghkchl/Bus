@@ -18,6 +18,7 @@ namespace BusProject.Data
         public Route()
         {
             this.Operations = new HashSet<Operation>();
+            this.ReservationTimes = new HashSet<ReservationTime>();
         }
     
         public int RouteId { get; set; }
@@ -25,10 +26,11 @@ namespace BusProject.Data
         public string ArrivalLocation { get; set; }
         public string DepartureLocation { get; set; }
         public int RoutePrice { get; set; }
-        public System.TimeSpan TravelTime { get; set; }
     
         public virtual BusType BusType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Operation> Operations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReservationTime> ReservationTimes { get; set; }
     }
 }

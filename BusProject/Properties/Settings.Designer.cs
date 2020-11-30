@@ -33,5 +33,16 @@ namespace BusProject.Properties {
                 return ((string)(this["_BusSystemConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cn76.ipdisk.co.kr,3423;Initial Catalog=_BusSystem;User ID=8F;Password" +
+            "=3512;MultipleActiveResultSets=True;Application Name=EntityFramework")]
+        public string _BusSystemConnectionString1 {
+            get {
+                return ((string)(this["_BusSystemConnectionString1"]));
+            }
+        }
     }
 }

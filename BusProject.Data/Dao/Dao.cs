@@ -8,5 +8,7 @@
 
         public static RouteDao Route = new RouteDao();
 
+        public static ReservationTimeDao ReservationTime = new ReservationTimeDao();
+
     }
 }

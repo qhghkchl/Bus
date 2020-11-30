@@ -35,19 +35,16 @@
           <Property Name="DepartureTime" Type="time" Precision="0" Nullable="false" />
           <Property Name="ArrivalTime" Type="time" Precision="0" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ReservationTime">
           <Key>
             <PropertyRef Name="ReservationTimeId" />
-            <PropertyRef Name="ReservationDate" />
-            <PropertyRef Name="DepartureTime" />
-            <PropertyRef Name="ArrivalTime" />
           </Key>
           <Property Name="ReservationTimeId" Type="int" Nullable="false" />
+          <Property Name="RouteId" Type="int" Nullable="false" />
           <Property Name="ReservationDate" Type="date" Nullable="false" />
           <Property Name="DepartureTime" Type="time" Precision="0" Nullable="false" />
           <Property Name="ArrivalTime" Type="time" Precision="0" Nullable="false" />
+          <Property Name="TravelTime" Type="time" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="Route">
           <Key>
@@ -58,7 +55,6 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
           <Property Name="ArrivalLocation" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DepartureLocation" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RoutePrice" Type="int" Nullable="false" />
-          <Property Name="TravelTime" Type="time" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="Seat">
           <Key>
@@ -80,6 +76,20 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
               <PropertyRef Name="RouteId" />
             </Principal>
             <Dependent Role="Operation">
+              <PropertyRef Name="RouteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationTime_Route1">
+          <End Role="Route" Type="Self.Route" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReservationTime" Type="Self.ReservationTime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="RouteId" />
+            </Principal>
+            <Dependent Role="ReservationTime">
               <PropertyRef Name="RouteId" />
             </Dependent>
           </ReferentialConstraint>
@@ -128,19 +138,16 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
           <EntitySet Name="BusType" EntityType="Self.BusType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReservationTime" EntityType="Self.ReservationTime" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seat" EntityType="Self.Seat" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ReservationTime" EntityType="Self.ReservationTime" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ReservationTime].[ReservationTimeId] AS [ReservationTimeId], 
-    [ReservationTime].[ReservationDate] AS [ReservationDate], 
-    [ReservationTime].[DepartureTime] AS [DepartureTime], 
-    [ReservationTime].[ArrivalTime] AS [ArrivalTime]
-    FROM [dbo].[ReservationTime] AS [ReservationTime]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Operation_Route" Association="Self.FK_Operation_Route">
             <End Role="Route" EntitySet="Route" />
             <End Role="Operation" EntitySet="Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationTime_Route1" Association="Self.FK_ReservationTime_Route1">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="ReservationTime" EntitySet="ReservationTime" />
           </AssociationSet>
           <AssociationSet Name="FK_Route_BusType" Association="Self.FK_Route_BusType">
             <End Role="BusType" EntitySet="BusType" />
@@ -163,9 +170,9 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
           <EntitySet Name="BusTypes" EntityType="BusSystemModel.BusType" />
           <EntitySet Name="Customers" EntityType="BusSystemModel.Customer" />
           <EntitySet Name="Operations" EntityType="BusSystemModel.Operation" />
+          <EntitySet Name="ReservationTimes" EntityType="BusSystemModel.ReservationTime" />
           <EntitySet Name="Routes" EntityType="BusSystemModel.Route" />
           <EntitySet Name="Seats" EntityType="BusSystemModel.Seat" />
-          <EntitySet Name="ReservationTimes" EntityType="BusSystemModel.ReservationTime" />
           <AssociationSet Name="FK_Route_BusType" Association="BusSystemModel.FK_Route_BusType">
             <End Role="BusType" EntitySet="BusTypes" />
             <End Role="Route" EntitySet="Routes" />
@@ -181,6 +188,10 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
           <AssociationSet Name="FK_Seat_Operation" Association="BusSystemModel.FK_Seat_Operation">
             <End Role="Operation" EntitySet="Operations" />
             <End Role="Seat" EntitySet="Seats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationTime_Route1" Association="BusSystemModel.FK_ReservationTime_Route1">
+            <End Role="Route" EntitySet="Routes" />
+            <End Role="ReservationTime" EntitySet="ReservationTimes" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="BusType">
@@ -217,6 +228,18 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
           <NavigationProperty Name="Route" Relationship="BusSystemModel.FK_Operation_Route" FromRole="Operation" ToRole="Route" />
           <NavigationProperty Name="Seats" Relationship="BusSystemModel.FK_Seat_Operation" FromRole="Operation" ToRole="Seat" />
         </EntityType>
+        <EntityType Name="ReservationTime">
+          <Key>
+            <PropertyRef Name="ReservationTimeId" />
+          </Key>
+          <Property Name="ReservationTimeId" Type="Int32" Nullable="false" />
+          <Property Name="RouteId" Type="Int32" Nullable="false" />
+          <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DepartureTime" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="ArrivalTime" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="TravelTime" Type="Time" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Route" Relationship="BusSystemModel.FK_ReservationTime_Route1" FromRole="ReservationTime" ToRole="Route" />
+        </EntityType>
         <EntityType Name="Route">
           <Key>
             <PropertyRef Name="RouteId" />
@@ -226,9 +249,9 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
           <Property Name="ArrivalLocation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DepartureLocation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RoutePrice" Type="Int32" Nullable="false" />
-          <Property Name="TravelTime" Type="Time" Nullable="false" Precision="0" />
           <NavigationProperty Name="BusType" Relationship="BusSystemModel.FK_Route_BusType" FromRole="Route" ToRole="BusType" />
           <NavigationProperty Name="Operations" Relationship="BusSystemModel.FK_Operation_Route" FromRole="Route" ToRole="Operation" />
+          <NavigationProperty Name="ReservationTimes" Relationship="BusSystemModel.FK_ReservationTime_Route1" FromRole="Route" ToRole="ReservationTime" />
         </EntityType>
         <EntityType Name="Seat">
           <Key>
@@ -243,18 +266,6 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
           <Property Name="PaymentMethod" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="BusSystemModel.FK_Seat_Customer" FromRole="Seat" ToRole="Customer" />
           <NavigationProperty Name="Operation" Relationship="BusSystemModel.FK_Seat_Operation" FromRole="Seat" ToRole="Operation" />
-        </EntityType>
-        <EntityType Name="ReservationTime">
-          <Key>
-            <PropertyRef Name="ReservationTimeId" />
-            <PropertyRef Name="ReservationDate" />
-            <PropertyRef Name="DepartureTime" />
-            <PropertyRef Name="ArrivalTime" />
-          </Key>
-          <Property Name="ReservationTimeId" Type="Int32" Nullable="false" />
-          <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DepartureTime" Type="Time" Nullable="false" Precision="0" />
-          <Property Name="ArrivalTime" Type="Time" Nullable="false" Precision="0" />
         </EntityType>
         <Association Name="FK_Route_BusType">
           <End Type="BusSystemModel.BusType" Role="BusType" Multiplicity="0..1">
@@ -308,6 +319,20 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ReservationTime_Route1">
+          <End Type="BusSystemModel.Route" Role="Route" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="BusSystemModel.ReservationTime" Role="ReservationTime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="RouteId" />
+            </Principal>
+            <Dependent Role="ReservationTime">
+              <PropertyRef Name="RouteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -347,10 +372,21 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ReservationTimes">
+            <EntityTypeMapping TypeName="BusSystemModel.ReservationTime">
+              <MappingFragment StoreEntitySet="ReservationTime">
+                <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+                <ScalarProperty Name="ReservationDate" ColumnName="ReservationDate" />
+                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+                <ScalarProperty Name="ReservationTimeId" ColumnName="ReservationTimeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Routes">
             <EntityTypeMapping TypeName="BusSystemModel.Route">
               <MappingFragment StoreEntitySet="Route">
-                <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
                 <ScalarProperty Name="RoutePrice" ColumnName="RoutePrice" />
                 <ScalarProperty Name="DepartureLocation" ColumnName="DepartureLocation" />
                 <ScalarProperty Name="ArrivalLocation" ColumnName="ArrivalLocation" />
@@ -368,16 +404,6 @@ warning 6002: The table/view '_BusSystem.dbo.ReservationTime' does not have a pr
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
                 <ScalarProperty Name="OperationId" ColumnName="OperationId" />
                 <ScalarProperty Name="SeatId" ColumnName="SeatId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ReservationTimes">
-            <EntityTypeMapping TypeName="BusSystemModel.ReservationTime">
-              <MappingFragment StoreEntitySet="ReservationTime">
-                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
-                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
-                <ScalarProperty Name="ReservationDate" ColumnName="ReservationDate" />
-                <ScalarProperty Name="ReservationTimeId" ColumnName="ReservationTimeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

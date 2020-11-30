@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusProject.Data;
+using System.Data.SqlClient;
 
 namespace BusProject
 {
@@ -17,17 +18,16 @@ namespace BusProject
         {
             InitializeComponent();
         }
-
         private void ReservationScreen_Load(object sender, EventArgs e)
         {
-            List<string> cities = Dao.Route.GetDepartureCities();
-            foreach (var city in cities)
-            comboDeparture.Items.Add(city);
-
-            bool newVal = (checkAll.Checked == true);
+            /*bool newVal = (checkAll.Checked == true);
             checkPremium.Checked = newVal;
             checkHigh.Checked = newVal;
-            checkEconomy.Checked = newVal;
+            checkEconomy.Checked = newVal;*/
+
+            List<string> cities = Dao.Route.GetDepartureCities();
+            foreach (var city in cities)
+            comboDeparture.Items.Add(city);      
         }
 
         private void comboDeparture_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,16 +37,17 @@ namespace BusProject
             comboArrival.Items.Clear();
             comboArrival.Items.AddRange(cities.ToArray());
 
-            // 수정중 
-            /*operationBindingSource.DataSource = OperationDao.GetAllOperation();
-            operationBindingSource.Filter = string.Format("OperationDate = #{0}#", PickDate.Value.ToShortDateString());*/
-        }
 
+        }
         private void bttSearch_Click(object sender, EventArgs e)
         {
-            // 수정중 
-            /*operationBindingSource.DataSource = OperationDao.GetAllOperation();
-            operationBindingSource.Filter = string.Format("OperationDate = #{0}#", PickDate.Value.ToLongDateString());*/
+            if (comboArrival.Text == "서울")
+            {
+                reservationTimeBindingSource.DataSource = ReservationTimeDao.GetAllReservationDate();
+                reservationTimeBindingSource.Filter = string.Format("ReservationTimeId == 1", comboArrival.SelectedItem.ToString());
+            }
+            reservationTimeBindingSource.DataSource = ReservationTimeDao.GetAllReservationDate();
+            reservationTimeBindingSource.Filter = string.Format("ReservationDate = #{0}#", DateTimePicker.Value.ToLongDateString());
         }
     }
 }

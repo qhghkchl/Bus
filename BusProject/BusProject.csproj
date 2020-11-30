@@ -109,6 +109,11 @@
     <Compile Include="UserControl\ManageOperation.Designer.cs">
       <DependentUpon>ManageOperation.cs</DependentUpon>
     </Compile>
+    <Compile Include="_BusSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_BusSystemDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,7 +151,6 @@
       <DependentUpon>ManageReservationControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\BusProject.Data.Operation.datasource" />
     <None Include="Properties\DataSources\EFLibrary.DbContextCreator.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -157,6 +161,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_BusSystemDataSet.xsc">
+      <DependentUpon>_BusSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_BusSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_BusSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_BusSystemDataSet.xss">
+      <DependentUpon>_BusSystemDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

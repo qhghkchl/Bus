@@ -22,7 +22,7 @@ namespace BusProject
 
             DbContextCreator.Context = () => new BusProjectEntities();
             
-            Application.Run(new Mainscreen());
+            Application.Run(new ReservationScreen());
 
         }
     }

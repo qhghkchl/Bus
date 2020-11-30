@@ -22,20 +22,12 @@ namespace BusProject.Data
             }
         }
 
-        public Operation GetByReservationId(int operationId)
+        public Operation GetAllOperation(int operationId)
         {
             using (var context = new BusProjectEntities())
             {
                 return context.Operations.FirstOrDefault(x => x.OperationId == operationId);
             }
-        }
-
-/*        public List<string> JoinWithRoute(string routeId, string join)
-        {
-            using (var context = new BusProjectEntities())
-            {
-*//*                join = @"Select Route"
-*//*            }
-        }
-*/    }
+        }  
+    }
 }
