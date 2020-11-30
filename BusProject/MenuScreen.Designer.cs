@@ -31,8 +31,8 @@ namespace BusProject
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bttReservationInfo = new System.Windows.Forms.Button();
-            this.bttCustomerInfo = new System.Windows.Forms.Button();
             this.bttReservation = new System.Windows.Forms.Button();
+            this.bttCustomerInfo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@ namespace BusProject
             this.groupBox1.Controls.Add(this.bttReservationInfo);
             this.groupBox1.Controls.Add(this.bttReservation);
             this.groupBox1.Controls.Add(this.bttCustomerInfo);
-            this.groupBox1.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(248, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(322, 344);
@@ -55,19 +55,9 @@ namespace BusProject
             this.bttReservationInfo.Name = "bttReservationInfo";
             this.bttReservationInfo.Size = new System.Drawing.Size(121, 43);
             this.bttReservationInfo.TabIndex = 3;
-            this.bttReservationInfo.Text = "예매정보";
+            this.bttReservationInfo.Text = "예매 내역";
             this.bttReservationInfo.UseVisualStyleBackColor = true;
             this.bttReservationInfo.Click += new System.EventHandler(this.bttReservationInfo_Click);
-            // 
-            // bttCustomerInfo
-            // 
-            this.bttCustomerInfo.Location = new System.Drawing.Point(104, 57);
-            this.bttCustomerInfo.Name = "bttCustomerInfo";
-            this.bttCustomerInfo.Size = new System.Drawing.Size(121, 43);
-            this.bttCustomerInfo.TabIndex = 1;
-            this.bttCustomerInfo.Text = "내 정보";
-            this.bttCustomerInfo.UseVisualStyleBackColor = true;
-            this.bttCustomerInfo.Click += new System.EventHandler(this.bttCustomerInfo_Click);
             // 
             // bttReservation
             // 
@@ -78,6 +68,16 @@ namespace BusProject
             this.bttReservation.Text = "예매하기";
             this.bttReservation.UseVisualStyleBackColor = true;
             this.bttReservation.Click += new System.EventHandler(this.bttReservation_Click);
+            // 
+            // bttCustomerInfo
+            // 
+            this.bttCustomerInfo.Location = new System.Drawing.Point(104, 57);
+            this.bttCustomerInfo.Name = "bttCustomerInfo";
+            this.bttCustomerInfo.Size = new System.Drawing.Size(121, 43);
+            this.bttCustomerInfo.TabIndex = 1;
+            this.bttCustomerInfo.Text = "내 정보";
+            this.bttCustomerInfo.UseVisualStyleBackColor = true;
+            this.bttCustomerInfo.Click += new System.EventHandler(this.bttCustomerInfo_Click);
             // 
             // MenuScreen
             // 

@@ -14,27 +14,27 @@
 
 ### 1. 회원 가입
 
-<img src="./Images/회원가입.png" width="45%">
+<img src="./images/회원가입.png" width="45%">
 
 - 고객 정보를 입력하고 회원가입 버튼을 누르면 정보가 입력되었는지 확인하고 DB에 저장 후 로그인 창으로 넘어간다.
 
 ### 2. 로그인
 <div>
-<img src="./Images/로그인.png" width="45%">
+<img src="./images/로그인.png" width="45%">
 </div>
 
 - 아이디와 비밀번호를 입력하여 로그인하고 고객 예약 폼이 나온다.
 
 ### 3. 예매
 
-<img src="./Images/예매.png" width="45%">
+<img src="./images/예매.png" width="45%">
 
 - 출발지, 도착지, 날짜, 시간, 등급을 선택 후 조회를 누르면 좌석 선택 폼으로 이동한다.  
 
 ### 4. 좌석 선택 폼
 
 <div>
-<img src=".Images/.png" width="45%">
+<img src=".images/.png" width="45%">
 </div>
 
 - 선택 가능한 좌석을 선택 후 다음 버튼을 클릭하여 확인 및 결제 폼으로 이동한다.
@@ -45,7 +45,7 @@
 ### 1. 직원 로그인
 
 <div>
-<img src="./Images/직원로그인.png" width="45%">
+<img src="./images/직원로그인.png" width="45%">
 </div>
 
 - 아이디 admin, 비밀번호: 3512 를 입력하고 로그인 버튼을 누르면 직원용 관리 폼이 나온다.
@@ -53,7 +53,7 @@
 ### 2. 버스 운행 관리
 
 <div>
-<img src="./Images/직원관리폼_운행.png" width="45%">
+<img src="./images/직원관리폼_운행.png" width="45%">
 </div>
 
 - 버스의 출발지, 도착지, 날짜, 시간, 버스타입을 추가하면 연동된 DB 테이블로 추가된다.
@@ -125,19 +125,19 @@
 
 # 데이터베이스 스키마
 
-![스키마](./.png)
 
-- 모든 항목이 제 3 정규화까지 완료됐다
+
+
 
 # 순서도
 
 ## 1. 고객용 프로그램
 
-![고객용 다이어그램](./.jpg)
+![고객용 다이어그램]
 
 ## 2. 직원용 프로그램
 
-![직원용 다이어그램](./.jpg)
+![직원용 다이어그램]
 
 # Point of Interest
 
@@ -174,20 +174,20 @@
 ## 증상
 - 회원가입한 고객이 로그인을 하였는데 다시 로그인 메세지가 뜨며 창이 닫히는 문제 
 <div>
-<img src="./Images/문제4-1.png" width="45%">
+<img src="./images/문제4-1.png" width="45%">
 </div>
 <div>
-<img src="./Images/문제4-2.png" width="45%">
+<img src="./images/문제4-2.png" width="45%">
 </div>
 
 
 ## 결과
 - if문으로 중복된 코드가 있어서 제거하니 로그인 완료 후 예매 폼으로 이동함.
 <div>
-<img src="./Images/문제4-1.png" width="45%">
+<img src="./images/문제4-1.png" width="45%">
 </div>
 <div>
-<img src="./Images/예매.png" width="45%">
+<img src="./images/예매.png" width="45%">
 </div>
 
 
