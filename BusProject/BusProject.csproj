@@ -161,7 +161,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="README.md" />
     <None Include="_BusSystemDataSet.xsc">
       <DependentUpon>_BusSystemDataSet.xsd</DependentUpon>
     </None>
