@@ -2,13 +2,13 @@
 {
     public class Dao
     {
-        public static OperationDao Operation = new OperationDao();
+        public static OperationDao Operation { get; } = new OperationDao();
         
-        public static CustomerDao Customer = new CustomerDao();
+        public static CustomerDao Customer { get; }  = new CustomerDao();
 
-        public static RouteDao Route = new RouteDao();
+        public static RouteDao Route { get; }  = new RouteDao();
 
-        public static ReservationTimeDao ReservationTime = new ReservationTimeDao();
+        public static ReservationTimeDao ReservationTime { get; }  = new ReservationTimeDao();
 
     }
 }

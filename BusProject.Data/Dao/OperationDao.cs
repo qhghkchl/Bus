@@ -22,6 +22,19 @@ namespace BusProject.Data
             }
         }
 
+        public List<Operation> GetByOperationId (int operationId)
+        {
+            using (var context = new BusProjectEntities())
+            {
+                var query = from x in context.Operations
+                            where x.OperationId == operationId
+                            select x;
+
+                return query.ToList();
+            }
+        }
+
+
         public Operation GetAllOperation(int operationId)
         {
             using (var context = new BusProjectEntities())

@@ -59,6 +59,12 @@
     <Compile Include="CustomerInfo.Designer.cs">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReservationScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +103,6 @@
     <Compile Include="RegisterScreen.Designer.cs">
       <DependentUpon>RegisterScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\ManageOperation.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\ManageOperation.Designer.cs">
-      <DependentUpon>ManageOperation.cs</DependentUpon>
-    </Compile>
     <Compile Include="_BusSystemDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -110,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationScreen.resx">
       <DependentUpon>ReservationScreen.cs</DependentUpon>
@@ -135,13 +138,11 @@
     <EmbeddedResource Include="RegisterScreen.resx">
       <DependentUpon>RegisterScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\ManageOperation.resx">
-      <DependentUpon>ManageOperation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\ManageReservationControl.resx">
       <DependentUpon>ManageReservationControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BusProject.Data.Operation.datasource" />
     <None Include="Properties\DataSources\EFLibrary.DbContextCreator.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
