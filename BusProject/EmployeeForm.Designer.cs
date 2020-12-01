@@ -33,6 +33,16 @@ namespace BusProject
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,16 +78,6 @@ namespace BusProject
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -103,7 +103,7 @@ namespace BusProject
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1181, 540);
@@ -113,9 +113,9 @@ namespace BusProject
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1173, 508);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "운행 관리";
@@ -125,7 +125,7 @@ namespace BusProject
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -150,6 +150,90 @@ namespace BusProject
             this.splitContainer1.SplitterDistance = 119;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1039, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 55);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "추가";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(896, 45);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(112, 28);
+            this.textBox5.TabIndex = 9;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(670, 45);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(112, 28);
+            this.textBox4.TabIndex = 8;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(450, 45);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(112, 28);
+            this.textBox3.TabIndex = 7;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(269, 45);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(112, 28);
+            this.textBox2.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(83, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(112, 28);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(585, 50);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 18);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "출발시간";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(806, 50);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 18);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "버스 등급";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(402, 50);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 18);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "날짜";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(209, 50);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 18);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "도착지";
             // 
             // label1
             // 
@@ -176,7 +260,7 @@ namespace BusProject
             this.dataGridView1.DataSource = this.operationBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
@@ -241,9 +325,9 @@ namespace BusProject
             // 
             this.tabPage2.Controls.Add(this.splitContainer2);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1173, 508);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "예약 관리";
@@ -253,7 +337,7 @@ namespace BusProject
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -280,7 +364,7 @@ namespace BusProject
             // btnManReservSearch
             // 
             this.btnManReservSearch.Location = new System.Drawing.Point(932, 72);
-            this.btnManReservSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManReservSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnManReservSearch.Name = "btnManReservSearch";
             this.btnManReservSearch.Size = new System.Drawing.Size(94, 28);
             this.btnManReservSearch.TabIndex = 9;
@@ -290,7 +374,7 @@ namespace BusProject
             // dtManReservDate
             // 
             this.dtManReservDate.Location = new System.Drawing.Point(89, 68);
-            this.dtManReservDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtManReservDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtManReservDate.Name = "dtManReservDate";
             this.dtManReservDate.Size = new System.Drawing.Size(249, 28);
             this.dtManReservDate.TabIndex = 8;
@@ -309,7 +393,7 @@ namespace BusProject
             // 
             this.cbxManReservArrival.FormattingEnabled = true;
             this.cbxManReservArrival.Location = new System.Drawing.Point(539, 73);
-            this.cbxManReservArrival.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxManReservArrival.Margin = new System.Windows.Forms.Padding(4);
             this.cbxManReservArrival.Name = "cbxManReservArrival";
             this.cbxManReservArrival.Size = new System.Drawing.Size(150, 26);
             this.cbxManReservArrival.TabIndex = 6;
@@ -328,7 +412,7 @@ namespace BusProject
             // 
             this.cbxManReservDeparture.FormattingEnabled = true;
             this.cbxManReservDeparture.Location = new System.Drawing.Point(539, 31);
-            this.cbxManReservDeparture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxManReservDeparture.Margin = new System.Windows.Forms.Padding(4);
             this.cbxManReservDeparture.Name = "cbxManReservDeparture";
             this.cbxManReservDeparture.Size = new System.Drawing.Size(150, 26);
             this.cbxManReservDeparture.TabIndex = 4;
@@ -346,7 +430,7 @@ namespace BusProject
             // txbManReservName
             // 
             this.txbManReservName.Location = new System.Drawing.Point(89, 31);
-            this.txbManReservName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbManReservName.Margin = new System.Windows.Forms.Padding(4);
             this.txbManReservName.Name = "txbManReservName";
             this.txbManReservName.Size = new System.Drawing.Size(124, 28);
             this.txbManReservName.TabIndex = 2;
@@ -380,7 +464,7 @@ namespace BusProject
             this.dataGridView2.DataSource = this.customerBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 27;
@@ -482,9 +566,9 @@ namespace BusProject
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(1173, 508);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
@@ -493,97 +577,13 @@ namespace BusProject
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage4.Size = new System.Drawing.Size(1173, 508);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(209, 50);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 18);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "도착지";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(402, 50);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 18);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "날짜";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(806, 50);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 18);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "버스 등급";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(585, 50);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 18);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "출발시간";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(83, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 28);
-            this.textBox1.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(269, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(112, 28);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(450, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(112, 28);
-            this.textBox3.TabIndex = 7;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(670, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 28);
-            this.textBox4.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(896, 45);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(112, 28);
-            this.textBox5.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1039, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 55);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "추가";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // EmployeeForm
             // 
@@ -591,7 +591,7 @@ namespace BusProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 540);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
             this.tabControl1.ResumeLayout(false);

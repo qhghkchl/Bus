@@ -23,7 +23,7 @@
 <img src="./images/로그인.png" width="45%">
 </div>
 <div>
-<img src="./images/로그인완료.png" width="45%">
+<img src="./images/로그인완료.PNG" width="45%">
 </div>
 - 아이디와 비밀번호를 입력하여 로그인하고 메뉴 폼이 나온다.
 
@@ -70,7 +70,7 @@
 ### 3. 예매 관리
 
 <div>
-<img src="./images/직원관리폼_예약.png" width="45%">
+<img src="./images/직원관리폼_예약.PNG" width="45%">
 </div>
 <div>
 </div>
