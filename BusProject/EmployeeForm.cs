@@ -24,12 +24,6 @@ namespace BusProject
             InitializeComponent();
             username = s;
         }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-
-            operationBindingSource.DataSource = Dao.Operation.GetAll();
-        }
+        
     }
 }

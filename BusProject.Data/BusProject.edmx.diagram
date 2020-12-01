@@ -6,11 +6,11 @@
     <edmx:Diagrams>
       <Diagram DiagramId="eec4ffda46b44e51a1a28fd17cb586db" Name="BusSystem" ZoomLevel="74">
         <EntityTypeShape EntityType="BusSystemModel.BusType" Width="1.5" PointX="0.75" PointY="3" />
-        <EntityTypeShape EntityType="BusSystemModel.Customer" Width="1.5" PointX="5.25" PointY="8.25" />
-        <EntityTypeShape EntityType="BusSystemModel.Operation" Width="1.5" PointX="5.25" PointY="1.25" />
-        <EntityTypeShape EntityType="BusSystemModel.ReservationTime" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="BusSystemModel.Customer" Width="1.5" PointX="5.25" PointY="8.375" />
+        <EntityTypeShape EntityType="BusSystemModel.Operation" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="BusSystemModel.ReservationTime" Width="1.5" PointX="5.25" PointY="1.25" />
         <EntityTypeShape EntityType="BusSystemModel.Route" Width="1.5" PointX="3" PointY="2.625" />
-        <EntityTypeShape EntityType="BusSystemModel.Seat" Width="1.5" PointX="7.5" PointY="1.125" />
+        <EntityTypeShape EntityType="BusSystemModel.Seat" Width="1.5" PointX="7.5" PointY="4.25" />
         <AssociationConnector Association="BusSystemModel.FK_Route_BusType" />
         <AssociationConnector Association="BusSystemModel.FK_Seat_Customer" />
         <AssociationConnector Association="BusSystemModel.FK_Operation_Route" />

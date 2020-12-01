@@ -8,8 +8,8 @@ namespace BusProject.Data
 {
     public partial class Operation
     {
-        public string Departure { get; set; }
-        public string Arrival { get; set; }
+        public string DepartureLocation { get; set; }
+        public string ArrivalLocation { get; set; }
 
         public string BusTypeText
         {
@@ -29,6 +29,6 @@ namespace BusProject.Data
             }
         }
 
-        public int BusTypeId { get; private set; }
+    public int BusTypeId { get; private set; }
     }
 }

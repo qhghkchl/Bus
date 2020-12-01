@@ -33,14 +33,5 @@ namespace BusProject.Data
                 return query.ToList();
             }
         }
-
-
-        public Operation GetAllOperation(int operationId)
-        {
-            using (var context = new BusProjectEntities())
-            {
-                return context.Operations.FirstOrDefault(x => x.OperationId == operationId);
-            }
-        }  
     }
 }
