@@ -22,7 +22,7 @@ namespace BusProject
         public EmployeeForm(string s)
         {
             InitializeComponent();
-            username = s;
+            username = s; 
         }
         
     }
