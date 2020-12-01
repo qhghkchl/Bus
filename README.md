@@ -189,12 +189,19 @@
 <img src="./images/예매.png" width="45%">
 </div>
 
+---
 
 
-```csharp
-// before
+# 회원가입 후 데이터베이스에 값이 저장되지 않는 문제 
+
+## 증상
+- 회원가입을 하고 난 뒤에 데이터베이스에 값이 저장되지 않아 로그인을 할 수 없는 문제
 
 
-// after
+## 결과
+- Customer user = Dao.Customer.GetByName(txtLoginId.Text); 부분에서 breakpoint debugging 한 결과, txtLoginId.Text는 계속 null값으로 보여줬다. 
+- 테이블에 저장하고자 하는 값을 지정해야함으로 userval이라는 함수를 선언하고 이는 customer테이블에 속성을 갖게함으로써 해결했다.
 
-```
+<div>
+<img src="./images/회원가입오류.png" width="45%">
+</div>
