@@ -540,7 +540,6 @@ namespace BusProject
             this.label9.Size = new System.Drawing.Size(80, 18);
             this.label9.TabIndex = 4;
             this.label9.Text = "출발시간";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // textBox1
             // 
@@ -548,7 +547,6 @@ namespace BusProject
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(112, 28);
             this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
