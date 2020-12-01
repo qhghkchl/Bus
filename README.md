@@ -29,7 +29,7 @@
 
 ### 3. 메뉴
 <div>
-<img src="./images/메뉴화면.png" width="45%">
+<img src="./images/메뉴화면.PNG" width="45%">
 </div>
 
 - 원하는 메뉴를 선택하면 이동한다. 
