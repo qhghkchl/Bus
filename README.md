@@ -70,6 +70,7 @@
 ### 3. 예매 관리
 
 <div>
+<img src="./images/직원관리폼_예약.png" width="45%">
 </div>
 <div>
 </div>
