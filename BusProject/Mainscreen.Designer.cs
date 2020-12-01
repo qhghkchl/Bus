@@ -36,15 +36,15 @@ namespace BusProject
             this.label1 = new System.Windows.Forms.Label();
             this.bttRegister = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbttAdmin = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bttLogin
             // 
-            this.bttLogin.Location = new System.Drawing.Point(268, 251);
-            this.bttLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bttLogin.Location = new System.Drawing.Point(214, 209);
             this.bttLogin.Name = "bttLogin";
-            this.bttLogin.Size = new System.Drawing.Size(94, 28);
+            this.bttLogin.Size = new System.Drawing.Size(75, 23);
             this.bttLogin.TabIndex = 3;
             this.bttLogin.Text = "로그인";
             this.bttLogin.UseVisualStyleBackColor = true;
@@ -53,47 +53,42 @@ namespace BusProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 193);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(128, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 18);
+            this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
             // txtLoginId
             // 
-            this.txtLoginId.Location = new System.Drawing.Point(268, 101);
-            this.txtLoginId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLoginId.Location = new System.Drawing.Point(214, 84);
             this.txtLoginId.Name = "txtLoginId";
-            this.txtLoginId.Size = new System.Drawing.Size(242, 28);
+            this.txtLoginId.Size = new System.Drawing.Size(194, 25);
             this.txtLoginId.TabIndex = 2;
             // 
             // txtLoginPassword
             // 
-            this.txtLoginPassword.Location = new System.Drawing.Point(268, 181);
-            this.txtLoginPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLoginPassword.Location = new System.Drawing.Point(214, 151);
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.PasswordChar = '*';
-            this.txtLoginPassword.Size = new System.Drawing.Size(242, 28);
+            this.txtLoginPassword.Size = new System.Drawing.Size(194, 25);
             this.txtLoginPassword.TabIndex = 2;
             this.txtLoginPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoginPassword_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(225, 113);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(180, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 18);
+            this.label1.Size = new System.Drawing.Size(20, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // bttRegister
             // 
-            this.bttRegister.Location = new System.Drawing.Point(416, 251);
-            this.bttRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bttRegister.Location = new System.Drawing.Point(333, 209);
             this.bttRegister.Name = "bttRegister";
-            this.bttRegister.Size = new System.Drawing.Size(94, 28);
+            this.bttRegister.Size = new System.Drawing.Size(75, 23);
             this.bttRegister.TabIndex = 3;
             this.bttRegister.Text = "회원가입";
             this.bttRegister.UseVisualStyleBackColor = true;
@@ -107,28 +102,37 @@ namespace BusProject
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtLoginPassword);
             this.groupBox1.Controls.Add(this.bttLogin);
-            this.groupBox1.Location = new System.Drawing.Point(155, 101);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(124, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(715, 343);
+            this.groupBox1.Size = new System.Drawing.Size(572, 286);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "예매 로그인";
             // 
+            // rbttAdmin
+            // 
+            this.rbttAdmin.AutoSize = true;
+            this.rbttAdmin.Location = new System.Drawing.Point(380, 392);
+            this.rbttAdmin.Name = "rbttAdmin";
+            this.rbttAdmin.Size = new System.Drawing.Size(73, 19);
+            this.rbttAdmin.TabIndex = 5;
+            this.rbttAdmin.TabStop = true;
+            this.rbttAdmin.Text = "관리자";
+            this.rbttAdmin.UseVisualStyleBackColor = true;
+            // 
             // Mainscreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 540);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rbttAdmin);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Mainscreen";
             this.Text = "버스예매 시스템";
-            this.Load += new System.EventHandler(this.Mainscreen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -141,6 +145,7 @@ namespace BusProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bttRegister;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbttAdmin;
     }
 }
 

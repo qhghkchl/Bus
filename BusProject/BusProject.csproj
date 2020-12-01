@@ -141,6 +141,7 @@
     <EmbeddedResource Include="UserControl\ManageReservationControl.resx">
       <DependentUpon>ManageReservationControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BusProject.Data.Operation.datasource" />
     <None Include="Properties\DataSources\EFLibrary.DbContextCreator.datasource" />
