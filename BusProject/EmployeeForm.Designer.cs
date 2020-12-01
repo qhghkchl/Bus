@@ -132,9 +132,9 @@ namespace BusProject
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(36, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "출발지";
+            this.label1.Text = "출발지ㅣ";
             // 
             // dataGridView1
             // 
