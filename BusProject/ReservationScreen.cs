@@ -41,13 +41,13 @@ namespace BusProject
         }
         private void bttSearch_Click(object sender, EventArgs e)
         {
-            if (comboArrival.Text == "서울")
+            /*if (comboArrival.Text == "서울")
             {
                 reservationTimeBindingSource.DataSource = ReservationTimeDao.GetAllReservationDate();
                 reservationTimeBindingSource.Filter = string.Format("ReservationTimeId == 1", comboArrival.SelectedItem.ToString());
             }
             reservationTimeBindingSource.DataSource = ReservationTimeDao.GetAllReservationDate();
-            reservationTimeBindingSource.Filter = string.Format("ReservationDate = #{0}#", DateTimePicker.Value.ToLongDateString());
+            reservationTimeBindingSource.Filter = string.Format("ReservationDate = #{0}#", DateTimePicker.Value.ToLongDateString());*/
         }
     }
 }

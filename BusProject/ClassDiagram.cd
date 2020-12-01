@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusProject._BusSystemDataSet" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAAJAJEAAwCAAgAgCQBgAAAAAAAFABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.CustomerInfo" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomerInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.EmployeeForm" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCAAAAAACAAQAAIAACAAAECABgAAAACBAAAARABhAA=</HashCode>
+      <FileName>EmployeeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.Mainscreen" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAACAAABAAAACAEAACAoAACAAAACAAAABgAEA=</HashCode>
+      <FileName>Mainscreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.MenuScreen" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEBCAAAAAAAACAAAACAAAAAEAAACAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.Program" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.RegisterScreen" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAACABABAAAACAEAACAAAAgAAAAAgAAABAAAU=</HashCode>
+      <FileName>RegisterScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.ReservationScreen" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCIAEBIAAADAMgCCACAAACAgAAAAAABAAAo=</HashCode>
+      <FileName>ReservationScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.LoginControl">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAACAAABAAAACAEAACAAAAAAAAAAAAAABAAEA=</HashCode>
+      <FileName>UserControl\LoginControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.ManageReservationControl" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAKAAABAIAAmQAAAGAAgAAQAAAAAACRgAgAA=</HashCode>
+      <FileName>UserControl\ManageReservationControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject._BusSystemDataSetTableAdapters.ReservationTimeTableAdapter" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject._BusSystemDataSetTableAdapters.RouteTableAdapter" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject._BusSystemDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABMEBAAAAMAAgAAACgAAAAAQAAAAGBAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.Properties.Resources">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusProject.Properties.Settings" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

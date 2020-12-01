@@ -17,27 +17,35 @@ namespace BusProject
         {
             InitializeComponent();
         }
-
-
+        // Menuscreen 폼으로 이동하기 위한 변수 생성 
+        MenuScreen menuScreen = new MenuScreen();
         private void bttLogin_Click(object sender, EventArgs e)
         {
-            if (txtLoginId.Text == "admin" && txtLoginPassword.Text == "3512")
-            {
-                EmployeeForm employeeForm = new EmployeeForm(txtLoginId.Text);
-                employeeForm.Show();
-                //this.Close();
-            }
+            // 관리자 폼으로 로그인
 
+            if (rbttAdmin.Checked)
+            {
+                if (txtLoginId.Text == "admin" && txtLoginPassword.Text == "3512")
+                {
+                    EmployeeForm employeeForm = new EmployeeForm();
+                    this.Hide();
+                    employeeForm.Show();
+                }
+            }           
             else
             {
-                Customer user = Dao.Customer.GetByName(txtLoginId.Text);
-
                 if (txtLoginId.Text != string.Empty && txtLoginPassword.Text != string.Empty)
-                {
+                {                  
+                    Customer user = Dao.Customer.GetByLogid(txtLoginId.Text);
+
                     if (user != null)
                     {
                         if (user.LoginPassword == txtLoginPassword.Text)
-                            MessageBox.Show("로그인 하세요.");
+                        {
+                            MessageBox.Show("로그인이 되었습니다.");
+                            this.Hide();
+                            menuScreen.Show();
+                        }
                         else
                             MessageBox.Show("잘못된 비밀번호입니다.");
                     }
@@ -46,12 +54,6 @@ namespace BusProject
                 }
                 else
                     MessageBox.Show("아이디와 비밀번호 입력하세요.");
-
-
-
-                MenuScreen menuscreen = new MenuScreen();
-                menuscreen.Show();
-                this.Close();
             }
         }
 
@@ -59,23 +61,15 @@ namespace BusProject
         {
             this.Hide();
             RegisterScreen register = new RegisterScreen();
-            register.Show();         
-      
+            register.Show();
         }
-
-        
-        private void Mainscreen_Load(object sender, EventArgs e)
-        {
-        }
-
         private void txtLoginPassword_KeyDown(object sender, KeyEventArgs e)
         {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    bttLogin_Click(sender, e);
-                    bttLogin.Select();
-                }
+            if (e.KeyCode == Keys.Enter)
+            {
+                bttLogin_Click(sender, e);
+                bttLogin.Select();
             }
         }
     }
-
+}

@@ -19,29 +19,29 @@ namespace BusProject
         }
         private void BttRegistrationComplete_Click(object sender, EventArgs e)
         {
-            Customer user = Dao.Customer.GetByName(txtLoginId.Text);
+            Customer userval = new Customer();
             if (txtLoginId.Text == "" || txtPassword.Text == "" || txtName.Text == "" || txtContact.Text == "" ||txtDateOfBirth.Text == "")
             {
                 MessageBox.Show("정보를 입력해주세요.");
-            }
-            else if(user != null)
-            {              
-                user.LoginId = txtLoginId.Text.Trim();
-                user.LoginPassword = txtPassword.Text.Trim();
-                user.Name = txtName.Text.Trim();
-                user.PhoneNumber = txtContact.Text.Trim();
-                user.DateOfBirth = txtDateOfBirth.Text.Trim();
+                return;
+            }        
+            else if (userval != null)
+            {             
+                userval.LoginId = txtLoginId.Text.Trim();
+                userval.LoginPassword = txtPassword.Text.Trim();
+                userval.Name = txtName.Text.Trim();
+                userval.PhoneNumber = txtContact.Text.Trim();
+                userval.DateOfBirth = txtDateOfBirth.Text.Trim();
 
-                Dao.Customer.Insert(user);
+                Dao.Customer.Insert(userval);
+                this.Clear();
+                MessageBox.Show("회원정보 입력완료.");
             }
-            this.Clear();
-            MessageBox.Show("회원정보 입력완료.");
 
             Mainscreen mainscreen = new Mainscreen();
             mainscreen.Show();
-            this.Close();           
+            this.Close();
         }
-
         private void Clear()
         {
             txtLoginId.Text = txtPassword.Text = txtName.Text = txtContact.Text = txtDateOfBirth.Text = "";

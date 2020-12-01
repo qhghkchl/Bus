@@ -21,12 +21,12 @@ namespace BusProject.Data
             }
         }
 
-        public Customer GetByName(string loginId)
+        public Customer GetByLogid(string loginId)
         { 
             using (var context = new BusProjectEntities())
             {
-                return context.Customers.FirstOrDefault(x => x.LoginId == loginId);               
+                return context.Customers.FirstOrDefault(x => x.LoginId == loginId);
             }
-        }      
+        }   
     }
 }
