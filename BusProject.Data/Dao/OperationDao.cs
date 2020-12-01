@@ -33,5 +33,7 @@ namespace BusProject.Data
                 return query.ToList();
             }
         }
+
+        
     }
 }

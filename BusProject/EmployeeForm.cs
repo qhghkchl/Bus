@@ -30,6 +30,21 @@ namespace BusProject
 
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
 
+            dgvManOperation.DataSource = Dao.Operation.GetAll();
+            dgvManOperation.DataSource = Dao.Route.GetAll();
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            base.OnLoad(e);
+            dgvManOperation.DataSource = Dao.Operation.GetAll();
+            dgvManOperation.DataSource = Dao.Route.GetAll();
+
+        }
     }
 }
