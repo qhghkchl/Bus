@@ -24,6 +24,5 @@ namespace BusProject
             InitializeComponent();
             username = s; 
         }
-        
     }
 }
