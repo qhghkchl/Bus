@@ -571,7 +571,7 @@ namespace BusProject
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(1173, 508);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "노선별 매출액";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
@@ -582,7 +582,7 @@ namespace BusProject
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage4.Size = new System.Drawing.Size(1173, 508);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "월별 매출액";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // EmployeeForm
