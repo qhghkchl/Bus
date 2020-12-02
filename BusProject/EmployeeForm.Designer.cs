@@ -44,7 +44,7 @@ namespace BusProject
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvManOperation = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ArrivalLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,7 +84,7 @@ namespace BusProject
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvManOperation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.operationBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -145,7 +145,7 @@ namespace BusProject
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvManOperation);
             this.splitContainer1.Size = new System.Drawing.Size(1165, 500);
             this.splitContainer1.SplitterDistance = 119;
             this.splitContainer1.SplitterWidth = 5;
@@ -246,26 +246,26 @@ namespace BusProject
             this.label1.Text = "출발지";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView1
+            // dgvManOperation
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvManOperation.AutoGenerateColumns = false;
+            this.dgvManOperation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvManOperation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.ArrivalLocation,
             this.operationDateDataGridViewTextBoxColumn,
             this.departureTimeDataGridViewTextBoxColumn,
             this.busTypeTextDataGridViewTextBoxColumn,
             this.busTypeIdDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.operationBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1165, 376);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvManOperation.DataSource = this.operationBindingSource;
+            this.dgvManOperation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvManOperation.Location = new System.Drawing.Point(0, 0);
+            this.dgvManOperation.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvManOperation.Name = "dgvManOperation";
+            this.dgvManOperation.RowHeadersWidth = 51;
+            this.dgvManOperation.RowTemplate.Height = 27;
+            this.dgvManOperation.Size = new System.Drawing.Size(1165, 376);
+            this.dgvManOperation.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -601,7 +601,7 @@ namespace BusProject
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvManOperation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.operationBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -622,7 +622,7 @@ namespace BusProject
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvManOperation;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn arrivalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource operationBindingSource;
