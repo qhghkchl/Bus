@@ -34,16 +34,14 @@ namespace BusProject
         {
             base.OnLoad(e);
 
-            dgvManOperation.DataSource = Dao.Operation.GetAll();
-            dgvManOperation.DataSource = Dao.Route.GetAll();
+            dgvManOperation.DataSource = Dao.Operation.GetWithRoute();
 
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
             base.OnLoad(e);
-            dgvManOperation.DataSource = Dao.Operation.GetAll();
-            dgvManOperation.DataSource = Dao.Route.GetAll();
+            dgvManOperation.DataSource = Dao.Operation.GetWithRoute();
 
         }
 
