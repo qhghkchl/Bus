@@ -22,7 +22,7 @@ namespace BusProject.Data
         }
     
         public int RouteId { get; set; }
-        public Nullable<int> BusTypeId { get; set; }
+        public int BusTypeId { get; set; }
         public string ArrivalLocation { get; set; }
         public string DepartureLocation { get; set; }
         public int RoutePrice { get; set; }

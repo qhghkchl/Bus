@@ -38,17 +38,23 @@ namespace BusProject.Data
         {
             using (var context = new BusProjectEntities())
             {
-                var query = from x in context.Operations select x;
+                var query = from x in context.Operations 
+                            select x;
+
 
                 List<Operation> operations = query.ToList();
 
+
+                //departure, arrival, bustype
                 foreach (Operation operation in operations)
                 {
-                    var DepartureLocation = context.Routes.First(x => x.RouteId == operation.RouteId);
-                    var ArrivalLocation = context.Routes.First(x => x.RouteId == operation.RouteId);
-                    var BusTypeId = context.Routes.First(x => x.RouteId == operation.RouteId);
+                    //Route routes = context.Routes.First(x => x.RouteId == operation.RouteId);
+                    Route route = context.Routes.SingleOrDefault( x => x.RouteId == operation.RouteId);
+                    operation.DepartureLocation = route.DepartureLocation;
+                    operation.ArrivalLocation = route.ArrivalLocation;
+                    operation.BusTypeId = route.BusTypeId;
                 }
-                return operations;                            
+                return operations;
             }
         }
     }

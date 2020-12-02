@@ -1,7 +1,7 @@
-﻿// T4 code generation is enabled for model 'C:\git\Bus\BusProject.Data\BusProject.edmx'. 
-// To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
-// property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
-// is open in the designer.
+﻿// 모델 'C:\git\Bus\BusProject.Data\BusProject.edmx'에 대해 T4 코드 생성이 사용됩니다. 
+// 레거시 코드 생성을 사용하려면 '코드 생성 전략' 디자이너 속성의 값을
+// 'Legacy ObjectContext'로 변경하십시오. 이 속성은 모델이 디자이너에서 열릴 때
+// 속성 창에서 사용할 수 있습니다.
 
 // 컨텍스트 및 엔터티 클래스가 생성되지 않은 경우 빈 모델을 만들었기 때문일 수도 있지만
 // 사용할 Entity Framework 버전을 선택하지 않았기 때문일 수도 있습니다. 모델에 맞는 컨텍스트 클래스 및

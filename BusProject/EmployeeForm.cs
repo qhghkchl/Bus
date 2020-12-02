@@ -36,6 +36,7 @@ namespace BusProject
 
             dgvManOperation.DataSource = Dao.Operation.GetWithRoute();
 
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -44,6 +45,5 @@ namespace BusProject
             dgvManOperation.DataSource = Dao.Operation.GetWithRoute();
 
         }
-
     }
 }
