@@ -30,7 +30,7 @@ namespace BusProject
         }
         private void bttSearch_Click(object sender, EventArgs e)
         {
-            FilterRouteByLocationAndDate();    
+            FilterRouteBycationDate();    
         }
 
         public void ClassCheckbox()
@@ -60,7 +60,7 @@ namespace BusProject
             var showdata = DataGridView.Rows[e.RowIndex].Cells[0].Value;
             MessageBox.Show(showdata.ToString());
         }
-        public void FilterRouteByLocationAndDate()
+        public void FilterRouteBycationDate()
         {
             #region 서울 -> 정읍
             if (comboArrival.Text == "서울" && comboDeparture.Text == "정읍")
