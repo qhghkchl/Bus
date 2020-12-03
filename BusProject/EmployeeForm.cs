@@ -25,24 +25,23 @@ namespace BusProject
             username = s; 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
-            dgvManOperation.DataSource = Dao.Operation.GetWithRoute();
-
-
+            dgvManOperation.DataSource = Dao.Operation.GetManOperation();
+           
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
             base.OnLoad(e);
-            dgvManOperation.DataSource = Dao.Operation.GetWithRoute();
+            dgvManOperation.DataSource = Dao.Operation.GetManOperation();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            base.OnLoad(e);
+            dgvManReservation.DataSource = Dao.Customer.GetManReservation();
 
         }
     }

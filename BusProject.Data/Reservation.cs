@@ -12,7 +12,7 @@ namespace BusProject.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class ReservationTime
+    public partial class Reservation
     {
         public int ReservationTimeId { get; set; }
         public int RouteId { get; set; }

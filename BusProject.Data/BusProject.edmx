@@ -35,7 +35,7 @@
           <Property Name="DepartureTime" Type="time" Precision="0" Nullable="false" />
           <Property Name="ArrivalTime" Type="time" Precision="0" Nullable="false" />
         </EntityType>
-        <EntityType Name="ReservationTime">
+        <EntityType Name="Reservation">
           <Key>
             <PropertyRef Name="ReservationTimeId" />
           </Key>
@@ -84,12 +84,12 @@
           <End Role="Route" Type="Self.Route" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="ReservationTime" Type="Self.ReservationTime" Multiplicity="*" />
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Route">
               <PropertyRef Name="RouteId" />
             </Principal>
-            <Dependent Role="ReservationTime">
+            <Dependent Role="Reservation">
               <PropertyRef Name="RouteId" />
             </Dependent>
           </ReferentialConstraint>
@@ -138,7 +138,7 @@
           <EntitySet Name="BusType" EntityType="Self.BusType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ReservationTime" EntityType="Self.ReservationTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seat" EntityType="Self.Seat" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Operation_Route" Association="Self.FK_Operation_Route">
@@ -147,7 +147,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_ReservationTime_Route1" Association="Self.FK_ReservationTime_Route1">
             <End Role="Route" EntitySet="Route" />
-            <End Role="ReservationTime" EntitySet="ReservationTime" />
+            <End Role="Reservation" EntitySet="Reservation" />
           </AssociationSet>
           <AssociationSet Name="FK_Route_BusType" Association="Self.FK_Route_BusType">
             <End Role="BusType" EntitySet="BusType" />
@@ -186,7 +186,7 @@
           <Property Name="LoginId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LoginPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Seats" Relationship="Self.FK_Seat_Customer" FromRole="Customer" ToRole="Seat" />
+          <NavigationProperty Name="Seats" Relationship="BusSystemModel.FK_Seat_Customer" FromRole="Customer" ToRole="Seat" />
         </EntityType>
         <EntityType Name="Operation">
           <Key>
@@ -197,75 +197,13 @@
           <Property Name="OperationDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DepartureTime" Type="Time" Nullable="false" Precision="0" />
           <Property Name="ArrivalTime" Type="Time" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Seats" Relationship="Self.FK_Seat_Operation" FromRole="Operation" ToRole="Seat" />
           <NavigationProperty Name="Route" Relationship="BusSystemModel.FK_Operation_Route" FromRole="Operation" ToRole="Route" />
+          <NavigationProperty Name="Seats" Relationship="BusSystemModel.FK_Seat_Operation" FromRole="Operation" ToRole="Seat" />
         </EntityType>
-        <EntityType Name="ReservationTime">
-          <Key>
-            <PropertyRef Name="ReservationTimeId" />
-          </Key>
-          <Property Name="ReservationTimeId" Type="Int32" Nullable="false" />
-          <Property Name="RouteId" Type="Int32" Nullable="false" />
-          <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DepartureTime" Type="Time" Nullable="false" Precision="0" />
-          <Property Name="ArrivalTime" Type="Time" Nullable="false" Precision="0" />
-          <Property Name="TravelTime" Type="Time" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Route" Relationship="BusSystemModel.FK_ReservationTime_Route1" FromRole="ReservationTime" ToRole="Route" />
-        </EntityType>
-        <EntityType Name="Seat">
-          <Key>
-            <PropertyRef Name="SeatId" />
-            <PropertyRef Name="OperationId" />
-          </Key>
-          <Property Name="SeatId" Type="Int32" Nullable="false" />
-          <Property Name="OperationId" Type="Int32" Nullable="false" />
-          <Property Name="CustomerId" Type="Int32" Nullable="false" />
-          <Property Name="SeatColumn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SeatColumnNumber" Type="Int32" Nullable="false" />
-          <Property Name="PaymentMethod" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK_Seat_Customer" FromRole="Seat" ToRole="Customer" />
-          <NavigationProperty Name="Operation" Relationship="Self.FK_Seat_Operation" FromRole="Seat" ToRole="Operation" />
-        </EntityType>
-        <Association Name="FK_Seat_Customer">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="CustomerId" />
-            </Principal>
-            <Dependent Role="Seat">
-              <PropertyRef Name="CustomerId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Seat_Operation">
-          <End Role="Operation" Type="Self.Operation" Multiplicity="1" />
-          <End Role="Seat" Type="Self.Seat" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Operation">
-              <PropertyRef Name="OperationId" />
-            </Principal>
-            <Dependent Role="Seat">
-              <PropertyRef Name="OperationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="BusProjectEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BusTypes" EntityType="Self.BusType" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Operations" EntityType="Self.Operation" />
-          <EntitySet Name="ReservationTimes" EntityType="Self.ReservationTime" />
-          <EntitySet Name="Seats" EntityType="Self.Seat" />
-          <AssociationSet Name="FK_Seat_Customer" Association="Self.FK_Seat_Customer">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="Seat" EntitySet="Seats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Seat_Operation" Association="Self.FK_Seat_Operation">
-            <End Role="Operation" EntitySet="Operations" />
-            <End Role="Seat" EntitySet="Seats" />
-          </AssociationSet>
           <EntitySet Name="Routes" EntityType="BusSystemModel.Route" />
           <AssociationSet Name="FK_Route_BusType" Association="BusSystemModel.FK_Route_BusType">
             <End Role="BusType" EntitySet="BusTypes" />
@@ -275,9 +213,19 @@
             <End Role="Route" EntitySet="Routes" />
             <End Role="Operation" EntitySet="Operations" />
           </AssociationSet>
+          <EntitySet Name="Seats" EntityType="BusSystemModel.Seat" />
+          <AssociationSet Name="FK_Seat_Customer" Association="BusSystemModel.FK_Seat_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Seat" EntitySet="Seats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seat_Operation" Association="BusSystemModel.FK_Seat_Operation">
+            <End Role="Operation" EntitySet="Operations" />
+            <End Role="Seat" EntitySet="Seats" />
+          </AssociationSet>
+          <EntitySet Name="Reservations" EntityType="BusSystemModel.Reservation" />
           <AssociationSet Name="FK_ReservationTime_Route1" Association="BusSystemModel.FK_ReservationTime_Route1">
             <End Role="Route" EntitySet="Routes" />
-            <End Role="ReservationTime" EntitySet="ReservationTimes" />
+            <End Role="Reservation" EntitySet="Reservations" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Route">
@@ -291,7 +239,7 @@
           <Property Name="RoutePrice" Type="Int32" Nullable="false" />
           <NavigationProperty Name="BusType" Relationship="BusSystemModel.FK_Route_BusType" FromRole="Route" ToRole="BusType" />
           <NavigationProperty Name="Operations" Relationship="BusSystemModel.FK_Operation_Route" FromRole="Route" ToRole="Operation" />
-          <NavigationProperty Name="ReservationTimes" Relationship="BusSystemModel.FK_ReservationTime_Route1" FromRole="Route" ToRole="ReservationTime" />
+          <NavigationProperty Name="Reservations" Relationship="BusSystemModel.FK_ReservationTime_Route1" FromRole="Route" ToRole="Reservation" />
         </EntityType>
         <Association Name="FK_Route_BusType">
           <End Type="BusSystemModel.BusType" Role="BusType" Multiplicity="1">
@@ -319,16 +267,68 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Seat">
+          <Key>
+            <PropertyRef Name="SeatId" />
+            <PropertyRef Name="OperationId" />
+          </Key>
+          <Property Name="SeatId" Type="Int32" Nullable="false" />
+          <Property Name="OperationId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="SeatColumn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SeatColumnNumber" Type="Int32" Nullable="false" />
+          <Property Name="PaymentMethod" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="BusSystemModel.FK_Seat_Customer" FromRole="Seat" ToRole="Customer" />
+          <NavigationProperty Name="Operation" Relationship="BusSystemModel.FK_Seat_Operation" FromRole="Seat" ToRole="Operation" />
+        </EntityType>
+        <Association Name="FK_Seat_Customer">
+          <End Type="BusSystemModel.Customer" Role="Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="BusSystemModel.Seat" Role="Seat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Seat">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seat_Operation">
+          <End Type="BusSystemModel.Operation" Role="Operation" Multiplicity="1" />
+          <End Type="BusSystemModel.Seat" Role="Seat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operation">
+              <PropertyRef Name="OperationId" />
+            </Principal>
+            <Dependent Role="Seat">
+              <PropertyRef Name="OperationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="ReservationTimeId" />
+          </Key>
+          <Property Name="ReservationTimeId" Type="Int32" Nullable="false" />
+          <Property Name="RouteId" Type="Int32" Nullable="false" />
+          <Property Name="ReservationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DepartureTime" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="ArrivalTime" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="TravelTime" Type="Time" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Route" Relationship="BusSystemModel.FK_ReservationTime_Route1" FromRole="Reservation" ToRole="Route" />
+        </EntityType>
         <Association Name="FK_ReservationTime_Route1">
           <End Type="BusSystemModel.Route" Role="Route" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="BusSystemModel.ReservationTime" Role="ReservationTime" Multiplicity="*" />
+          <End Type="BusSystemModel.Reservation" Role="Reservation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Route">
               <PropertyRef Name="RouteId" />
             </Principal>
-            <Dependent Role="ReservationTime">
+            <Dependent Role="Reservation">
               <PropertyRef Name="RouteId" />
             </Dependent>
           </ReferentialConstraint>
@@ -372,30 +372,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ReservationTimes">
-            <EntityTypeMapping TypeName="BusSystemModel.ReservationTime">
-              <MappingFragment StoreEntitySet="ReservationTime">
-                <ScalarProperty Name="ReservationTimeId" ColumnName="ReservationTimeId" />
-                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
-                <ScalarProperty Name="ReservationDate" ColumnName="ReservationDate" />
-                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
-                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
-                <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Seats">
-            <EntityTypeMapping TypeName="BusSystemModel.Seat">
-              <MappingFragment StoreEntitySet="Seat">
-                <ScalarProperty Name="SeatId" ColumnName="SeatId" />
-                <ScalarProperty Name="OperationId" ColumnName="OperationId" />
-                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="SeatColumn" ColumnName="SeatColumn" />
-                <ScalarProperty Name="SeatColumnNumber" ColumnName="SeatColumnNumber" />
-                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Routes">
             <EntityTypeMapping TypeName="BusSystemModel.Route">
               <MappingFragment StoreEntitySet="Route">
@@ -404,6 +380,30 @@
                 <ScalarProperty Name="ArrivalLocation" ColumnName="ArrivalLocation" />
                 <ScalarProperty Name="BusTypeId" ColumnName="BusTypeId" />
                 <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seats">
+            <EntityTypeMapping TypeName="BusSystemModel.Seat">
+              <MappingFragment StoreEntitySet="Seat">
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="SeatColumnNumber" ColumnName="SeatColumnNumber" />
+                <ScalarProperty Name="SeatColumn" ColumnName="SeatColumn" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="OperationId" ColumnName="OperationId" />
+                <ScalarProperty Name="SeatId" ColumnName="SeatId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservations">
+            <EntityTypeMapping TypeName="BusSystemModel.Reservation">
+              <MappingFragment StoreEntitySet="Reservation">
+                <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+                <ScalarProperty Name="ReservationDate" ColumnName="ReservationDate" />
+                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+                <ScalarProperty Name="ReservationTimeId" ColumnName="ReservationTimeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
