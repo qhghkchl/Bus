@@ -65,7 +65,7 @@ namespace BusProject
             #region 서울 -> 정읍
             if (comboArrival.Text == "서울" && comboDeparture.Text == "정읍")
             {
-                var result = from reservationtime in ReservationTimeDao.GetAllReservationDate()
+                var result = from reservationtime in ReservationDao.GetAllReservationDate()
                              from route in RouteDao.GetByRouteId()
                              where reservationtime.RouteId == 1 && route.RouteId == 1 && DateTimePicker.Value.Date == reservationtime.ReservationDate                  
                              select new
@@ -84,7 +84,7 @@ namespace BusProject
             #region 대전 -> 부산
             if (comboArrival.Text == "대전" && comboDeparture.Text == "부산")
             {
-                var result = from reservationtime in ReservationTimeDao.GetAllReservationDate()
+                var result = from reservationtime in ReservationDao.GetAllReservationDate()
                              from route in RouteDao.GetByRouteId()
                              where reservationtime.RouteId == 2 && route.RouteId == 2 && DateTimePicker.Value.Date == reservationtime.ReservationDate
                              select new

@@ -58,8 +58,8 @@ namespace BusProject {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["ReservationTime"] != null)) {
-                    base.Tables.Add(new ReservationTimeDataTable(ds.Tables["ReservationTime"]));
+                if ((ds.Tables["Reservation"] != null)) {
+                    base.Tables.Add(new ReservationTimeDataTable(ds.Tables["Reservation"]));
                 }
                 if ((ds.Tables["Route"] != null)) {
                     base.Tables.Add(new RouteDataTable(ds.Tables["Route"]));
@@ -86,7 +86,7 @@ namespace BusProject {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ReservationTimeDataTable ReservationTime {
+        public ReservationTimeDataTable Reservation {
             get {
                 return this.tableReservationTime;
             }
@@ -169,8 +169,8 @@ namespace BusProject {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["ReservationTime"] != null)) {
-                    base.Tables.Add(new ReservationTimeDataTable(ds.Tables["ReservationTime"]));
+                if ((ds.Tables["Reservation"] != null)) {
+                    base.Tables.Add(new ReservationTimeDataTable(ds.Tables["Reservation"]));
                 }
                 if ((ds.Tables["Route"] != null)) {
                     base.Tables.Add(new RouteDataTable(ds.Tables["Route"]));
@@ -208,7 +208,7 @@ namespace BusProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableReservationTime = ((ReservationTimeDataTable)(base.Tables["ReservationTime"]));
+            this.tableReservationTime = ((ReservationTimeDataTable)(base.Tables["Reservation"]));
             if ((initTable == true)) {
                 if ((this.tableReservationTime != null)) {
                     this.tableReservationTime.InitVars();
@@ -243,7 +243,7 @@ namespace BusProject {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeReservationTime() {
+        private bool ShouldSerializeReservation() {
             return false;
         }
         
@@ -336,7 +336,7 @@ namespace BusProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ReservationTimeDataTable() {
-                this.TableName = "ReservationTime";
+                this.TableName = "Reservation";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -451,10 +451,10 @@ namespace BusProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ReservationTimeRow AddReservationTimeRow(int ReservationTimeId, RouteRow parentRouteRowByFK_ReservationTime_Route1, System.DateTime ReservationDate, System.TimeSpan DepartureTime, System.TimeSpan ArrivalTime, System.TimeSpan TravelTime) {
+            public ReservationTimeRow AddReservationTimeRow(int ReservationId, RouteRow parentRouteRowByFK_ReservationTime_Route1, System.DateTime ReservationDate, System.TimeSpan DepartureTime, System.TimeSpan ArrivalTime, System.TimeSpan TravelTime) {
                 ReservationTimeRow rowReservationTimeRow = ((ReservationTimeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ReservationTimeId,
+                        ReservationId,
                         null,
                         ReservationDate,
                         DepartureTime,
@@ -470,9 +470,9 @@ namespace BusProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ReservationTimeRow FindByReservationTimeId(int ReservationTimeId) {
+            public ReservationTimeRow FindByReservationId(int ReservationId) {
                 return ((ReservationTimeRow)(this.Rows.Find(new object[] {
-                            ReservationTimeId})));
+                            ReservationId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,7 +492,7 @@ namespace BusProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnReservationTimeId = base.Columns["ReservationTimeId"];
+                this.columnReservationTimeId = base.Columns["ReservationId"];
                 this.columnRouteId = base.Columns["RouteId"];
                 this.columnReservationDate = base.Columns["ReservationDate"];
                 this.columnDepartureTime = base.Columns["DepartureTime"];
@@ -503,7 +503,10 @@ namespace BusProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnReservationTimeId = new global::System.Data.DataColumn("ReservationTimeId", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnReservationTimeId = new global::System.Data.DataColumn("ReservationId", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnReservationTimeId.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "ReservationTimeIdColumn");
+                this.columnReservationTimeId.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnReservationTimeId");
+                this.columnReservationTimeId.ExtendedProperties.Add("Generator_UserColumnName", "ReservationId");
                 base.Columns.Add(this.columnReservationTimeId);
                 this.columnRouteId = new global::System.Data.DataColumn("RouteId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRouteId);
@@ -524,6 +527,12 @@ namespace BusProject {
                 this.columnDepartureTime.AllowDBNull = false;
                 this.columnArrivalTime.AllowDBNull = false;
                 this.columnTravelTime.AllowDBNull = false;
+                this.ExtendedProperties.Add("Generator_RowClassName", "ReservationTimeRow");
+                this.ExtendedProperties.Add("Generator_RowEvArgName", "ReservationTimeRowChangeEvent");
+                this.ExtendedProperties.Add("Generator_RowEvHandlerName", "ReservationTimeRowChangeEventHandler");
+                this.ExtendedProperties.Add("Generator_TableClassName", "ReservationTimeDataTable");
+                this.ExtendedProperties.Add("Generator_TableVarName", "tableReservationTime");
+                this.ExtendedProperties.Add("Generator_UserTableName", "Reservation");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -985,7 +994,7 @@ namespace BusProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ReservationTimeId {
+            public int ReservationId {
                 get {
                     return ((int)(this[this.tableReservationTime.ReservationTimeIdColumn]));
                 }
@@ -1351,8 +1360,8 @@ namespace BusProject._BusSystemDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ReservationTime";
-            tableMapping.ColumnMappings.Add("ReservationTimeId", "ReservationTimeId");
+            tableMapping.DataSetTable = "Reservation";
+            tableMapping.ColumnMappings.Add("ReservationId", "ReservationId");
             tableMapping.ColumnMappings.Add("RouteId", "RouteId");
             tableMapping.ColumnMappings.Add("ReservationDate", "ReservationDate");
             tableMapping.ColumnMappings.Add("DepartureTime", "DepartureTime");
@@ -1361,9 +1370,9 @@ namespace BusProject._BusSystemDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ReservationTime] WHERE (([ReservationTimeId] = @Original_ReservationTimeId) AND ([RouteId] = @Original_RouteId) AND ([ReservationDate] = @Original_ReservationDate) AND ([DepartureTime] = @Original_DepartureTime) AND ([ArrivalTime] = @Original_ArrivalTime) AND ([TravelTime] = @Original_TravelTime))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Reservation] WHERE (([ReservationId] = @Original_ReservationTimeId) AND ([RouteId] = @Original_RouteId) AND ([ReservationDate] = @Original_ReservationDate) AND ([DepartureTime] = @Original_DepartureTime) AND ([ArrivalTime] = @Original_ArrivalTime) AND ([TravelTime] = @Original_TravelTime))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReservationTimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationTimeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReservationTimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RouteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RouteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReservationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DepartureTime", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartureTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1371,10 +1380,10 @@ namespace BusProject._BusSystemDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TravelTime", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TravelTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ReservationTime] ([ReservationTimeId], [RouteId], [ReservationDate], [DepartureTime], [ArrivalTime], [TravelTime]) VALUES (@ReservationTimeId, @RouteId, @ReservationDate, @DepartureTime, @ArrivalTime, @TravelTime);
-SELECT ReservationTimeId, RouteId, ReservationDate, DepartureTime, ArrivalTime, TravelTime FROM ReservationTime WHERE (ReservationTimeId = @ReservationTimeId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Reservation] ([ReservationId], [RouteId], [ReservationDate], [DepartureTime], [ArrivalTime], [TravelTime]) VALUES (@ReservationId, @RouteId, @ReservationDate, @DepartureTime, @ArrivalTime, @TravelTime);
+SELECT ReservationId, RouteId, ReservationDate, DepartureTime, ArrivalTime, TravelTime FROM Reservation WHERE (ReservationId = @ReservationId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReservationTimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationTimeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReservationId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RouteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RouteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReservationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartureTime", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartureTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1382,16 +1391,16 @@ SELECT ReservationTimeId, RouteId, ReservationDate, DepartureTime, ArrivalTime, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TravelTime", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TravelTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ReservationTime] SET [ReservationTimeId] = @ReservationTimeId, [RouteId] = @RouteId, [ReservationDate] = @ReservationDate, [DepartureTime] = @DepartureTime, [ArrivalTime] = @ArrivalTime, [TravelTime] = @TravelTime WHERE (([ReservationTimeId] = @Original_ReservationTimeId) AND ([RouteId] = @Original_RouteId) AND ([ReservationDate] = @Original_ReservationDate) AND ([DepartureTime] = @Original_DepartureTime) AND ([ArrivalTime] = @Original_ArrivalTime) AND ([TravelTime] = @Original_TravelTime));
-SELECT ReservationTimeId, RouteId, ReservationDate, DepartureTime, ArrivalTime, TravelTime FROM ReservationTime WHERE (ReservationTimeId = @ReservationTimeId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Reservation] SET [ReservationId] = @ReservationId, [RouteId] = @RouteId, [ReservationDate] = @ReservationDate, [DepartureTime] = @DepartureTime, [ArrivalTime] = @ArrivalTime, [TravelTime] = @TravelTime WHERE (([ReservationId] = @Original_ReservationTimeId) AND ([RouteId] = @Original_RouteId) AND ([ReservationDate] = @Original_ReservationDate) AND ([DepartureTime] = @Original_DepartureTime) AND ([ArrivalTime] = @Original_ArrivalTime) AND ([TravelTime] = @Original_TravelTime));
+SELECT ReservationId, RouteId, ReservationDate, DepartureTime, ArrivalTime, TravelTime FROM Reservation WHERE (ReservationId = @ReservationId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReservationTimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationTimeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReservationId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RouteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RouteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReservationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartureTime", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartureTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArrivalTime", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArrivalTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TravelTime", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TravelTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReservationTimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationTimeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReservationTimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RouteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RouteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReservationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReservationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DepartureTime", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DepartureTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1412,8 +1421,8 @@ SELECT ReservationTimeId, RouteId, ReservationDate, DepartureTime, ArrivalTime, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ReservationTimeId, RouteId, ReservationDate, DepartureTime, ArrivalTime, T" +
-                "ravelTime FROM dbo.ReservationTime";
+            this._commandCollection[0].CommandText = "SELECT ReservationId, RouteId, ReservationDate, DepartureTime, ArrivalTime, Trave" +
+                "lTime FROM dbo.Reservation";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1452,7 +1461,7 @@ SELECT ReservationTimeId, RouteId, ReservationDate, DepartureTime, ArrivalTime, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(_BusSystemDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "ReservationTime");
+            return this.Adapter.Update(dataSet, "Reservation");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1501,8 +1510,8 @@ SELECT ReservationTimeId, RouteId, ReservationDate, DepartureTime, ArrivalTime, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ReservationTimeId, int RouteId, System.DateTime ReservationDate, System.TimeSpan DepartureTime, System.TimeSpan ArrivalTime, System.TimeSpan TravelTime) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ReservationTimeId));
+        public virtual int Insert(int ReservationId, int RouteId, System.DateTime ReservationDate, System.TimeSpan DepartureTime, System.TimeSpan ArrivalTime, System.TimeSpan TravelTime) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ReservationId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(RouteId));
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(ReservationDate));
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.TimeSpan)(DepartureTime));
@@ -1528,8 +1537,8 @@ SELECT ReservationTimeId, RouteId, ReservationDate, DepartureTime, ArrivalTime, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ReservationTimeId, int RouteId, System.DateTime ReservationDate, System.TimeSpan DepartureTime, System.TimeSpan ArrivalTime, System.TimeSpan TravelTime, int Original_ReservationTimeId, int Original_RouteId, System.DateTime Original_ReservationDate, System.TimeSpan Original_DepartureTime, System.TimeSpan Original_ArrivalTime, System.TimeSpan Original_TravelTime) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ReservationTimeId));
+        public virtual int Update(int ReservationId, int RouteId, System.DateTime ReservationDate, System.TimeSpan DepartureTime, System.TimeSpan ArrivalTime, System.TimeSpan TravelTime, int Original_ReservationTimeId, int Original_RouteId, System.DateTime Original_ReservationDate, System.TimeSpan Original_DepartureTime, System.TimeSpan Original_ArrivalTime, System.TimeSpan Original_TravelTime) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ReservationId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(RouteId));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(ReservationDate));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.TimeSpan)(DepartureTime));
@@ -2084,7 +2093,7 @@ SELECT RouteId, BusTypeId, ArrivalLocation, DepartureLocation, RoutePrice FROM R
                 }
             }
             if ((this._reservationTimeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ReservationTime.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                global::System.Data.DataRow[] updatedRows = dataSet.Reservation.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
@@ -2111,7 +2120,7 @@ SELECT RouteId, BusTypeId, ArrivalLocation, DepartureLocation, RoutePrice FROM R
                 }
             }
             if ((this._reservationTimeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ReservationTime.Select(null, null, global::System.Data.DataViewRowState.Added);
+                global::System.Data.DataRow[] addedRows = dataSet.Reservation.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._reservationTimeTableAdapter.Update(addedRows));
@@ -2129,7 +2138,7 @@ SELECT RouteId, BusTypeId, ArrivalLocation, DepartureLocation, RoutePrice FROM R
         private int UpdateDeletedRows(_BusSystemDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._reservationTimeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ReservationTime.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                global::System.Data.DataRow[] deletedRows = dataSet.Reservation.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._reservationTimeTableAdapter.Update(deletedRows));

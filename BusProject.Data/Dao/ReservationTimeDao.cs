@@ -6,50 +6,50 @@ using System.Collections.Generic;
 
 namespace BusProject.Data
 {
-    public class ReservationTimeDao : SingleKeyDao<ReservationTime, int>
+    public class ReservationDao : SingleKeyDao<Reservation, int>
     {
-        protected override Expression<Func<ReservationTime, bool>> IsKey(int key)
+        protected override Expression<Func<Reservation, bool>> IsKey(int key)
         {
-            return x => x.ReservationTimeId == key;
+            return x => x.ReservationId == key;
         }
 
-        protected override Expression<Func<ReservationTime, int>> KeySelector
+        protected override Expression<Func<Reservation, int>> KeySelector
         {
             get
             {
-                return x => x.ReservationTimeId;
+                return x => x.ReservationId;
             }
         }
 
-        public List<ReservationTime> ReservationRouteId()
+        public List<Reservation> ReservationRouteId()
         {
             using (var context = new BusProjectEntities())
             {
-                var query = from x in context.ReservationTimes
-                            select new { ReservationTime = x, RouteId = x.RouteId };
+                var query = from x in context.Reservations
+                            select new { Reservation = x, RouteId = x.RouteId };
                 var list = query.ToList();
 
                 foreach (var item in list)
                 {
-                    item.ReservationTime.RouteId = item.RouteId;
+                    item.Reservation.RouteId = item.RouteId;
                 }
-                return list.ConvertAll(x => x.ReservationTime);
+                return list.ConvertAll(x => x.Reservation);
             }
         }
 
-        public ReservationTime GetByReservationId(int reservationTimeId)
+        public Reservation GetByReservationId(int reservationTimeId)
         {
             using (var context = new BusProjectEntities())
             {
-                return context.ReservationTimes.FirstOrDefault(x => x.ReservationTimeId == reservationTimeId);
+                return context.Reservations.FirstOrDefault(x => x.ReservationId == reservationTimeId);
             }
         }
 
-        public static List<ReservationTime> GetAllReservationDate()
+        public static List<Reservation> GetAllReservationDate()
         {
             using (var context = new BusProjectEntities())
             {
-                return context.ReservationTimes.ToList();
+                return context.Reservations.ToList();
             }
         }
     }

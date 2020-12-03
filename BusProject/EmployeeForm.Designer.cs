@@ -593,11 +593,8 @@ namespace BusProject
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgvManOperation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departureDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource operationBindingSource;
         private System.Windows.Forms.DataGridView dgvManReservation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn busTypeTextDataGridViewTextBoxColumn;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer2;

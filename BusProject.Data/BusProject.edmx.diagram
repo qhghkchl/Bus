@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4e7a6773391c4de98a7c50f92924297c" Name="Diagram1">
-        <EntityTypeShape EntityType="BusSystemModel.BusType" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusSystemModel.Customer" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusSystemModel.Operation" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusSystemModel.Route" Width="1.5" PointX="3" PointY="2.75" />
+      <Diagram DiagramId="4e7a6773391c4de98a7c50f92924297c" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="BusSystemModel.BusType" Width="1.5" PointX="0.75" PointY="3" />
+        <EntityTypeShape EntityType="BusSystemModel.Customer" Width="1.5" PointX="5.25" PointY="8.25" />
+        <EntityTypeShape EntityType="BusSystemModel.Operation" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="BusSystemModel.Reservation" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="BusSystemModel.Route" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="BusSystemModel.Seat" Width="1.5" PointX="7.5" PointY="1.125" />
         <AssociationConnector Association="BusSystemModel.FK_Route_BusType" />
-        <AssociationConnector Association="BusSystemModel.FK_Operation_Route" />
-        <EntityTypeShape EntityType="BusSystemModel.Seat" Width="1.5" PointX="7.5" PointY="4.625" />
         <AssociationConnector Association="BusSystemModel.FK_Seat_Customer" />
+        <AssociationConnector Association="BusSystemModel.FK_Operation_Route" />
         <AssociationConnector Association="BusSystemModel.FK_Seat_Operation" />
-        <EntityTypeShape EntityType="BusSystemModel.Reservation" Width="1.5" PointX="5.25" PointY="4.875" />
         <AssociationConnector Association="BusSystemModel.FK_ReservationTime_Route1" />
       </Diagram>
     </edmx:Diagrams>

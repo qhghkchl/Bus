@@ -22,7 +22,7 @@ namespace BusProject.Data
         public int SeatColumnNumber { get; set; }
         public int PaymentMethod { get; set; }
 
-        // ReservationTime Table
+        // Reservation Table
         public DateTime ReservationDate { get; set; }
     }
 }
