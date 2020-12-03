@@ -55,8 +55,8 @@ namespace BusProject.Data
                     Route route = context.Routes.FirstOrDefault(x => x.RouteId == operation.RouteId);
                     customer.BusTypeId = route.BusTypeId;
 
-                    Reservation reservationTime = context.Reservations.FirstOrDefault(x => x.RouteId == route.RouteId);
-                    customer.ReservationDate = reservationTime.ReservationDate;
+                    Reservation reservation = context.Reservations.FirstOrDefault(x => x.RouteId == route.RouteId);
+                    customer.ReservationDate = reservation.ReservationDate;
                 }
                 return customers;
             }

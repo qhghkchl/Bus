@@ -37,11 +37,11 @@ namespace BusProject.Data
             }
         }
 
-        public Reservation GetByReservationId(int reservationTimeId)
+        public Reservation GetByReservationId(int reservationId)
         {
             using (var context = new BusProjectEntities())
             {
-                return context.Reservations.FirstOrDefault(x => x.ReservationId == reservationTimeId);
+                return context.Reservations.FirstOrDefault(x => x.ReservationId == reservationId);
             }
         }
 
