@@ -88,7 +88,7 @@
       <DependentUpon>BusProject.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReservationTime.cs">
+    <Compile Include="Reservation.cs">
       <DependentUpon>BusProject.tt</DependentUpon>
     </Compile>
     <Compile Include="Route.cs">

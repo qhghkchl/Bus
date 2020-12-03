@@ -8,12 +8,21 @@ namespace BusProject.Data
 {
     public partial class Customer
     {
-        public string ReservationDate { get; set; }
-        public int PaymentMethod { get; set; }
-        public string OperationDate { get; set; }
-        public int DepartureTime { get; set; }
-        public string Departure { get; set; }
-        public string Arrival { get; set; }
+        // Operation Table
+        public string DepartureLocation { get; set; }
+        public string ArrivalLocation { get; set; }
+        public DateTime OperationDate { get; set; }
+        //public DateTime DepartureTime { get; set; }
+
+        // Route Table
         public int BusTypeId { get; set; }
+
+        // Seat Table
+        public string SeatColumn { get; set; }
+        public int SeatColumnNumber { get; set; }
+        public int PaymentMethod { get; set; }
+
+        // ReservationTime Table
+        public DateTime ReservationDate { get; set; }
     }
 }

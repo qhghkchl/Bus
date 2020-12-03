@@ -34,21 +34,17 @@ namespace BusProject.Data
             }
         }
 
-        public List<Operation> GetWithRoute()
+        public List<Operation> GetManOperation()
         {
             using (var context = new BusProjectEntities())
             {
                 var query = from x in context.Operations 
                             select x;
 
-
                 List<Operation> operations = query.ToList();
-
-
-                //departure, arrival, bustype
+                
                 foreach (Operation operation in operations)
                 {
-                    //Route routes = context.Routes.First(x => x.RouteId == operation.RouteId);
                     Route route = context.Routes.SingleOrDefault( x => x.RouteId == operation.RouteId);
                     operation.DepartureLocation = route.DepartureLocation;
                     operation.ArrivalLocation = route.ArrivalLocation;

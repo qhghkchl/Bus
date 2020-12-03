@@ -28,8 +28,8 @@ namespace BusProject.Data
         public virtual DbSet<BusType> BusTypes { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Operation> Operations { get; set; }
-        public virtual DbSet<ReservationTime> ReservationTimes { get; set; }
-        public virtual DbSet<Seat> Seats { get; set; }
         public virtual DbSet<Route> Routes { get; set; }
+        public virtual DbSet<Seat> Seats { get; set; }
+        public virtual DbSet<Reservation> Reservations { get; set; }
     }
 }

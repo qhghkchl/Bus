@@ -30,5 +30,6 @@ namespace BusProject.Data
         //}
 
         public int BusTypeId { get;  set; }
+        
     }
 }

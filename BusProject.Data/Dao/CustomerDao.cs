@@ -27,6 +27,39 @@ namespace BusProject.Data
             {
                 return context.Customers.FirstOrDefault(x => x.LoginId == loginId);
             }
-        }   
+        }
+
+        public List<Customer> GetManReservation()
+        {
+            using (var context = new BusProjectEntities())
+            {
+                var query = from x in context.Customers
+                            select x;
+
+                List<Customer> customers = query.ToList();
+
+                foreach (Customer customer in customers)
+                {
+                    Seat seat = context.Seats.FirstOrDefault(x => x.CustomerId == customer.CustomerId);
+                    customer.SeatColumn = seat.SeatColumn;
+                    customer.SeatColumnNumber = seat.SeatColumnNumber;
+                    customer.PaymentMethod = seat.PaymentMethod;
+
+                    Operation operation = context.Operations.FirstOrDefault(x => x.OperationId == seat.OperationId);
+                    customer.DepartureLocation = operation.DepartureLocation;
+                    customer.ArrivalLocation = operation.ArrivalLocation;
+                    customer.OperationDate = operation.OperationDate;
+                   
+                    //customer.DepartureTime = operation.DepartureTime;
+                    
+                    Route route = context.Routes.FirstOrDefault(x => x.RouteId == operation.RouteId);
+                    customer.BusTypeId = route.BusTypeId;
+
+                    ReservationTime reservationTime = context.ReservationTimes.FirstOrDefault(x => x.RouteId == route.RouteId);
+                    customer.ReservationDate = reservationTime.ReservationDate;
+                }
+                return customers;
+            }
+        }
     }
 }

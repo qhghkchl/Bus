@@ -30,7 +30,7 @@ namespace BusProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@ namespace BusProject
             this.label3 = new System.Windows.Forms.Label();
             this.txbManReservName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvManReservation = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.ArrivalLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,16 +68,16 @@ namespace BusProject
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operationDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.busTypeIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seatColumnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seatColumnNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentMethodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabControl1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -89,23 +89,23 @@ namespace BusProject
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvManReservation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.operationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl2
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(945, 450);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(945, 450);
+            this.tabControl2.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -241,7 +241,6 @@ namespace BusProject
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "출발지";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvManOperation
             // 
@@ -272,6 +271,7 @@ namespace BusProject
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "예약 관리";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // splitContainer2
             // 
@@ -294,7 +294,7 @@ namespace BusProject
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer2.Panel2.Controls.Add(this.dgvManReservation);
             this.splitContainer2.Size = new System.Drawing.Size(931, 415);
             this.splitContainer2.SplitterDistance = 98;
             this.splitContainer2.TabIndex = 1;
@@ -374,30 +374,30 @@ namespace BusProject
             this.label2.TabIndex = 1;
             this.label2.Text = "이름";
             // 
-            // dataGridView2
+            // dgvManReservation
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvManReservation.AutoGenerateColumns = false;
+            this.dgvManReservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvManReservation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.phoneNumberDataGridViewTextBoxColumn,
             this.loginIdDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
+            this.departureLocationDataGridViewTextBoxColumn,
+            this.arrivalLocationDataGridViewTextBoxColumn,
             this.operationDateDataGridViewTextBoxColumn1,
-            this.departureTimeDataGridViewTextBoxColumn1,
             this.busTypeIdDataGridViewTextBoxColumn1,
-            this.seatsDataGridViewTextBoxColumn,
-            this.reservationDateDataGridViewTextBoxColumn,
-            this.paymentMethodDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.customerBindingSource;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(931, 313);
-            this.dataGridView2.TabIndex = 0;
+            this.seatColumnDataGridViewTextBoxColumn,
+            this.seatColumnNumberDataGridViewTextBoxColumn,
+            this.paymentMethodDataGridViewTextBoxColumn,
+            this.reservationDateDataGridViewTextBoxColumn});
+            this.dgvManReservation.DataSource = this.customerBindingSource;
+            this.dgvManReservation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvManReservation.Location = new System.Drawing.Point(0, 0);
+            this.dgvManReservation.Name = "dgvManReservation";
+            this.dgvManReservation.RowHeadersWidth = 51;
+            this.dgvManReservation.RowTemplate.Height = 27;
+            this.dgvManReservation.Size = new System.Drawing.Size(931, 313);
+            this.dgvManReservation.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -488,21 +488,21 @@ namespace BusProject
             this.loginIdDataGridViewTextBoxColumn.Name = "loginIdDataGridViewTextBoxColumn";
             this.loginIdDataGridViewTextBoxColumn.Width = 125;
             // 
-            // dataGridViewTextBoxColumn2
+            // departureLocationDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Departure";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Departure";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
+            this.departureLocationDataGridViewTextBoxColumn.DataPropertyName = "DepartureLocation";
+            this.departureLocationDataGridViewTextBoxColumn.HeaderText = "DepartureLocation";
+            this.departureLocationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.departureLocationDataGridViewTextBoxColumn.Name = "departureLocationDataGridViewTextBoxColumn";
+            this.departureLocationDataGridViewTextBoxColumn.Width = 125;
             // 
-            // dataGridViewTextBoxColumn3
+            // arrivalLocationDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Arrival";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Arrival";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
+            this.arrivalLocationDataGridViewTextBoxColumn.DataPropertyName = "ArrivalLocation";
+            this.arrivalLocationDataGridViewTextBoxColumn.HeaderText = "ArrivalLocation";
+            this.arrivalLocationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.arrivalLocationDataGridViewTextBoxColumn.Name = "arrivalLocationDataGridViewTextBoxColumn";
+            this.arrivalLocationDataGridViewTextBoxColumn.Width = 125;
             // 
             // operationDateDataGridViewTextBoxColumn1
             // 
@@ -512,14 +512,6 @@ namespace BusProject
             this.operationDateDataGridViewTextBoxColumn1.Name = "operationDateDataGridViewTextBoxColumn1";
             this.operationDateDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // departureTimeDataGridViewTextBoxColumn1
-            // 
-            this.departureTimeDataGridViewTextBoxColumn1.DataPropertyName = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn1.HeaderText = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.departureTimeDataGridViewTextBoxColumn1.Name = "departureTimeDataGridViewTextBoxColumn1";
-            this.departureTimeDataGridViewTextBoxColumn1.Width = 125;
-            // 
             // busTypeIdDataGridViewTextBoxColumn1
             // 
             this.busTypeIdDataGridViewTextBoxColumn1.DataPropertyName = "BusTypeId";
@@ -528,21 +520,21 @@ namespace BusProject
             this.busTypeIdDataGridViewTextBoxColumn1.Name = "busTypeIdDataGridViewTextBoxColumn1";
             this.busTypeIdDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // seatsDataGridViewTextBoxColumn
+            // seatColumnDataGridViewTextBoxColumn
             // 
-            this.seatsDataGridViewTextBoxColumn.DataPropertyName = "Seats";
-            this.seatsDataGridViewTextBoxColumn.HeaderText = "Seats";
-            this.seatsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.seatsDataGridViewTextBoxColumn.Name = "seatsDataGridViewTextBoxColumn";
-            this.seatsDataGridViewTextBoxColumn.Width = 125;
+            this.seatColumnDataGridViewTextBoxColumn.DataPropertyName = "SeatColumn";
+            this.seatColumnDataGridViewTextBoxColumn.HeaderText = "SeatColumn";
+            this.seatColumnDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.seatColumnDataGridViewTextBoxColumn.Name = "seatColumnDataGridViewTextBoxColumn";
+            this.seatColumnDataGridViewTextBoxColumn.Width = 125;
             // 
-            // reservationDateDataGridViewTextBoxColumn
+            // seatColumnNumberDataGridViewTextBoxColumn
             // 
-            this.reservationDateDataGridViewTextBoxColumn.DataPropertyName = "ReservationDate";
-            this.reservationDateDataGridViewTextBoxColumn.HeaderText = "ReservationDate";
-            this.reservationDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reservationDateDataGridViewTextBoxColumn.Name = "reservationDateDataGridViewTextBoxColumn";
-            this.reservationDateDataGridViewTextBoxColumn.Width = 125;
+            this.seatColumnNumberDataGridViewTextBoxColumn.DataPropertyName = "SeatColumnNumber";
+            this.seatColumnNumberDataGridViewTextBoxColumn.HeaderText = "SeatColumnNumber";
+            this.seatColumnNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.seatColumnNumberDataGridViewTextBoxColumn.Name = "seatColumnNumberDataGridViewTextBoxColumn";
+            this.seatColumnNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // paymentMethodDataGridViewTextBoxColumn
             // 
@@ -551,6 +543,14 @@ namespace BusProject
             this.paymentMethodDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.paymentMethodDataGridViewTextBoxColumn.Name = "paymentMethodDataGridViewTextBoxColumn";
             this.paymentMethodDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // reservationDateDataGridViewTextBoxColumn
+            // 
+            this.reservationDateDataGridViewTextBoxColumn.DataPropertyName = "ReservationDate";
+            this.reservationDateDataGridViewTextBoxColumn.HeaderText = "ReservationDate";
+            this.reservationDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reservationDateDataGridViewTextBoxColumn.Name = "reservationDateDataGridViewTextBoxColumn";
+            this.reservationDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // customerBindingSource
             // 
@@ -561,10 +561,10 @@ namespace BusProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 450);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl2);
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -578,7 +578,7 @@ namespace BusProject
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvManReservation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.operationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -587,7 +587,7 @@ namespace BusProject
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -596,7 +596,7 @@ namespace BusProject
         private System.Windows.Forms.DataGridViewTextBoxColumn departureDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn arrivalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource operationBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvManReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn busTypeTextDataGridViewTextBoxColumn;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
@@ -609,18 +609,6 @@ namespace BusProject
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbManReservName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loginIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn operationDateDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn busTypeIdDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seatsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reservationDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paymentMethodDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.Button btnManReservSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -637,5 +625,17 @@ namespace BusProject
         private System.Windows.Forms.DataGridViewTextBoxColumn operationDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn busTypeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureLocationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalLocationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operationDateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn busTypeIdDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seatColumnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seatColumnNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentMethodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reservationDateDataGridViewTextBoxColumn;
     }
 }
