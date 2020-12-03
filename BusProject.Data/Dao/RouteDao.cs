@@ -21,13 +21,13 @@ namespace BusProject.Data
                 return x => x.RouteId;
             }
         }
-        public Route GetByRouteId(int routeId)
+        public static List<Route> GetByRouteId()
         {
             using (var context = new BusProjectEntities())
             {
-                return context.Routes.FirstOrDefault(x => x.RouteId == routeId);
+                return context.Routes.ToList();
             }
-        }     
+        }
 
         public List<string> GetDepartureCities()
         {
@@ -43,6 +43,6 @@ namespace BusProject.Data
             {
                 return context.Routes.Select(x => x.ArrivalLocation).ToList();
             }
-        }
+        }       
     }
 }

@@ -46,5 +46,7 @@ namespace BusProject
         {
             txtLoginId.Text = txtPassword.Text = txtName.Text = txtContact.Text = txtDateOfBirth.Text = "";
         }
+
+       
     }
 }

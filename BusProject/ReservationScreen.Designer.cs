@@ -29,6 +29,7 @@ namespace BusProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -37,16 +38,19 @@ namespace BusProject
             this.comboDeparture = new System.Windows.Forms.ComboBox();
             this.comboArrival = new System.Windows.Forms.ComboBox();
             this.DataGridView = new System.Windows.Forms.DataGridView();
-            this.ReservationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReservationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TravelTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkAll = new System.Windows.Forms.CheckBox();
             this.checkPremium = new System.Windows.Forms.CheckBox();
             this.checkHigh = new System.Windows.Forms.CheckBox();
             this.checkEconomy = new System.Windows.Forms.CheckBox();
             this.bttSearch = new System.Windows.Forms.Button();
+            this.routeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,6 +74,8 @@ namespace BusProject
             // DateTimePicker
             // 
             this.DateTimePicker.Location = new System.Drawing.Point(157, 212);
+            this.DateTimePicker.MaxDate = new System.DateTime(2021, 1, 31, 0, 0, 0, 0);
+            this.DateTimePicker.MinDate = new System.DateTime(2020, 11, 1, 0, 0, 0, 0);
             this.DateTimePicker.Name = "DateTimePicker";
             this.DateTimePicker.Size = new System.Drawing.Size(205, 25);
             this.DateTimePicker.TabIndex = 2;
@@ -111,27 +117,21 @@ namespace BusProject
             // 
             // DataGridView
             // 
+            this.DataGridView.AutoGenerateColumns = false;
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ReservationDate,
             this.DepartureTime,
             this.ArrivalTime,
-            this.TravelTime});
+            this.ReservationDate,
+            this.TravelTime,
+            this.routeIdDataGridViewTextBoxColumn});
+            this.DataGridView.DataSource = this.routeBindingSource;
             this.DataGridView.Location = new System.Drawing.Point(454, 30);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 27;
-            this.DataGridView.Size = new System.Drawing.Size(547, 339);
+            this.DataGridView.Size = new System.Drawing.Size(669, 339);
             this.DataGridView.TabIndex = 6;
-            // 
-            // ReservationDate
-            // 
-            this.ReservationDate.DataPropertyName = "ReservationDate";
-            this.ReservationDate.HeaderText = "ReservationDate";
-            this.ReservationDate.MinimumWidth = 6;
-            this.ReservationDate.Name = "ReservationDate";
-            this.ReservationDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ReservationDate.Width = 125;
             // 
             // DepartureTime
             // 
@@ -150,6 +150,15 @@ namespace BusProject
             this.ArrivalTime.Name = "ArrivalTime";
             this.ArrivalTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ArrivalTime.Width = 125;
+            // 
+            // ReservationDate
+            // 
+            this.ReservationDate.DataPropertyName = "ReservationDate";
+            this.ReservationDate.HeaderText = "ReservationDate";
+            this.ReservationDate.MinimumWidth = 6;
+            this.ReservationDate.Name = "ReservationDate";
+            this.ReservationDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ReservationDate.Width = 125;
             // 
             // TravelTime
             // 
@@ -210,11 +219,23 @@ namespace BusProject
             this.bttSearch.UseVisualStyleBackColor = true;
             this.bttSearch.Click += new System.EventHandler(this.bttSearch_Click);
             // 
+            // routeIdDataGridViewTextBoxColumn
+            // 
+            this.routeIdDataGridViewTextBoxColumn.DataPropertyName = "RouteId";
+            this.routeIdDataGridViewTextBoxColumn.HeaderText = "RouteId";
+            this.routeIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.routeIdDataGridViewTextBoxColumn.Name = "routeIdDataGridViewTextBoxColumn";
+            this.routeIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // routeBindingSource
+            // 
+            this.routeBindingSource.DataSource = typeof(BusProject.Data.Route);
+            // 
             // ReservationScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 450);
+            this.ClientSize = new System.Drawing.Size(1159, 450);
             this.Controls.Add(this.bttSearch);
             this.Controls.Add(this.checkEconomy);
             this.Controls.Add(this.checkHigh);
@@ -232,6 +253,7 @@ namespace BusProject
             this.Text = "ReservationScreen";
             this.Load += new System.EventHandler(this.ReservationScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,9 +274,11 @@ namespace BusProject
         private System.Windows.Forms.CheckBox checkHigh;
         private System.Windows.Forms.CheckBox checkEconomy;
         private System.Windows.Forms.Button bttSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReservationDate;
+        private System.Windows.Forms.BindingSource routeBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReservationDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn TravelTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn routeIdDataGridViewTextBoxColumn;
     }
 }

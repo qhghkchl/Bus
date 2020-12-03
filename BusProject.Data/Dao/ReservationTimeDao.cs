@@ -21,6 +21,22 @@ namespace BusProject.Data
             }
         }
 
+        public List<ReservationTime> ReservationRouteId()
+        {
+            using (var context = new BusProjectEntities())
+            {
+                var query = from x in context.ReservationTimes
+                            select new { ReservationTime = x, RouteId = x.RouteId };
+                var list = query.ToList();
+
+                foreach (var item in list)
+                {
+                    item.ReservationTime.RouteId = item.RouteId;
+                }
+                return list.ConvertAll(x => x.ReservationTime);
+            }
+        }
+
         public ReservationTime GetByReservationId(int reservationTimeId)
         {
             using (var context = new BusProjectEntities())
