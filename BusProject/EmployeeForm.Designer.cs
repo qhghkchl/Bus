@@ -45,6 +45,12 @@ namespace BusProject
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvManOperation = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivalLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.btnManReservSearch = new System.Windows.Forms.Button();
@@ -59,24 +65,18 @@ namespace BusProject
             this.dgvManReservation = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.ArrivalLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.operationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.operationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivalLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.operationDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busTypeIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seatColumnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seatColumnNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentMethodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentMethodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seatColumnNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seatColumnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busTypeIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operationDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -84,13 +84,13 @@ namespace BusProject
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManOperation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.operationBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManReservation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +112,7 @@ namespace BusProject
             this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(937, 421);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "운행 관리";
@@ -150,7 +150,7 @@ namespace BusProject
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(831, 27);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 46);
             this.button1.TabIndex = 10;
@@ -160,7 +160,7 @@ namespace BusProject
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(717, 37);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(90, 25);
             this.textBox5.TabIndex = 9;
@@ -168,7 +168,7 @@ namespace BusProject
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(536, 37);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(90, 25);
             this.textBox4.TabIndex = 8;
@@ -176,7 +176,7 @@ namespace BusProject
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(360, 37);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(90, 25);
             this.textBox3.TabIndex = 7;
@@ -184,7 +184,7 @@ namespace BusProject
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(215, 37);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(90, 25);
             this.textBox2.TabIndex = 6;
@@ -192,7 +192,7 @@ namespace BusProject
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(66, 36);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(90, 25);
             this.textBox1.TabIndex = 5;
@@ -261,12 +261,57 @@ namespace BusProject
             this.dgvManOperation.Size = new System.Drawing.Size(931, 313);
             this.dgvManOperation.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DepartureLocation";
+            this.dataGridViewTextBoxColumn1.HeaderText = "DepartureLocation";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // ArrivalLocation
+            // 
+            this.ArrivalLocation.DataPropertyName = "ArrivalLocation";
+            this.ArrivalLocation.HeaderText = "ArrivalLocation";
+            this.ArrivalLocation.MinimumWidth = 6;
+            this.ArrivalLocation.Name = "ArrivalLocation";
+            this.ArrivalLocation.Width = 150;
+            // 
+            // operationDateDataGridViewTextBoxColumn
+            // 
+            this.operationDateDataGridViewTextBoxColumn.DataPropertyName = "OperationDate";
+            this.operationDateDataGridViewTextBoxColumn.HeaderText = "OperationDate";
+            this.operationDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.operationDateDataGridViewTextBoxColumn.Name = "operationDateDataGridViewTextBoxColumn";
+            this.operationDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // departureTimeDataGridViewTextBoxColumn
+            // 
+            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
+            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "DepartureTime";
+            this.departureTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
+            this.departureTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // busTypeIdDataGridViewTextBoxColumn
+            // 
+            this.busTypeIdDataGridViewTextBoxColumn.DataPropertyName = "BusTypeId";
+            this.busTypeIdDataGridViewTextBoxColumn.HeaderText = "BusTypeId";
+            this.busTypeIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.busTypeIdDataGridViewTextBoxColumn.Name = "busTypeIdDataGridViewTextBoxColumn";
+            this.busTypeIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.busTypeIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // operationBindingSource
+            // 
+            this.operationBindingSource.DataSource = typeof(BusProject.Data.Operation);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(937, 421);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "예약 관리";
@@ -376,7 +421,6 @@ namespace BusProject
             // 
             // dgvManReservation
             // 
-            this.dgvManReservation.AutoGenerateColumns = false;
             this.dgvManReservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvManReservation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
@@ -390,7 +434,6 @@ namespace BusProject
             this.seatColumnNumberDataGridViewTextBoxColumn,
             this.paymentMethodDataGridViewTextBoxColumn,
             this.reservationDateDataGridViewTextBoxColumn});
-            this.dgvManReservation.DataSource = this.customerBindingSource;
             this.dgvManReservation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvManReservation.Location = new System.Drawing.Point(0, 0);
             this.dgvManReservation.Name = "dgvManReservation";
@@ -403,7 +446,7 @@ namespace BusProject
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(937, 421);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "노선별 매출액";
@@ -413,136 +456,15 @@ namespace BusProject
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(937, 421);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "월별 매출액";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // ArrivalLocation
+            // customerBindingSource
             // 
-            this.ArrivalLocation.DataPropertyName = "ArrivalLocation";
-            this.ArrivalLocation.HeaderText = "ArrivalLocation";
-            this.ArrivalLocation.MinimumWidth = 6;
-            this.ArrivalLocation.Name = "ArrivalLocation";
-            this.ArrivalLocation.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DepartureLocation";
-            this.dataGridViewTextBoxColumn1.HeaderText = "DepartureLocation";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // operationDateDataGridViewTextBoxColumn
-            // 
-            this.operationDateDataGridViewTextBoxColumn.DataPropertyName = "OperationDate";
-            this.operationDateDataGridViewTextBoxColumn.HeaderText = "OperationDate";
-            this.operationDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.operationDateDataGridViewTextBoxColumn.Name = "operationDateDataGridViewTextBoxColumn";
-            this.operationDateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // departureTimeDataGridViewTextBoxColumn
-            // 
-            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
-            this.departureTimeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // busTypeIdDataGridViewTextBoxColumn
-            // 
-            this.busTypeIdDataGridViewTextBoxColumn.DataPropertyName = "BusTypeId";
-            this.busTypeIdDataGridViewTextBoxColumn.HeaderText = "BusTypeId";
-            this.busTypeIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.busTypeIdDataGridViewTextBoxColumn.Name = "busTypeIdDataGridViewTextBoxColumn";
-            this.busTypeIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.busTypeIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // operationBindingSource
-            // 
-            this.operationBindingSource.DataSource = typeof(BusProject.Data.Operation);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // loginIdDataGridViewTextBoxColumn
-            // 
-            this.loginIdDataGridViewTextBoxColumn.DataPropertyName = "LoginId";
-            this.loginIdDataGridViewTextBoxColumn.HeaderText = "LoginId";
-            this.loginIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.loginIdDataGridViewTextBoxColumn.Name = "loginIdDataGridViewTextBoxColumn";
-            this.loginIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // departureLocationDataGridViewTextBoxColumn
-            // 
-            this.departureLocationDataGridViewTextBoxColumn.DataPropertyName = "DepartureLocation";
-            this.departureLocationDataGridViewTextBoxColumn.HeaderText = "DepartureLocation";
-            this.departureLocationDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.departureLocationDataGridViewTextBoxColumn.Name = "departureLocationDataGridViewTextBoxColumn";
-            this.departureLocationDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // arrivalLocationDataGridViewTextBoxColumn
-            // 
-            this.arrivalLocationDataGridViewTextBoxColumn.DataPropertyName = "ArrivalLocation";
-            this.arrivalLocationDataGridViewTextBoxColumn.HeaderText = "ArrivalLocation";
-            this.arrivalLocationDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.arrivalLocationDataGridViewTextBoxColumn.Name = "arrivalLocationDataGridViewTextBoxColumn";
-            this.arrivalLocationDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // operationDateDataGridViewTextBoxColumn1
-            // 
-            this.operationDateDataGridViewTextBoxColumn1.DataPropertyName = "OperationDate";
-            this.operationDateDataGridViewTextBoxColumn1.HeaderText = "OperationDate";
-            this.operationDateDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.operationDateDataGridViewTextBoxColumn1.Name = "operationDateDataGridViewTextBoxColumn1";
-            this.operationDateDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // busTypeIdDataGridViewTextBoxColumn1
-            // 
-            this.busTypeIdDataGridViewTextBoxColumn1.DataPropertyName = "BusTypeId";
-            this.busTypeIdDataGridViewTextBoxColumn1.HeaderText = "BusTypeId";
-            this.busTypeIdDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.busTypeIdDataGridViewTextBoxColumn1.Name = "busTypeIdDataGridViewTextBoxColumn1";
-            this.busTypeIdDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // seatColumnDataGridViewTextBoxColumn
-            // 
-            this.seatColumnDataGridViewTextBoxColumn.DataPropertyName = "SeatColumn";
-            this.seatColumnDataGridViewTextBoxColumn.HeaderText = "SeatColumn";
-            this.seatColumnDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.seatColumnDataGridViewTextBoxColumn.Name = "seatColumnDataGridViewTextBoxColumn";
-            this.seatColumnDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // seatColumnNumberDataGridViewTextBoxColumn
-            // 
-            this.seatColumnNumberDataGridViewTextBoxColumn.DataPropertyName = "SeatColumnNumber";
-            this.seatColumnNumberDataGridViewTextBoxColumn.HeaderText = "SeatColumnNumber";
-            this.seatColumnNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.seatColumnNumberDataGridViewTextBoxColumn.Name = "seatColumnNumberDataGridViewTextBoxColumn";
-            this.seatColumnNumberDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // paymentMethodDataGridViewTextBoxColumn
-            // 
-            this.paymentMethodDataGridViewTextBoxColumn.DataPropertyName = "PaymentMethod";
-            this.paymentMethodDataGridViewTextBoxColumn.HeaderText = "PaymentMethod";
-            this.paymentMethodDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.paymentMethodDataGridViewTextBoxColumn.Name = "paymentMethodDataGridViewTextBoxColumn";
-            this.paymentMethodDataGridViewTextBoxColumn.Width = 125;
+            this.customerBindingSource.DataSource = typeof(BusProject.Data.Customer);
             // 
             // reservationDateDataGridViewTextBoxColumn
             // 
@@ -552,9 +474,85 @@ namespace BusProject
             this.reservationDateDataGridViewTextBoxColumn.Name = "reservationDateDataGridViewTextBoxColumn";
             this.reservationDateDataGridViewTextBoxColumn.Width = 125;
             // 
-            // customerBindingSource
+            // paymentMethodDataGridViewTextBoxColumn
             // 
-            this.customerBindingSource.DataSource = typeof(BusProject.Data.Customer);
+            this.paymentMethodDataGridViewTextBoxColumn.DataPropertyName = "PaymentMethod";
+            this.paymentMethodDataGridViewTextBoxColumn.HeaderText = "PaymentMethod";
+            this.paymentMethodDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.paymentMethodDataGridViewTextBoxColumn.Name = "paymentMethodDataGridViewTextBoxColumn";
+            this.paymentMethodDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // seatColumnNumberDataGridViewTextBoxColumn
+            // 
+            this.seatColumnNumberDataGridViewTextBoxColumn.DataPropertyName = "SeatColumnNumber";
+            this.seatColumnNumberDataGridViewTextBoxColumn.HeaderText = "SeatColumnNumber";
+            this.seatColumnNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.seatColumnNumberDataGridViewTextBoxColumn.Name = "seatColumnNumberDataGridViewTextBoxColumn";
+            this.seatColumnNumberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // seatColumnDataGridViewTextBoxColumn
+            // 
+            this.seatColumnDataGridViewTextBoxColumn.DataPropertyName = "SeatColumn";
+            this.seatColumnDataGridViewTextBoxColumn.HeaderText = "SeatColumn";
+            this.seatColumnDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.seatColumnDataGridViewTextBoxColumn.Name = "seatColumnDataGridViewTextBoxColumn";
+            this.seatColumnDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // busTypeIdDataGridViewTextBoxColumn1
+            // 
+            this.busTypeIdDataGridViewTextBoxColumn1.DataPropertyName = "BusTypeId";
+            this.busTypeIdDataGridViewTextBoxColumn1.HeaderText = "BusTypeId";
+            this.busTypeIdDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.busTypeIdDataGridViewTextBoxColumn1.Name = "busTypeIdDataGridViewTextBoxColumn1";
+            this.busTypeIdDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // operationDateDataGridViewTextBoxColumn1
+            // 
+            this.operationDateDataGridViewTextBoxColumn1.DataPropertyName = "OperationDate";
+            this.operationDateDataGridViewTextBoxColumn1.HeaderText = "OperationDate";
+            this.operationDateDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.operationDateDataGridViewTextBoxColumn1.Name = "operationDateDataGridViewTextBoxColumn1";
+            this.operationDateDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // arrivalLocationDataGridViewTextBoxColumn
+            // 
+            this.arrivalLocationDataGridViewTextBoxColumn.DataPropertyName = "ArrivalLocation";
+            this.arrivalLocationDataGridViewTextBoxColumn.HeaderText = "ArrivalLocation";
+            this.arrivalLocationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.arrivalLocationDataGridViewTextBoxColumn.Name = "arrivalLocationDataGridViewTextBoxColumn";
+            this.arrivalLocationDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // departureLocationDataGridViewTextBoxColumn
+            // 
+            this.departureLocationDataGridViewTextBoxColumn.DataPropertyName = "DepartureLocation";
+            this.departureLocationDataGridViewTextBoxColumn.HeaderText = "DepartureLocation";
+            this.departureLocationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.departureLocationDataGridViewTextBoxColumn.Name = "departureLocationDataGridViewTextBoxColumn";
+            this.departureLocationDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // loginIdDataGridViewTextBoxColumn
+            // 
+            this.loginIdDataGridViewTextBoxColumn.DataPropertyName = "LoginId";
+            this.loginIdDataGridViewTextBoxColumn.HeaderText = "LoginId";
+            this.loginIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loginIdDataGridViewTextBoxColumn.Name = "loginIdDataGridViewTextBoxColumn";
+            this.loginIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // EmployeeForm
             // 
@@ -572,6 +570,7 @@ namespace BusProject
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvManOperation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.operationBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
@@ -579,7 +578,6 @@ namespace BusProject
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvManReservation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -622,7 +620,6 @@ namespace BusProject
         private System.Windows.Forms.DataGridViewTextBoxColumn operationDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn busTypeIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginIdDataGridViewTextBoxColumn;
@@ -634,5 +631,6 @@ namespace BusProject
         private System.Windows.Forms.DataGridViewTextBoxColumn seatColumnNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentMethodDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource customerBindingSource;
     }
 }

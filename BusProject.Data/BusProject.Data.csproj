@@ -74,7 +74,7 @@
     <Compile Include="Dao\OperationDao.cs" />
     <Compile Include="Dao\CustomerDao.cs" />
     <Compile Include="Dao\Dao.cs" />
-    <Compile Include="Dao\ReservationTimeDao.cs" />
+    <Compile Include="Dao\ReservationDao.cs" />
     <Compile Include="Dao\RouteDao.cs" />
     <Compile Include="EFLibrary\BaseDao.cs" />
     <Compile Include="EFLibrary\DbContextCreator.cs" />

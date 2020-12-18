@@ -8,6 +8,11 @@ namespace BusProject.Data.Entities
 {
     class Reservation
     {
+        // Customer Table
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
+        public string LoginId { get; set; }
+
         // Operation Table
         public string DepartureLocation { get; set; }
         public string ArrivalLocation { get; set; }
